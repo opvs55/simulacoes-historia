@@ -16,6 +16,12 @@ export default {
   titulo: 'A terra do favor',
   subtitulo: 'Uma eleição no interior, 1927',
   pergunta: 'Se o voto é livre, por que é o coronel que paga o sapato?',
+  introducao:
+    'A Primeira República é liberal na Constituição e oligárquica na prática: só vota quem ' +
+    'sabe ler, o voto não é secreto, e em muitos municípios do interior o resultado da eleição ' +
+    'já está decidido antes mesmo de a urna abrir. Você está prestes a atravessar uma eleição ' +
+    'municipal de 1927 onde o voto de cada eleitor pode valer um sapato novo, um emprego — ou ' +
+    'uma dívida que não estava escrita em lugar nenhum.',
   era: 'republica',
   aulasRelacionadas: [1, 2],
   duracaoEstimada: '10 a 15 minutos',
@@ -38,6 +44,7 @@ export default {
       perguntaGuia: 'Quantos votos eu consigo entregar?',
       contexto:
         'A fazenda é sua, a venda é sua, e boa parte do município deve alguma coisa a você. Seu poder não vem de um cargo — vem de quantos votos você consegue entregar ao governo do estado no dia certo.',
+      icone: '/imagens/a-terra-do-favor/papeis/coronel.jpg',
     },
     {
       slug: 'presidente-estado',
@@ -48,6 +55,7 @@ export default {
       perguntaGuia: 'De quais coronéis eu preciso, e a que preço?',
       contexto:
         'Você governa o estado, mas não governa o interior: quem governa o interior são os coronéis. Você tem cargos para distribuir — delegado, professora, coletor — e precisa dos votos deles em troca.',
+      icone: '/imagens/a-terra-do-favor/papeis/presidente-estado.jpg',
     },
     {
       slug: 'delegado',
@@ -58,6 +66,7 @@ export default {
       perguntaGuia: 'A quem eu devo o meu cargo?',
       contexto:
         'Você foi nomeado por indicação — e sabe muito bem por indicação de quem. Sua autoridade é do Estado, mas sua nomeação é de um homem só.',
+      icone: '/imagens/a-terra-do-favor/papeis/delegado.jpg',
     },
     {
       slug: 'professora',
@@ -68,6 +77,7 @@ export default {
       perguntaGuia: 'Ensinar a ler é favor ou é direito?',
       contexto:
         'Sua cadeira na escola também veio por indicação. E há uma ironia difícil de engolir: só vota quem sabe ler, e é você quem ensina a ler. Cada aluno alfabetizado é um eleitor a mais — de alguém.',
+      icone: '/imagens/a-terra-do-favor/papeis/professora.jpg',
     },
     {
       slug: 'imprensa-oposicao',
@@ -78,6 +88,7 @@ export default {
       perguntaGuia: 'Denunciar adianta, ou só marca quem denunciou?',
       contexto:
         'Você imprime umas centenas de exemplares por semana numa cidade onde a maioria não lê. Sua arma é o constrangimento — e ela só funciona se alguém de fora estiver olhando.',
+      icone: '/imagens/a-terra-do-favor/papeis/imprensa-oposicao.jpg',
     },
     {
       slug: 'trabalhador-rural',
@@ -88,6 +99,7 @@ export default {
       perguntaGuia: 'O que é meu por direito e o que eu recebo de favor?',
       contexto:
         'Você trabalha na terra que não é sua. O remédio, o transporte, o documento, o sapato de couro que você não teria — tudo isso já veio da mão do coronel em algum momento. E vem de novo agora, em ano de eleição.',
+      icone: '/imagens/a-terra-do-favor/papeis/trabalhador-rural.jpg',
     },
   ],
 
@@ -108,7 +120,8 @@ export default {
       imagemSugerida: {
         descricao:
           'Uma fila de homens do campo diante de uma mesa de alistamento eleitoral, roupa de trabalho, alguns descalços — enquanto um capanga do coronel confere a lista de nomes.',
-        onde: 'Não há imagem específica no livro para esta cena. Serve qualquer fotografia de fila eleitoral rural da Primeira República (acervos: Biblioteca Nacional Digital, Arquivo Público do Estado de São Paulo).',
+        arquivo: '/imagens/a-terra-do-favor/o-alistamento.jpg',
+        onde: 'Ilustração gerada — cena genérica. Se quiser substituir por uma foto real, qualquer fotografia de fila eleitoral rural da Primeira República serve (acervos: Biblioteca Nacional Digital, Arquivo Público do Estado de São Paulo).',
       },
       investigacao: {
         olhar:
@@ -515,7 +528,8 @@ export default {
       imagemSugerida: {
         descricao:
           'Uma mesa eleitoral da Primeira República: mesários sentados, um eleitor de pé entregando a cédula aberta, e homens observando de perto — o voto acontecendo à vista de todos.',
-        onde: 'Não há imagem específica no livro. Acervos possíveis: Biblioteca Nacional Digital, Arquivo Público do Estado de São Paulo, ou charges da revista Careta do período.',
+        arquivo: '/imagens/a-terra-do-favor/dia-da-eleicao.jpg',
+        onde: 'Ilustração gerada — cena genérica. Acervos possíveis para uma foto real: Biblioteca Nacional Digital, Arquivo Público do Estado de São Paulo, ou charges da revista Careta do período.',
       },
       investigacao: {
         olhar:
@@ -706,7 +720,8 @@ export default {
       imagemSugerida: {
         descricao:
           'Uma ata eleitoral manuscrita da Primeira República, com assinaturas e rasuras visíveis — o documento que decidia mais que a urna.',
-        onde: 'Não há imagem específica no livro. Acervos possíveis: Arquivo Nacional, Arquivo Público do Estado de São Paulo.',
+        arquivo: '/imagens/a-terra-do-favor/a-degola.jpg',
+        onde: 'Ilustração gerada — cena genérica. Acervos possíveis para o documento real: Arquivo Nacional, Arquivo Público do Estado de São Paulo.',
       },
       investigacao: {
         olhar:

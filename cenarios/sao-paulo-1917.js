@@ -25,6 +25,13 @@ export default {
   serie: '2a',
   titulo: 'São Paulo, 1917',
   pergunta: 'Quem foi que decidiu que o pão ia custar o dobro?',
+  introducao:
+    'A Primeira Guerra Mundial, do outro lado do Atlântico, encareceu tudo no Brasil — e São ' +
+    'Paulo virou a maior cidade industrial do país às custas de operários que ganham cada vez ' +
+    'menos para trabalhar cada vez mais. Nos bairros da Mooca e do Brás, imigrantes e ' +
+    'migrantes internos dividem galpões de tijolo com máquinas de tear. Em junho de 1917, ' +
+    'ninguém imagina que uma fábrica parada vai virar a primeira greve geral da história do ' +
+    'Brasil — e que o resultado dela vai depender de decisões como as que você está prestes a tomar.',
   era: 'republica',
   aulasRelacionadas: [2, 3, 4],
 
@@ -617,7 +624,8 @@ export default {
       imagemSugerida: {
         descricao:
           'Multidão preenchendo uma rua do centro de São Paulo de calçada a calçada, vista de cima ou de longe, sem cartazes nem uniformes — só a escala da massa de gente.',
-        onde: 'Não há foto do cortejo específico no livro. Buscar em: acervo Fanfulla/Biblioteca Nacional Digital (a mesma investigação de 15-16 jul. 1917 já citada na fonte da Rodada 2) ou BIONDI, L. Classe e nação (2011), já referenciado por TOLEDO (2017).',
+        arquivo: '/imagens/sao-paulo-1917/o-cortejo.jpg',
+        onde: 'Ilustração gerada — cena genérica, não é reprodução de foto de época. Se quiser substituir por uma foto real, buscar em: acervo Fanfulla/Biblioteca Nacional Digital ou BIONDI, L. Classe e nação (2011), já referenciado por TOLEDO (2017).',
       },
       investigacao: {
         olhar:
@@ -827,8 +835,9 @@ export default {
         'independente, a centenas de quilômetros de distância. (TOLEDO, 2017)',
       imagemSugerida: {
         descricao:
-          'Retrato de Edgard Leuenroth — o diretor de A Plebe, uma das figuras centrais do Comitê de Defesa Proletária.',
-        onde: 'Retratos de Leuenroth circulam em acervos acadêmicos sobre o anarquismo paulista (ex.: KHOURY, Y. A. "Edgard Leuenroth, anarquismo e as esquerdas no Brasil", 2007, já citado por TOLEDO). Creditar a fonte da imagem ao publicar.',
+          'Cena genérica de uma tipografia operária de jornal anarquista, 1917 — não é um retrato de Edgard Leuenroth (diretor real de A Plebe e figura central do Comitê): gerar IA de uma pessoa real e identificável falsificaria um documento. Se quiser mostrar o Leuenroth de verdade, use uma foto real dele (ver `onde`).',
+        arquivo: '/imagens/sao-paulo-1917/comite-defesa-proletaria.jpg',
+        onde: 'Retratos reais de Leuenroth circulam em acervos acadêmicos sobre o anarquismo paulista (ex.: KHOURY, Y. A. "Edgard Leuenroth, anarquismo e as esquerdas no Brasil", 2007, já citado por TOLEDO). Creditar a fonte da imagem ao publicar.',
       },
       investigacao: {
         olhar:
@@ -1058,7 +1067,8 @@ export default {
       imagemSugerida: {
         descricao:
           'Operários entrando de volta pelo portão de uma fábrica têxtil, expressões neutras ou cansadas — o retorno ao trabalho depois do acordo, sem clima de celebração.',
-        onde: 'Não há foto específica no livro. Qualquer fotografia de portão de fábrica paulistana do período (acervos: Instituto Moreira Salles, Arquivo Público do Estado de São Paulo) serve como ambientação, creditada como ilustrativa.',
+        arquivo: '/imagens/sao-paulo-1917/o-acordo.jpg',
+        onde: 'Ilustração gerada — cena genérica. Se quiser substituir por uma foto real, qualquer fotografia de portão de fábrica paulistana do período (acervos: Instituto Moreira Salles, Arquivo Público do Estado de São Paulo) serve.',
       },
       investigacao: {
         olhar:

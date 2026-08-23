@@ -19,6 +19,12 @@ export default {
   titulo: 'O plano que não existia',
   subtitulo: 'O caminho para o Estado Novo, 1935-1937',
   pergunta: 'E se o documento que assustou o país inteiro fosse mentira?',
+  introducao:
+    'Brasil, 1935 a 1937. O país vive sob tensão: comunistas e integralistas se enfrentam nas ' +
+    'ruas, o mandato do presidente Vargas está com os dias contados pela Constituição, e o ' +
+    'medo de uma "ameaça vermelha" cresce a cada mês. Você está prestes a viver os meses que ' +
+    'antecederam o golpe que fechou o Congresso e instaurou o Estado Novo — com base num ' +
+    'documento que, a rigor, ninguém verificou.',
   era: 'era-vargas',
   aulasRelacionadas: [6, 7, 8],
   duracaoEstimada: '12 a 18 minutos',
@@ -41,6 +47,7 @@ export default {
       perguntaGuia: 'Uma ameaça de verdade precisa ser real para servir?',
       contexto:
         'Você assessora o Presidente da República num momento em que o mandato dele está com os dias contados pela Constituição de 1934. Um "estado de guerra" resolveria esse problema — falta só um motivo público.',
+      icone: '/imagens/o-plano-que-nao-existia/papeis/getulio.jpg',
     },
     {
       slug: 'oficial-aib',
@@ -51,6 +58,7 @@ export default {
       perguntaGuia: 'O comunismo que combatemos precisa existir, ou só precisa ser útil?',
       contexto:
         'Você veste a camisa-verde e acredita no que prega: ordem, nação, hierarquia. Seu serviço secreto tem acesso a redações de outros movimentos — e a capacidade de escrever como eles escreveriam.',
+      icone: '/imagens/o-plano-que-nao-existia/papeis/oficial-aib.jpg',
     },
     {
       slug: 'oficial-general',
@@ -61,6 +69,7 @@ export default {
       perguntaGuia: 'Defender a ordem ou defender quem está no poder — dá sempre no mesmo?',
       contexto:
         'As Forças Armadas são chamadas a "garantir a segurança nacional". Cabe a você avaliar se a ameaça apresentada é real o bastante para justificar o que está sendo pedido.',
+      icone: '/imagens/o-plano-que-nao-existia/papeis/oficial-general.jpg',
     },
     {
       slug: 'jornalista-grande-imprensa',
@@ -71,6 +80,7 @@ export default {
       perguntaGuia: 'Publicar rápido ou publicar certo?',
       contexto:
         'Um documento chegou à redação alegando revelar um plano comunista de tomada do país. É exatamente o tipo de furo que vende jornal — se for verdade.',
+      icone: '/imagens/o-plano-que-nao-existia/papeis/jornalista-grande-imprensa.jpg',
     },
     {
       slug: 'militante-anl',
@@ -81,6 +91,7 @@ export default {
       perguntaGuia: 'Como provar que não fiz o que dizem que eu ia fazer?',
       contexto:
         'Você organiza núcleos da ANL — comunistas, tenentes dissidentes, democratas, todos sob uma bandeira antifascista. Agora seu nome está sendo associado a um "plano de tomada do poder" que você nunca viu.',
+      icone: '/imagens/o-plano-que-nao-existia/papeis/militante-anl.jpg',
     },
     {
       slug: 'funcionario-publico',
@@ -91,6 +102,7 @@ export default {
       perguntaGuia: 'Obedecer à ordem de hoje me protege ou me compromete amanhã?',
       contexto:
         'Você trabalha num ministério. As instruções mudam de tom nas últimas semanas — mais vigilância, mais formulário, mais pergunta sobre "atividades suspeitas" de colegas.',
+      icone: '/imagens/o-plano-que-nao-existia/papeis/funcionario-publico.jpg',
     },
     {
       slug: 'cidadao-comum',
@@ -101,6 +113,7 @@ export default {
       perguntaGuia: 'Se todo mundo tem medo da mesma coisa, ela precisa ser verdade?',
       contexto:
         'Você lê o jornal de manhã e comenta na fila da padaria. Não milita em nada — mas o clima de "algo grave está para acontecer" está em toda conversa que você tem essa semana.',
+      icone: '/imagens/o-plano-que-nao-existia/papeis/cidadao-comum.jpg',
     },
   ],
 
@@ -121,7 +134,8 @@ export default {
       imagemSugerida: {
         descricao:
           'Cartazes convocatórios de 1932, convocando voluntários (enfermeiras e soldados) para a revolução constitucionalista, com forte apelo visual e simbólico.',
-        onde: 'Livro do 2º ano, Aula 6, Estação 1 — acervo Fapesp / Instituto Histórico e Geográfico de São Paulo / Arquivo Público do Estado de São Paulo.',
+        arquivo: '/imagens/o-plano-que-nao-existia/a-mvore-e-a-lembranca.jpg',
+        onde: 'Ilustração gerada — cena genérica de cartaz, não reprodução de um cartaz específico. Para a imagem real: Livro do 2º ano, Aula 6, Estação 1 — acervo Fapesp / Instituto Histórico e Geográfico de São Paulo / Arquivo Público do Estado de São Paulo.',
       },
       investigacao: {
         olhar:
@@ -334,7 +348,8 @@ export default {
       imagemSugerida: {
         descricao:
           'Uma folha datilografada, com timbre fictício de organização comunista, sobre uma mesa de gabinete militar — o "documento" sendo lido e repassado antes de qualquer verificação.',
-        onde: 'Não há reprodução do Plano Cohen no livro enviado. Reproduções do texto integral circulam em acervos acadêmicos (ex.: artigo de DANTAS, 2014, já citado) — usar com cuidado e crédito, deixando claro que é reprodução de fraude histórica, nunca apresentada como verdade.',
+        arquivo: '/imagens/o-plano-que-nao-existia/o-documento.jpg',
+        onde: 'Ilustração gerada — cena genérica de um documento datilografado sendo repassado, não reprodução do Plano Cohen real. Reproduções do texto integral do Plano Cohen circulam em acervos acadêmicos (ex.: artigo de DANTAS, 2014, já citado) — usar com cuidado e crédito, deixando claro que é reprodução de fraude histórica, nunca apresentada como verdade.',
       },
       investigacao: {
         olhar:
@@ -560,8 +575,9 @@ export default {
       },
       imagemSugerida: {
         descricao:
-          'Charge de Belmonte com caricaturas de Getúlio Vargas em diferentes fases do governo 1930-1937, publicada no jornal Folha da Manhã em 22 de julho de 1937 — mostra a transformação da figura pública de Vargas ao longo da escalada de poder.',
-        onde: 'Livro do 2º ano, Aula 8 — Folha da Manhã, acervo digital.',
+          'Cena genérica de Vargas discursando ao microfone de rádio para o país — não é a charge real de Belmonte (Folha da Manhã, 22 jul. 1937) mencionada em `onde`; recriar essa charge específica por IA a apresentaria como algo que ela não é.',
+        arquivo: '/imagens/o-plano-que-nao-existia/o-golpe.jpg',
+        onde: 'A charge real de Belmonte com as caricaturas de Vargas está no Livro do 2º ano, Aula 8 — Folha da Manhã, acervo digital. Use-a se quiser a imagem documental de verdade.',
       },
       investigacao: {
         olhar:

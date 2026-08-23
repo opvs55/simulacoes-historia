@@ -19,6 +19,11 @@ export default {
   titulo: 'São Paulo, 1917',
   pergunta: 'Quem foi que decidiu que o pão ia custar o dobro?',
 
+  // opcional — 1 parágrafo de contexto histórico geral, mostrado na tela
+  // "Entrar na partida" antes do aluno digitar o nome. Diferente de
+  // `pergunta` (frase-gancho curta): aqui é a ambientação de verdade.
+  introducao: 'A Primeira Guerra Mundial, do outro lado do Atlântico...',
+
   indicadores: [
     // slug: chave usada em `deltas` e em `efeitosFixos`
     // inicial: valor 0-100 no começo da partida

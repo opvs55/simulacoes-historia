@@ -121,6 +121,7 @@ export default function EntrarNaPartida({ params }) {
           <form onSubmit={handleEntrar} className={styles.card}>
             <h1>Entrar na partida</h1>
             <p className={styles.pergunta}>{cenario.titulo}</p>
+            {cenario.introducao && <p>{cenario.introducao}</p>}
             <label htmlFor="apelido">Seu apelido</label>
             <input
               id="apelido"
