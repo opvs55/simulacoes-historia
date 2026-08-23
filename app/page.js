@@ -4,25 +4,32 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <span className={styles.status}>Infraestrutura — sem conteúdo de cenário ainda</span>
-        <h1>Módulo Simulações</h1>
+        <p className={styles.kicker}>Currículo em ação · simulação social de turma</p>
+        <h1 className={styles.nameplate}>Módulo Simulações</h1>
+        <div className={styles.regraDupla} />
+
         <p className={styles.pergunta}>
           &ldquo;Quem foi que decidiu que o pão ia custar o dobro?&rdquo;
         </p>
-        <p>
+        <p className={styles.corpo}>
           Simulação social de turma para aulas de História: o aluno é sorteado para uma
-          posição social, decide dentro de uma crise histórica real ao longo de 5 rodadas
-          assíncronas, e no fim descobre que o resultado foi da turma inteira — não dele.
+          posição social, decide dentro de uma crise histórica real ao longo de várias
+          rodadas, e no fim descobre que o resultado foi da turma inteira — não dele.
         </p>
-        <ul className={styles.lista}>
-          <li>Motor puro (sorteio, coesão, agregação ponderada, saldo) — implementado e testado</li>
-          <li>Banco de dados (Supabase) — schema pronto, aguardando um projeto real</li>
-          <li>Conteúdo de &ldquo;São Paulo, 1917&rdquo; — ainda não escrito (Fase 1 do roadmap)</li>
-          <li>Telas de aluno e painel do professor — ainda não implementadas</li>
-        </ul>
+
+        <div className={styles.indice}>
+          <p className={styles.indiceTitulo}>Nesta edição</p>
+          <ul className={styles.lista}>
+            <li>Motor puro (sorteio, coesão, agregação ponderada, saldo) — implementado e testado</li>
+            <li>Banco de dados (Supabase) — ligado, schema aplicado</li>
+            <li>3 simulações jogáveis: São Paulo 1917, coronelismo/voto de cabresto, Plano Cohen</li>
+            <li>Painel do professor e fluxo de código de turma — ainda não implementados</li>
+          </ul>
+        </div>
+
         <nav className={styles.links}>
-          <a href="/simulacao/DEMO01">/simulacao/[codigo]</a>
-          <a href="/professor">/professor</a>
+          <a href="/simulacao/DEMO01">Jogar uma simulação →</a>
+          <a href="/professor">Painel do professor →</a>
         </nav>
       </main>
     </div>

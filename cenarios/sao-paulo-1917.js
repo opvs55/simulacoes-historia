@@ -113,6 +113,12 @@ export default {
       imagemContexto: {
         arquivo: '/imagens/sao-paulo-1917/preco-do-pao-enquanto-isso.jpg',
         onde: 'Foto fornecida pelo professor — acervo/fonte a confirmar.',
+        porPapel: {
+          'autoridade-estadual': {
+            arquivo: '/imagens/sao-paulo-1917/preco-do-pao-policia.jpg',
+            onde: 'Foto fornecida pelo professor — acervo/fonte a confirmar.',
+          },
+        },
       },
       imagemSugerida: {
         descricao:
@@ -360,7 +366,8 @@ export default {
       imagemSugerida: {
         descricao:
           'Um cordão de soldados da Força Pública enfileirados numa rua estreita do centro, de costas para o fotógrafo — a tropa formada antes de qualquer confronto acontecer.',
-        onde: 'Não há foto específica no livro. Buscar em: Fanfulla (jun.-jul. 1917, já citado como fonte de notas de rodapé por TOLEDO, 2017) ou acervo da Biblioteca Nacional Digital.',
+        arquivo: '/imagens/sao-paulo-1917/martinez-foto.jpg',
+        onde: 'Foto fornecida pelo professor — acervo/fonte a confirmar.',
       },
       investigacao: {
         olhar:

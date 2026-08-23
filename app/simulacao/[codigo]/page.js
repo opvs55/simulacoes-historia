@@ -34,6 +34,10 @@ export default function EntrarNaPartida({ params }) {
   const rodadaAtual = cenario?.rodadas[rodadaIndice]
   const ehUltimaRodada = cenario ? rodadaIndice === cenario.rodadas.length - 1 : false
   const opcaoSelecionada = rodadaAtual?.opcoesPorPapel[papelSlug]?.find((opcao) => opcao.slug === opcaoEscolhida)
+  // "enquanto isso" pode variar por papel (ex.: a força policial vê uma
+  // foto diferente da operária têxtil) — usa a versão específica do papel
+  // quando existir, senão cai na imagem padrão da rodada.
+  const imagemContexto = rodadaAtual?.imagemContexto?.porPapel?.[papelSlug] ?? rodadaAtual?.imagemContexto
 
   function handleEscolherCenario(cenarioEscolhido) {
     setCenario(cenarioEscolhido)
@@ -217,10 +221,10 @@ export default function EntrarNaPartida({ params }) {
           {rodadaAtual.contexto && (
             <div className={styles.fonte}>
               <span className={styles.selo}>Enquanto isso</span>
-              {rodadaAtual.imagemContexto?.arquivo && (
+              {imagemContexto?.arquivo && (
                 <figure className={styles.imagemReal}>
-                  <img src={rodadaAtual.imagemContexto.arquivo} alt="" />
-                  {rodadaAtual.imagemContexto.onde && <figcaption>{rodadaAtual.imagemContexto.onde}</figcaption>}
+                  <img src={imagemContexto.arquivo} alt="" />
+                  {imagemContexto.onde && <figcaption>{imagemContexto.onde}</figcaption>}
                 </figure>
               )}
               <p>{rodadaAtual.contexto}</p>

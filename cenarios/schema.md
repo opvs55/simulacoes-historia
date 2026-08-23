@@ -59,10 +59,15 @@ export default {
       contexto: 'O Crespi não é a única fábrica sob essa tensão... (TOLEDO, 2017)',
 
       // opcional — imagem real para acompanhar o texto de `contexto` acima.
-      // Mesmo formato de `imagemSugerida` abaixo.
+      // Mesmo formato de `imagemSugerida` abaixo. `porPapel` é opcional: se
+      // o papel do jogador tiver uma entrada aqui, ela substitui a imagem
+      // padrão (ex.: a força policial vê uma foto diferente da operária).
       imagemContexto: {
         arquivo: '/imagens/sao-paulo-1917/preco-do-pao-enquanto-isso.jpg', // caminho em /public
         onde: 'crédito/acervo da foto',
+        porPapel: {
+          'autoridade-estadual': { arquivo: '/imagens/sao-paulo-1917/preco-do-pao-policia.jpg', onde: '...' },
+        },
       },
 
       investigacao: {
