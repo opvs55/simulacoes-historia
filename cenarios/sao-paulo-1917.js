@@ -1,21 +1,22 @@
 // São Paulo, 1917 — cenário da 2ª série (GDD v2, seção 8)
 //
-// STATUS (2026-08-23): só a Rodada 1 está escrita. R2-R5 ainda não — ver o
-// TODO no fim do array `rodadas`. Isso NÃO é o protótipo completo descrito
-// na seção 16 do GDD (esse protótipo não foi encontrado em lugar nenhum
-// acessível; construímos do zero, ver docs/GDD-v2-modulo-simulacoes.md).
+// STATUS (2026-08-23): as 5 rodadas estão escritas. R1 e R4 se apoiam em
+// fontes reais e creditadas do livro do 2º ano (Aula 2, 3 e 4). R2, R3 e R5
+// narram a morte do sapateiro José Martinez, o cortejo e o acordo — fatos
+// bem estabelecidos na historiografia sobre a Greve Geral de 1917 e já
+// assumidos pelo próprio GDD (seção 8), mas que os PDFs enviados não
+// cobrem em detalhe — por isso essas três rodadas têm o campo `fonte`
+// marcado `natureza: 'recriada'` em vez de citar um documento específico.
+// Antes de usar em sala, vale revisar essas três contra uma fonte
+// historiográfica de fôlego maior (o artigo de TOLEDO, 2017, já citado na
+// R1/R2, é o candidato natural — cobre exatamente esse ano).
 //
-// Fontes reais usadas nesta rodada vêm do livro do 2º ano (Aula 3 —
-// "Movimento operário: as greves e as lutas por direitos na Primeira
-// República"). Toda fonte abaixo tem `natureza` declarada: 'documental'
-// (transcrição real do livro, creditada) ou 'recriada' (reconstituição
-// escrita para preencher uma lacuna que o livro não cobre — sinalizada
-// com selo na tela, nunca apresentada como documento de época). As opções
-// de decisão em si (`opcoesPorPapel`) são desenho de jogo informado pela
-// história, não citações — não carregam `natureza`.
+// Isso NÃO é o protótipo completo descrito na seção 16 do GDD (esse
+// protótipo não foi encontrado em lugar nenhum acessível; construímos do
+// zero, ver docs/GDD-v2-modulo-simulacoes.md).
 export default {
   slug: 'sao-paulo-1917',
-  versao: 1,
+  versao: 2,
   serie: '2a',
   titulo: 'São Paulo, 1917',
   pergunta: 'Quem foi que decidiu que o pão ia custar o dobro?',
@@ -28,10 +29,12 @@ export default {
     { slug: 'coesao', nome: 'Coesão operária', inicial: 25, faixas: ['dispersa', 'articulada', 'greve geral'] },
     { slug: 'repressao', nome: 'Repressão', inicial: 40, faixas: ['contida', 'ostensiva', 'violenta'] },
     { slug: 'opiniao', nome: 'Opinião pública', inicial: 45, faixas: ['contra os grevistas', 'dividida', 'a favor'] },
-    // "Direitos no papel × direitos cumpridos" (seção 8.2 do GDD) fica de
-    // fora por enquanto — é um par revelado só no fecho, não uma barra
-    // comum que rodadas empurram; precisa de tratamento especial em
-    // lib/simulacao/saldo.js quando a R5 (o acordo) for escrita.
+    // Par revelado "só no fecho" (seção 8.2 do GDD): ambos começam em 0 e só
+    // se mexem na R5. `direitos_papel` sobe por efeitoFixo (o acordo de 20%
+    // é fato histórico, não escolha da turma); `direitos_cumprido` sobe ou
+    // não conforme as decisões de quem tinha o poder de cumprir o combinado.
+    { slug: 'direitos_papel', nome: 'Direitos no papel', inicial: 0, faixas: ['nenhum', 'parcial', 'pleno'] },
+    { slug: 'direitos_cumprido', nome: 'Direitos cumpridos', inicial: 0, faixas: ['nenhum', 'parcial', 'pleno'] },
   ],
 
   papeis: [
@@ -95,6 +98,7 @@ export default {
           'Liga Operária da Mooca.',
         autor: 'TOLEDO, E. "Um ano extraordinário: greves, revoltas e circulação de ideias no Brasil em 1917." Estudos Históricos, Rio de Janeiro, v. 30, n. 61, p. 497-518, 2017.',
         acervo: 'Livro do 2º ano, Aula 3',
+        natureza: 'documental',
       },
       investigacao: {
         olhar:
@@ -200,32 +204,460 @@ export default {
         ],
       },
     },
-    // TODO (próximos passos, seguindo a cronologia real do GDD seção 8.3):
-    // - R2 "9 de julho": as fontes reais já levantadas (Fonte I "Prisões de
-    //   operários" e Fonte II "O porquê das greves", ambas de A Plebe,
-    //   datadas de julho de 1917) encaixam melhor aqui do que na R1 —
-    //   guardadas para esta rodada.
-    // - R3 "O cortejo" e R5 "O acordo": o livro do 2º ano (Aula 3) não
-    //   narra a morte do sapateiro José Martinez, o funeral, o acordo de
-    //   20% nem a Lei Adolfo Gordo — são fatos históricos reais (é sobre
-    //   eles que o próprio GDD seção 8 se apoia), mas não vieram creditados
-    //   nos PDFs enviados. Escrever essas rodadas exige ou (a) achar fonte
-    //   melhor — o artigo de TOLEDO (2017) já citado acima provavelmente
-    //   cobre isso — ou (b) escrever com `natureza: 'recriada'` e sinalizar
-    //   ao professor para revisar antes de usar em sala.
-    // - R4 "O Comitê de Defesa Proletária": a Aula 4 do livro tem a fonte
-    //   exata que o GDD já previa para destrancar "salário igual para as
-    //   mulheres" — as Bases de Acordo da Confederação Operária Brasileira
-    //   (1906) — e mais um documento comparável (pauta de operários da
-    //   construção civil do Rio, 1917, com jornada de 8h e fim do trabalho
-    //   infantil). Boa fonte já em mãos, falta escrever a rodada.
+
+    {
+      slug: 'nove-de-julho',
+      titulo: '9 de julho',
+      amplitude: 25,
+      cena:
+        '9 de julho de 1917. A tensão que vinha crescendo desde a Mooca chega ao centro. Num ' +
+        'confronto entre grevistas e a Força Pública, o sapateiro José Martinez é baleado e ' +
+        'morre. A notícia corre mais rápido do que qualquer jornal consegue imprimir.',
+      efeitosFixos: { repressao: 8, coesao: 5 },
+      fonte: {
+        texto:
+          'Se os operários morrem à mingua e se lamentam, que vão queixar-se a virgem dos ' +
+          'desamparados; se reclamam e protestam ahi está a polícia, o exercito, a armada e ' +
+          'todo aparelho legalitario [...]. O operariado realiza, portanto, uma obra justiceira ' +
+          'conquistando pela gréve ou outros meios de acção directa tudo quanto lhe é ' +
+          'extorquido, roubado legal ou illegalmente. [...] O movimento deve generalizar-se a ' +
+          'todas as classes, alastrar-se por todo o paiz. (Grafia original.)',
+        autor: 'BIBLIOTECA DIGITAL UNESP. "O porquê das greves." A Plebe, São Paulo, ano 1, n. 5, 09 jul. 1917.',
+        acervo: 'Livro do 2º ano, Aula 3',
+        natureza: 'documental',
+      },
+      investigacao: {
+        olhar:
+          'Fumaça de algum lugar perto da linha do trem. Gente correndo em direções opostas — ' +
+          'uns fugindo, outros indo ver o que houve. Um cordão de soldados da Força Pública se ' +
+          'forma na esquina, calado.',
+        fontes: [
+          {
+            slug: 'prisoes-operarios',
+            tipo: 'ler',
+            titulo: 'Prisões de operários',
+            papeis: ['imprensa-operaria', 'operaria-textil', 'operario-imigrante'],
+            trecho:
+              'A constituição republicana é uma burla. Está em scena a heroica policia de S. ' +
+              'Paulo. Numerosas prisões de operarios. Assalto à typographia onde se imprime A ' +
+              'PLEBE e ás Ligas operarias [...]. A prisão do nosso director Edgard Leuenroth. O ' +
+              'Centro Libertario è violentamente assaltado. (Grafia original.)',
+            autor: 'A Plebe, São Paulo, 1917.',
+            acervo: 'Livro do 2º ano, Aula 3',
+            natureza: 'documental',
+            confiavel: true,
+          },
+          {
+            slug: 'relato-confronto',
+            tipo: 'ouvir',
+            titulo: 'O que se conta sobre a morte de Martinez',
+            papeis: ['operaria-textil', 'operario-imigrante', 'imprensa-operaria'],
+            trecho:
+              'Um sapateiro chamado José Martinez foi atingido no confronto com a Força Pública ' +
+              'e morreu ainda na rua. Quem estava perto diz que ele não tinha arma nenhuma.',
+            acervo:
+              'Reconstituição — o livro enviado não narra este episódio; a base é a bibliografia ' +
+              'consolidada sobre a Greve Geral de 1917 (ver o artigo de TOLEDO, 2017, citado na ' +
+              'fonte principal desta e da rodada anterior). Vale revisar contra o artigo completo ' +
+              'antes de tratar os detalhes como definitivos em sala.',
+            natureza: 'recriada',
+            confiavel: true,
+          },
+          {
+            slug: 'relatorio-forca-publica',
+            tipo: 'ler',
+            titulo: 'Relatório da Força Pública',
+            papeis: ['autoridade-estadual', 'coronel-cafe', 'grande-imprensa'],
+            trecho:
+              'Comunicamos que a tropa agiu em legítima defesa diante de manifestantes que ' +
+              'arremessavam pedras. Lamenta-se a perda de uma vida, mas a ordem pública precisa ' +
+              'ser restabelecida sem demora.',
+            acervo: 'Reconstituição de um documento oficial típico do período — não é a transcrição de ' +
+              'um relatório real.',
+            natureza: 'recriada',
+            confiavel: true,
+          },
+          {
+            slug: 'boato-incendio',
+            tipo: 'ouvir',
+            titulo: '"Vão incendiar a fábrica esta noite"',
+            papeis: ['industrial-textil', 'coronel-cafe', 'autoridade-estadual'],
+            trecho:
+              'Chegou aos ouvidos do patrão que os grevistas mais exaltados planejam atear fogo ' +
+              'no Cotonifício ainda esta noite, em resposta à morte de Martinez.',
+            acervo: 'Boato — nenhum incêndio a fábricas ocorreu durante a Greve Geral de 1917.',
+            natureza: 'recriada',
+            confiavel: false,
+            revelacaoNoFecho:
+              'Boato. Nenhuma fábrica foi incendiada em 1917 — o medo de que isso acontecesse é que ' +
+              'foi real, e moveu decisões de gente que nunca chegou a ser ameaçada de verdade.',
+          },
+        ],
+      },
+      opcoesPorPapel: {
+        'operaria-textil': [
+          { slug: 'parar-em-luto', texto: 'Parar o trabalho em luto e protesto', deltas: { coesao: 12, repressao: 3 } },
+          { slug: 'trabalhar-com-medo', texto: 'Continuar trabalhando, com medo do que pode vir', deltas: { coesao: -4 } },
+          { slug: 'cuidar-feridos', texto: 'Deixar o posto para ajudar quem ficou ferido', deltas: { coesao: 4, opiniao: 2 } },
+        ],
+        'operario-imigrante': [
+          { slug: 'aderir-risco', texto: 'Aderir ao protesto, mesmo sabendo o que uma ficha na polícia pode significar', deltas: { coesao: 10, repressao: 3 } },
+          { slug: 'manter-distancia', texto: 'Manter distância — muito a perder se for preso ou marcado', deltas: { coesao: -6 } },
+          { slug: 'espalhar-noticia', texto: 'Espalhar a notícia entre outros imigrantes, sem se expor na rua', deltas: { coesao: 3 } },
+        ],
+        'industrial-textil': [
+          { slug: 'fechar-temporariamente', texto: 'Fechar a fábrica temporariamente', deltas: { producao: -10, repressao: -2, opiniao: 2 } },
+          { slug: 'pedir-protecao-reforcada', texto: 'Pedir reforço policial na porta da fábrica', deltas: { repressao: 6, coesao: 3 } },
+          { slug: 'comissao-negociacao', texto: 'Aceitar receber uma comissão de operários para negociar', deltas: { coesao: 2, opiniao: 3 } },
+        ],
+        'coronel-cafe': [
+          { slug: 'pressionar-fim-rapido', texto: 'Pressionar por um fim rápido — a paralisação já ameaça o escoamento do café', deltas: { repressao: -2, opiniao: 1 } },
+          { slug: 'manter-distancia-cafe', texto: 'Manter distância — problema da cidade, não do campo', deltas: { opiniao: -1 } },
+          { slug: 'apoiar-linha-dura', texto: 'Apoiar publicamente a linha dura do governo', deltas: { repressao: 5, opiniao: -4 } },
+        ],
+        'autoridade-estadual': [
+          { slug: 'reconhecer-excesso', texto: 'Reconhecer publicamente o excesso e recuar', deltas: { repressao: -8, opiniao: 5 } },
+          { slug: 'reforcar-tropa', texto: 'Reforçar a tropa nas ruas', deltas: { repressao: 10, coesao: 4 } },
+          { slug: 'abrir-investigacao', texto: 'Abrir uma investigação, sem mudar nada na rua por enquanto', deltas: { opiniao: 1, repressao: 2 } },
+        ],
+        'grande-imprensa': [
+          { slug: 'manchete-baderna', texto: 'Estampar manchete de "baderna" e desordem', deltas: { opiniao: -4, coesao: -2 } },
+          { slug: 'manchete-assassinato', texto: 'Estampar manchete de "assassinato" e repressão policial', deltas: { opiniao: 5, coesao: 3, repressao: 2 } },
+          { slug: 'cobertura-factual', texto: 'Cobrir os fatos sem adjetivos, deixando o leitor tirar conclusões', deltas: { opiniao: 1 } },
+        ],
+        'imprensa-operaria': [
+          { slug: 'convocar-cortejo', texto: 'Convocar publicamente o cortejo fúnebre como ato político', deltas: { coesao: 14, repressao: 3 } },
+          { slug: 'pedir-resposta-dura', texto: 'Pedir resposta à altura — inclusive fora da lei', deltas: { coesao: 8, repressao: 10, opiniao: -3 } },
+          { slug: 'pedir-calma', texto: 'Pedir calma, para não dar pretexto a mais repressão', deltas: { coesao: 2, repressao: -2 } },
+        ],
+      },
+    },
+
+    {
+      slug: 'o-cortejo',
+      titulo: 'O cortejo',
+      amplitude: 35,
+      efeitosFixos: { coesao: 15 },
+      cena:
+        'O funeral de Martinez vira o maior ato político que São Paulo já viu. Dezenas de ' +
+        'milhares acompanham o cortejo pelas ruas do centro — muito além da Mooca, muito além ' +
+        'de quem trabalha em fábrica. Nenhum papel consegue fingir que isso não está ' +
+        'acontecendo.',
+      fonte: {
+        texto:
+          'O enterro de José Martinez reuniu uma multidão que a imprensa da época não soube — ' +
+          'ou não quis — medir com precisão. O que os relatos concordam é que, a partir desse ' +
+          'dia, o que era greve de uma fábrica na Mooca já era outra coisa.',
+        autor: 'Reconstituição histórica — síntese de bibliografia sobre a Greve Geral de 1917, não é a transcrição de uma fonte primária.',
+        acervo: null,
+        natureza: 'recriada',
+      },
+      investigacao: {
+        olhar:
+          'Não dá para ver o fim da fila de gente, em nenhuma das duas direções. Alguém começa a ' +
+          'cantar; outros seguem calados. As lojas do trajeto fecham as portas — por respeito, ou ' +
+          'por medo, ninguém sabe dizer.',
+        fontes: [
+          {
+            slug: 'janela-do-gabinete',
+            tipo: 'olhar',
+            titulo: 'Visto da janela do gabinete',
+            papeis: ['autoridade-estadual', 'grande-imprensa', 'coronel-cafe', 'industrial-textil'],
+            trecho:
+              'De cima, a rua parece um rio que não acaba. Alguém no gabinete comenta baixinho ' +
+              'que nunca tinha visto tanta gente parada ao mesmo tempo na cidade.',
+            acervo: 'Reconstituição — ambientação, não citação de um documento específico.',
+            natureza: 'recriada',
+            confiavel: true,
+          },
+          {
+            slug: 'no-meio-do-cortejo',
+            tipo: 'olhar',
+            titulo: 'No meio do cortejo',
+            papeis: ['operaria-textil', 'operario-imigrante', 'imprensa-operaria'],
+            trecho:
+              'Gente que você nunca viu na fábrica está ali do seu lado. Padeiro, sapateiro, ' +
+              'costureira — o cortejo já não é só de quem trabalha no Crespi.',
+            acervo: 'Reconstituição — ambientação, não citação de um documento específico.',
+            natureza: 'recriada',
+            confiavel: true,
+          },
+        ],
+      },
+      opcoesPorPapel: {
+        'operaria-textil': [
+          { slug: 'participar-cortejo', texto: 'Sair da fila e entrar no cortejo', deltas: { coesao: 15, repressao: 2 } },
+          { slug: 'observar-distancia', texto: 'Observar da porta da fábrica, sem entrar no cortejo', deltas: { coesao: -3 } },
+          { slug: 'ajudar-organizar-cortejo', texto: 'Ajudar a organizar a passagem do cortejo pelo seu bairro', deltas: { coesao: 10, repressao: 3 } },
+        ],
+        'operario-imigrante': [
+          { slug: 'participar-cortejo-risco', texto: 'Entrar no cortejo, apesar do risco', deltas: { coesao: 15, repressao: 3 } },
+          { slug: 'observar-de-longe', texto: 'Observar de longe — muito visível para quem pode ser deportado', deltas: { coesao: -4 } },
+          { slug: 'apoio-logistico', texto: 'Ajudar sem se expor na linha de frente (água, recados, abrigo)', deltas: { coesao: 6 } },
+        ],
+        'industrial-textil': [
+          { slug: 'fechar-por-respeito', texto: 'Fechar a fábrica — por respeito, ou por medo, tanto faz o motivo', deltas: { producao: -12, opiniao: 3 } },
+          { slug: 'manter-seguranca-reforcada', texto: 'Manter a produção com segurança reforçada na porta', deltas: { repressao: 5, coesao: 4 } },
+          { slug: 'buscar-mediacao', texto: 'Buscar mediação através do comércio e da igreja local', deltas: { opiniao: 3, repressao: -2 } },
+        ],
+        'coronel-cafe': [
+          { slug: 'pressionar-acordo-rapido', texto: 'Usar sua influência para pressionar por um acordo rápido', deltas: { repressao: -3, opiniao: 2 } },
+          { slug: 'manter-irrelevante', texto: 'Continuar tratando como problema alheio', deltas: { opiniao: -2 } },
+          { slug: 'usar-influencia-politica', texto: 'Acionar contatos no governo estadual para "resolver isso"', deltas: { repressao: 3, opiniao: -1 } },
+        ],
+        'autoridade-estadual': [
+          { slug: 'recuar-de-vez', texto: 'Recuar de vez, prometer investigação e reformas', deltas: { repressao: -10, opiniao: 6 } },
+          { slug: 'reprimir-cortejo', texto: 'Tentar dispersar o cortejo', deltas: { repressao: 15, coesao: 6, opiniao: -8 } },
+          { slug: 'pedir-mediacao-terceiros', texto: 'Pedir que a imprensa e o comércio ajudem a mediar', deltas: { opiniao: 3, repressao: -2 } },
+        ],
+        'grande-imprensa': [
+          { slug: 'mudar-tom', texto: 'Mudar o tom — não dá mais para tratar isso como nota de pé de página', deltas: { opiniao: 5, coesao: 2 } },
+          { slug: 'continuar-minimizando', texto: 'Continuar minimizando a dimensão do fato', deltas: { opiniao: -4 } },
+          { slug: 'buscar-equilibrio', texto: 'Buscar entrevistar autoridades para "equilibrar" a cobertura', deltas: { opiniao: 1 } },
+        ],
+        'imprensa-operaria': [
+          { slug: 'convocar-geral', texto: 'Transformar a cobertura em convocação para greve geral', deltas: { coesao: 18, repressao: 4 } },
+          { slug: 'registrar-testemunhos', texto: 'Registrar testemunhos do cortejo para a posteridade', deltas: { coesao: 5, opiniao: 2 } },
+          { slug: 'manter-tom-anterior', texto: 'Manter o mesmo tom de antes, sem inflamar mais', deltas: { coesao: 3 } },
+        ],
+      },
+    },
+
+    {
+      slug: 'comite-defesa-proletaria',
+      titulo: 'O Comitê de Defesa Proletária',
+      amplitude: 25,
+      cena:
+        'Com a cidade parada, lideranças sindicais e anarquistas — entre elas Edgard Leuenroth, ' +
+        'diretor de A Plebe — formam o Comitê de Defesa Proletária para negociar em nome dos ' +
+        'grevistas. Alguém precisa escrever a pauta: o que exatamente está sendo pedido?',
+      fonte: {
+        texto:
+          'Tendo o movimento [de São Paulo] repercutido imediatamente nesta capital [...], a ' +
+          'Construção Civil declara-se em greve geral [...], reclamando o seguinte dos ' +
+          'industriais de construção: 1º) Adoção da jornada de 8 horas de trabalho [...]; 2º) ' +
+          'Fixação do salário mínimo [...]; 3º) Em caso de acidentes no trabalho, o operário ' +
+          'terá direito ao seu salário integral durante o tratamento [...]; 4º) As horas ' +
+          'extraordinárias serão pagas pelo dobro; 5º) Abolição completa do trabalho dos ' +
+          'menores de 14 anos [...] nas fábricas, obras e oficinas.',
+        autor: 'CARONE, E. Movimento operário no Brasil (1877-1944). Rio de Janeiro: Difel, 1979.',
+        acervo: 'Livro do 2º ano, Aula 3 — pauta da Construção Civil do Rio de Janeiro, inspirada no movimento de São Paulo. Usada aqui como modelo do que uma pauta de 1917 continha, não como o documento de São Paulo em si.',
+        natureza: 'documental',
+      },
+      investigacao: {
+        olhar:
+          'Numa mesa de bar improvisada em sede sindical, alguém escreve a lápis, risca, escreve ' +
+          'de novo. Cada item que entra na lista é uma discussão.',
+        fontes: [
+          {
+            slug: 'bases-acordo-1906',
+            tipo: 'ler',
+            titulo: 'Bases de Acordo da Confederação Operária Brasileira (1906)',
+            papeis: ['operaria-textil', 'imprensa-operaria'],
+            trecho:
+              'Considerando que a causa principal da exploração exercida contra as mulheres [...] ' +
+              'está no fato de lhes faltar coesão e solidariedade [...], o Congresso [...] ' +
+              'convida e incita os sindicatos operários a envidar todos os esforços para ' +
+              'organizar as mulheres e torná-las companheiras de luta, abolindo a concorrência ' +
+              'que fazem, aliás ocasionada pela exploração burguesa, a qual paga pouco e exige ' +
+              'muito.',
+            autor: 'Confederação Operária Brasileira, aprovadas pelo Primeiro Congresso Operário Brasileiro (1906).',
+            acervo: 'Livro do 2º ano, Aula 4',
+            natureza: 'documental',
+            confiavel: true,
+            destrancaOpcao: 'propor-salario-igual',
+          },
+          {
+            slug: 'terra-livre-mulheres',
+            tipo: 'ler',
+            titulo: 'Mulheres na luta de classes — "A Terra Livre"',
+            papeis: ['operaria-textil', 'imprensa-operaria'],
+            trecho:
+              '"Devemos demonstrar, enfim, que somos capazes de exigir o que nos pertence; e se ' +
+              'todas forem solidárias [...] nós começaremos por desmascarar a cupidez dos ' +
+              'patrões." [...] "Não devemos [...] esperar que nos concedam o que nos pertence ' +
+              'quando lhes agrade. Devemos tomá-lo por nossas mãos."',
+            autor: 'A Terra Livre, 19 jul. e 15 ago. 1906, apud RAGO, M. Trabalho feminino e sexualidade. In: PRIORI, M.; BASSANEZI, C. (org.). História das mulheres no Brasil. São Paulo: Contexto, 2004.',
+            acervo: 'Livro do 2º ano, Aula 4',
+            natureza: 'documental',
+            confiavel: true,
+            destrancaOpcao: 'propor-salario-igual',
+          },
+          {
+            slug: 'murmurio-patronal',
+            tipo: 'ouvir',
+            titulo: 'O que se murmura do outro lado',
+            papeis: ['industrial-textil', 'coronel-cafe'],
+            trecho:
+              '"Se a gente começa a ceder item por item, esse Comitê vira sindicato permanente. ' +
+              'Melhor negociar rápido e calado do que deixar isso virar rotina."',
+            acervo: 'Reconstituição — fala típica atribuída à classe patronal, não uma citação de um indivíduo real.',
+            natureza: 'recriada',
+            confiavel: true,
+          },
+        ],
+      },
+      opcoesPorPapel: {
+        'operaria-textil': [
+          { slug: 'propor-salario-igual', texto: 'Propor que a pauta inclua salário igual para homens e mulheres', deltas: { coesao: 10, opiniao: 2 } },
+          { slug: 'propor-jornada-8h', texto: 'Propor jornada de 8 horas', deltas: { coesao: 6 } },
+          { slug: 'aceitar-pauta-pronta', texto: 'Aceitar a pauta que já está pronta, sem propor mudança', deltas: { coesao: -3 } },
+        ],
+        'operario-imigrante': [
+          { slug: 'propor-fim-trabalho-infantil', texto: 'Propor o fim do trabalho de menores de 14 anos', deltas: { coesao: 8, opiniao: 3 } },
+          { slug: 'propor-protecao-acidente', texto: 'Propor indenização integral em caso de acidente', deltas: { coesao: 6 } },
+          { slug: 'nao-participar-redacao', texto: 'Não participar da redação — deixar para quem tem mais experiência', deltas: { coesao: -4 } },
+        ],
+        'industrial-textil': [
+          { slug: 'aceitar-negociar-pauta', texto: 'Aceitar negociar item a item com o Comitê', deltas: { opiniao: 4, repressao: -2 } },
+          { slug: 'recusar-legitimidade-comite', texto: 'Recusar reconhecer o Comitê como interlocutor legítimo', deltas: { coesao: 6, repressao: 3, opiniao: -4 } },
+          { slug: 'contraproposta-reduzida', texto: 'Oferecer contraproposta reduzida antes de qualquer reunião', deltas: { opiniao: 1 } },
+        ],
+        'coronel-cafe': [
+          { slug: 'pressionar-acordo-pauta', texto: 'Pressionar por um acordo rápido para acabar com o caos', deltas: { opiniao: 2, repressao: -1 } },
+          { slug: 'manter-distancia-pauta', texto: 'Manter distância — pauta de fábrica não é problema do campo', deltas: { opiniao: -1 } },
+          { slug: 'endurecer-pauta', texto: 'Endurecer — ceder à pauta abre precedente perigoso', deltas: { repressao: 4, opiniao: -3 } },
+        ],
+        'autoridade-estadual': [
+          { slug: 'reconhecer-comite', texto: 'Reconhecer o Comitê como interlocutor e sentar à mesa', deltas: { repressao: -6, opiniao: 5 } },
+          { slug: 'ignorar-comite', texto: 'Ignorar o Comitê, tratar apenas com os patrões', deltas: { coesao: 5, opiniao: -3 } },
+          { slug: 'negociar-com-vigilancia', texto: 'Aceitar negociar, mas manter vigilância sobre as lideranças', deltas: { repressao: 4, opiniao: 1 } },
+        ],
+        'grande-imprensa': [
+          { slug: 'publicar-pauta-integral', texto: 'Publicar a pauta na íntegra, item por item', deltas: { opiniao: 4, coesao: 2 } },
+          { slug: 'publicar-itens-moderados', texto: 'Publicar só os itens "razoáveis", omitir os outros', deltas: { opiniao: 1 } },
+          { slug: 'criticar-pauta', texto: 'Publicar editorial criticando a pauta como "inflamada"', deltas: { opiniao: -3, coesao: 2 } },
+        ],
+        'imprensa-operaria': [
+          { slug: 'pauta-ampla', texto: 'Redigir uma pauta ampla, incluindo salário igual e fim do trabalho infantil', deltas: { coesao: 12, repressao: 3 } },
+          { slug: 'pauta-minima', texto: 'Redigir uma pauta mínima, focada só no que tem mais chance de ser aceito', deltas: { coesao: 2, opiniao: 2 } },
+          { slug: 'divulgar-bases-1906', texto: 'Reimprimir as Bases de Acordo de 1906 ao lado da nova pauta', deltas: { coesao: 8, opiniao: 2 } },
+        ],
+      },
+    },
+
+    {
+      slug: 'o-acordo',
+      titulo: 'O acordo',
+      amplitude: 30,
+      efeitosFixos: { direitos_papel: 65, carestia: -12 },
+      cena:
+        'Depois de dias de cidade parada, a mediação — imprensa, comércio, o próprio Comitê — ' +
+        'chega a um acordo: aumento em torno de 20%, promessa de readmissão sem represálias. Os ' +
+        'operários voltam ao trabalho. Nas semanas seguintes, porém, o que foi prometido nem ' +
+        'sempre é o que se cumpre.',
+      fonte: {
+        texto:
+          'O acordo que encerrou a Greve Geral de 1917 previa aumento salarial e readmissão sem ' +
+          'perseguição. O grau em que isso foi de fato cumprido — fábrica por fábrica, operário ' +
+          'por operário — é exatamente o que esta rodada decide.',
+        autor: 'Reconstituição histórica — síntese de bibliografia sobre o desfecho da Greve Geral de 1917, não é a transcrição de uma fonte primária.',
+        acervo: null,
+        natureza: 'recriada',
+      },
+      investigacao: {
+        olhar:
+          'A fábrica reabre. Algumas caras de sempre não aparecem no primeiro dia. Ninguém fala ' +
+          'muito alto sobre isso.',
+        fontes: [
+          {
+            slug: 'lista-demitidos',
+            tipo: 'ler',
+            titulo: 'Uma lista que corre por baixo',
+            papeis: ['operaria-textil', 'imprensa-operaria'],
+            trecho:
+              'Uma lista, copiada à mão e passada de mão em mão, com o nome de quem não foi ' +
+              'readmitido depois do acordo — a maioria, gente que apareceu na frente durante o ' +
+              'cortejo ou o Comitê.',
+            acervo: 'Reconstituição — representa o fenômeno real da demissão seletiva pós-acordo, sem forjar uma lista específica.',
+            natureza: 'recriada',
+            confiavel: true,
+          },
+          {
+            slug: 'aviso-lei-adolfo-gordo',
+            tipo: 'ler',
+            titulo: 'A Lei que já existia, agora usada',
+            papeis: ['operario-imigrante', 'autoridade-estadual', 'imprensa-operaria'],
+            trecho:
+              'Uma lei de 1907 permite expulsar do país estrangeiro considerado perigoso à ordem ' +
+              'pública. Ela não foi criada por causa da greve — mas é sobre lideranças imigrantes ' +
+              'do movimento operário que ela está sendo aplicada agora.',
+            acervo: 'Reconstituição — a Lei Adolfo Gordo (Decreto nº 1.641, de 1907) é real; sua aplicação ' +
+              'contra lideranças anarquistas imigrantes no pós-1917 é fato histórico bem documentado, ' +
+              'mas este trecho não transcreve um documento específico.',
+            natureza: 'recriada',
+            confiavel: true,
+          },
+          {
+            slug: 'boato-cancelamento',
+            tipo: 'ouvir',
+            titulo: '"O acordo vai ser cancelado"',
+            papeis: ['operaria-textil', 'operario-imigrante', 'industrial-textil'],
+            trecho:
+              '"Dizem que se a produção não voltar ao normal em 48 horas, os patrões vão ' +
+              'cancelar tudo que foi combinado."',
+            acervo: 'Boato — não há registro de uma cláusula assim no acordo que encerrou a greve.',
+            natureza: 'recriada',
+            confiavel: false,
+            revelacaoNoFecho:
+              'Boato. Não existiu prazo nem cláusula de cancelamento — o medo de perder o que tinha ' +
+              'sido conquistado é que empurrou gente de volta ao trabalho mais depressa do que precisava.',
+          },
+        ],
+      },
+      opcoesPorPapel: {
+        'industrial-textil': [
+          { slug: 'cumprir-integralmente', texto: 'Cumprir o acordo integralmente, sem retaliação', deltas: { direitos_cumprido: 15, opiniao: 4 } },
+          { slug: 'demissao-seletiva', texto: 'Readmitir a maioria, mas demitir aos poucos quem liderou', deltas: { direitos_cumprido: -8, coesao: 4, opiniao: -3 } },
+          { slug: 'usar-lei-adolfo-gordo-industrial', texto: 'Denunciar lideranças estrangeiras à polícia com base na Lei Adolfo Gordo', deltas: { direitos_cumprido: -14, repressao: 8, opiniao: -6 } },
+        ],
+        'coronel-cafe': [
+          { slug: 'apoiar-normalizacao', texto: 'Apoiar a normalização rápida — o que importa é a produção voltando', deltas: { producao: 4, direitos_cumprido: 3 } },
+          { slug: 'manter-distancia-final', texto: 'Manter distância do desfecho, como fez o resto do tempo', deltas: { opiniao: -1 } },
+          { slug: 'pressionar-exemplo', texto: 'Pressionar para que "alguém pague o preço", evitando que isso se repita', deltas: { repressao: 6, direitos_cumprido: -6 } },
+        ],
+        'autoridade-estadual': [
+          { slug: 'fiscalizar-cumprimento', texto: 'Fiscalizar o cumprimento do acordo nas fábricas', deltas: { direitos_cumprido: 10, opiniao: 4 } },
+          { slug: 'aplicar-lei-adolfo-gordo', texto: 'Usar a Lei Adolfo Gordo para deportar lideranças imigrantes', deltas: { direitos_cumprido: -12, repressao: 10, opiniao: -5 } },
+          { slug: 'declarar-caso-encerrado', texto: 'Declarar o caso encerrado, sem fiscalizar nada', deltas: { direitos_cumprido: -5 } },
+        ],
+        'grande-imprensa': [
+          { slug: 'cobrar-cumprimento', texto: 'Cobrar publicamente o cumprimento do acordo', deltas: { direitos_cumprido: 8, opiniao: 3 } },
+          { slug: 'declarar-paz-social', texto: 'Declarar "paz social restaurada" e seguir para a próxima pauta', deltas: { direitos_cumprido: -2 } },
+          { slug: 'investigar-demissoes', texto: 'Investigar e publicar as demissões seletivas', deltas: { direitos_cumprido: 10, coesao: 3, opiniao: 2 } },
+        ],
+        'imprensa-operaria': [
+          { slug: 'denunciar-retaliacoes', texto: 'Denunciar publicamente as retaliações e deportações', deltas: { direitos_cumprido: 6, coesao: 6, repressao: 3 } },
+          { slug: 'comemorar-vitoria', texto: 'Comemorar a vitória, sem fiscalizar o que vem depois', deltas: { direitos_cumprido: -4 } },
+          { slug: 'organizar-apoio', texto: 'Organizar apoio a quem for demitido ou ameaçado de deportação', deltas: { direitos_cumprido: 9, coesao: 8 } },
+        ],
+        'operaria-textil': [
+          { slug: 'cobrar-prometido', texto: 'Cobrar, publicamente, exatamente o que foi prometido', deltas: { direitos_cumprido: 6, coesao: 3 } },
+          { slug: 'aceitar-o-que-vier', texto: 'Aceitar o que vier, com medo de perder o posto de novo', deltas: { direitos_cumprido: -5 } },
+          { slug: 'apoiar-colegas-demitidas', texto: 'Apoiar as colegas que forem demitidas mesmo assim', deltas: { direitos_cumprido: 5, coesao: 6 } },
+        ],
+        'operario-imigrante': [
+          { slug: 'temer-e-recuar', texto: 'Recuar da vida pública — o risco de deportação agora é real', deltas: { direitos_cumprido: -6, coesao: -3 } },
+          { slug: 'continuar-organizando', texto: 'Continuar organizando, apesar do risco', deltas: { direitos_cumprido: 7, coesao: 7, repressao: 3 } },
+          { slug: 'buscar-apoio-conterraneos', texto: 'Buscar apoio e abrigo entre conterrâneos, por precaução', deltas: { direitos_cumprido: 2 } },
+        ],
+      },
+    },
   ],
 
   desfecho: {
-    // Fixo desde já — não muda com o que a turma decidir (seção 5.4 e 8.4 do GDD).
     fixo: 'A greve acontece e o acordo de 20% é firmado.',
     variavel: ['cumprimento', 'repressao', 'quem-ficou-de-fora'],
-    textoFecho: null, // escrever junto com a R5
-    perguntasDebate: [], // gerado junto com o fecho completo
+    textoFecho:
+      'A greve de 1917 termina como começou: decidida por quem trabalha, não por quem manda. ' +
+      'O acordo de 20% foi real — mas o que a turma acabou de viver, nas duas últimas rodadas, ' +
+      'é que "no papel" e "na prática" raramente são a mesma coisa. O nome que os livros dão a ' +
+      'isso vem por último: vocês passaram por dentro da Primeira República — o mesmo sistema ' +
+      'que a Aula 2 chama de liberalismo oligárquico.',
+    perguntasDebate: [
+      'A barra de "direitos cumpridos" ficou bem abaixo da de "direitos no papel"? Por quê, na visão de vocês?',
+      'Quem, na turma, propôs salário igual para as mulheres na pauta — e quem só decidiu depois de ler as Bases de 1906? O que isso mudou?',
+      'Se vocês fossem sorteados de novo, para outro papel, decidiriam diferente? O que isso diz sobre o peso que cada papel carrega?',
+    ],
   },
 }
