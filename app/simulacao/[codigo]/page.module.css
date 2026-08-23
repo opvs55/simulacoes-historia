@@ -1,0 +1,141 @@
+.page {
+  --borda: rgba(0, 0, 0, 0.12);
+  --texto-fraco: rgba(0, 0, 0, 0.6);
+  --fundo-barra: rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 100svh;
+  padding: 60px 24px;
+  font-family: sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --borda: rgba(255, 255, 255, 0.16);
+    --texto-fraco: rgba(255, 255, 255, 0.64);
+    --fundo-barra: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.aviso {
+  max-width: 640px;
+  font-size: 13px;
+  color: var(--texto-fraco);
+  border: 1px dashed var(--borda);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.aviso2 {
+  font-size: 14px;
+  color: var(--texto-fraco);
+  font-style: italic;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
+  width: 100%;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.card h1 {
+  margin: 0;
+}
+
+.selo {
+  align-self: flex-start;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  color: var(--texto-fraco);
+}
+
+.pergunta {
+  font-style: italic;
+  color: var(--texto-fraco);
+}
+
+.card input[type='text'],
+.card input:not([type]),
+.card textarea {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  resize: vertical;
+}
+
+.card button {
+  align-self: flex-start;
+  font: inherit;
+  padding: 10px 20px;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.card button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.card button:not(:disabled):hover {
+  background: var(--fundo-barra);
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.opcao {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.opcao input {
+  margin-top: 3px;
+}
+
+.barraLinha {
+  display: grid;
+  grid-template-columns: 140px 1fr 36px;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.barraFundo {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--fundo-barra);
+  overflow: hidden;
+}
+
+.barraPreenchida {
+  height: 100%;
+  background: currentColor;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}

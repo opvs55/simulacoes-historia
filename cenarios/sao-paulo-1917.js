@@ -1,15 +1,15 @@
 // São Paulo, 1917 — cenário da 2ª série (GDD v2, seção 8)
 //
-// STATUS (2026-08-23): as 5 rodadas estão escritas. R1 e R4 se apoiam em
-// fontes reais e creditadas do livro do 2º ano (Aula 2, 3 e 4). R2, R3 e R5
-// narram a morte do sapateiro José Martinez, o cortejo e o acordo — fatos
-// bem estabelecidos na historiografia sobre a Greve Geral de 1917 e já
-// assumidos pelo próprio GDD (seção 8), mas que os PDFs enviados não
-// cobrem em detalhe — por isso essas três rodadas têm o campo `fonte`
-// marcado `natureza: 'recriada'` em vez de citar um documento específico.
-// Antes de usar em sala, vale revisar essas três contra uma fonte
-// historiográfica de fôlego maior (o artigo de TOLEDO, 2017, já citado na
-// R1/R2, é o candidato natural — cobre exatamente esse ano).
+// STATUS (2026-08-23): as 5 rodadas estão escritas, e todos os 5 campos
+// `fonte` principais são documentais — o livro do 2º ano (Aula 2, 3 e 4)
+// cobre a origem da greve e a pauta das mulheres; o artigo completo de
+// TOLEDO, E. "Um ano extraordinário: greves, revoltas e circulação de
+// ideias no Brasil em 1917" (Estudos Históricos, 2017), enviado pelo
+// professor, cobre o resto — a morte de José Gimenez Martinez, o cortejo,
+// a pauta completa do Comitê e os termos do acordo. Alguns fragmentos
+// menores de ambientação (o que se fala no galpão, o murmúrio patronal, os
+// dois boatos) continuam `natureza: 'recriada'` porque são flavor text, não
+// fatos historiográficos — isso é o esperado, não uma lacuna.
 //
 // Isso NÃO é o protótipo completo descrito na seção 16 do GDD (esse
 // protótipo não foi encontrado em lugar nenhum acessível; construímos do
@@ -249,18 +249,17 @@ export default {
           },
           {
             slug: 'relato-confronto',
-            tipo: 'ouvir',
-            titulo: 'O que se conta sobre a morte de Martinez',
+            tipo: 'ler',
+            titulo: 'Quem era José Gimenez Martinez',
             papeis: ['operaria-textil', 'operario-imigrante', 'imprensa-operaria'],
             trecho:
-              'Um sapateiro chamado José Martinez foi atingido no confronto com a Força Pública ' +
-              'e morreu ainda na rua. Quem estava perto diz que ele não tinha arma nenhuma.',
-            acervo:
-              'Reconstituição — o livro enviado não narra este episódio; a base é a bibliografia ' +
-              'consolidada sobre a Greve Geral de 1917 (ver o artigo de TOLEDO, 2017, citado na ' +
-              'fonte principal desta e da rodada anterior). Vale revisar contra o artigo completo ' +
-              'antes de tratar os detalhes como definitivos em sala.',
-            natureza: 'recriada',
+              'José Gimenez Martinez foi apenas uma das vítimas dos protestos, que chegaram a ' +
+              'cerca de 200, segundo a investigação realizada pelo jornal Fanfulla no cemitério ' +
+              'do Araçá nas noites de 15 e 16 de julho, quando a polícia fechou o cemitério para ' +
+              'transportar os cadáveres.',
+            autor: 'TOLEDO, E. "Um ano extraordinário: greves, revoltas e circulação de ideias no Brasil em 1917." Estudos Históricos, Rio de Janeiro, v. 30, n. 61, p. 497-518, 2017.',
+            acervo: 'Artigo acadêmico completo, enviado pelo professor em 2026-08-23.',
+            natureza: 'documental',
             confiavel: true,
           },
           {
@@ -339,18 +338,21 @@ export default {
       amplitude: 35,
       efeitosFixos: { coesao: 15 },
       cena:
-        'O funeral de Martinez vira o maior ato político que São Paulo já viu. Dezenas de ' +
-        'milhares acompanham o cortejo pelas ruas do centro — muito além da Mooca, muito além ' +
-        'de quem trabalha em fábrica. Nenhum papel consegue fingir que isso não está ' +
-        'acontecendo.',
+        'O funeral de José Gimenez Martinez — sapateiro, anarquista espanhol de 21 anos, do ' +
+        'grupo Jovens Incansáveis — vira o maior ato político que São Paulo já viu. Mais de 10 ' +
+        'mil pessoas acompanham o cortejo por vários pontos da cidade até o cemitério do Araçá, ' +
+        'parando várias vezes para comícios de rua. Nenhum papel consegue fingir que isso não ' +
+        'está acontecendo.',
       fonte: {
         texto:
-          'O enterro de José Martinez reuniu uma multidão que a imprensa da época não soube — ' +
-          'ou não quis — medir com precisão. O que os relatos concordam é que, a partir desse ' +
-          'dia, o que era greve de uma fábrica na Mooca já era outra coisa.',
-        autor: 'Reconstituição histórica — síntese de bibliografia sobre a Greve Geral de 1917, não é a transcrição de uma fonte primária.',
-        acervo: null,
-        natureza: 'recriada',
+          'O ponto máximo da agitação foi atingido no enterro do sapateiro José Gimenez ' +
+          'Martinez, um jovem militante anarquista espanhol, que tinha apenas 21 anos e fazia ' +
+          'parte do grupo Jovens Incansáveis. Mais de 10 mil pessoas participaram do cortejo ' +
+          'fúnebre, que seguiu por vários pontos da cidade até o cemitério do Araçá. O cortejo ' +
+          'foi interrompido por vários comícios.',
+        autor: 'TOLEDO, E. "Um ano extraordinário: greves, revoltas e circulação de ideias no Brasil em 1917." Estudos Históricos, Rio de Janeiro, v. 30, n. 61, p. 497-518, 2017.',
+        acervo: 'Artigo acadêmico completo, enviado pelo professor em 2026-08-23.',
+        natureza: 'documental',
       },
       investigacao: {
         olhar:
@@ -429,19 +431,22 @@ export default {
       amplitude: 25,
       cena:
         'Com a cidade parada, lideranças sindicais e anarquistas — entre elas Edgard Leuenroth, ' +
-        'diretor de A Plebe — formam o Comitê de Defesa Proletária para negociar em nome dos ' +
-        'grevistas. Alguém precisa escrever a pauta: o que exatamente está sendo pedido?',
+        'diretor de A Plebe, e o socialista italiano Teodoro Monicelli, diretor do Avanti! — ' +
+        'formam o Comitê de Defesa Proletária para negociar em nome dos grevistas, após ' +
+        'consultar as entidades operárias sobre o que incluir na pauta.',
       fonte: {
         texto:
-          'Tendo o movimento [de São Paulo] repercutido imediatamente nesta capital [...], a ' +
-          'Construção Civil declara-se em greve geral [...], reclamando o seguinte dos ' +
-          'industriais de construção: 1º) Adoção da jornada de 8 horas de trabalho [...]; 2º) ' +
-          'Fixação do salário mínimo [...]; 3º) Em caso de acidentes no trabalho, o operário ' +
-          'terá direito ao seu salário integral durante o tratamento [...]; 4º) As horas ' +
-          'extraordinárias serão pagas pelo dobro; 5º) Abolição completa do trabalho dos ' +
-          'menores de 14 anos [...] nas fábricas, obras e oficinas.',
-        autor: 'CARONE, E. Movimento operário no Brasil (1877-1944). Rio de Janeiro: Difel, 1979.',
-        acervo: 'Livro do 2º ano, Aula 3 — pauta da Construção Civil do Rio de Janeiro, inspirada no movimento de São Paulo. Usada aqui como modelo do que uma pauta de 1917 continha, não como o documento de São Paulo em si.',
+          'Eram elas: a libertação dos grevistas presos, o respeito "do modo mais absoluto" ao ' +
+          'direito de associação para os trabalhadores, nenhuma demissão por participação na ' +
+          'greve, a abolição do trabalho de menores de 14 anos, a proibição do trabalho noturno ' +
+          'para menores de 18 anos, a abolição do trabalho noturno das mulheres, o aumento de ' +
+          '35% para os salários inferiores a 5$000 e de 25% para os superiores, o pagamento ' +
+          'pontual a cada 15 dias, a garantia de trabalho permanente aos operários, a jornada ' +
+          'de oito horas, a semana inglesa e o aumento de 50% em todo trabalho extraordinário, ' +
+          'o imediato barateamento dos gêneros de primeira necessidade [...] e a redução do ' +
+          'preço dos aluguéis.',
+        autor: 'A Plebe, São Paulo, 21 jul. 1917, apud TOLEDO, E. "Um ano extraordinário..." Estudos Históricos, Rio de Janeiro, v. 30, n. 61, 2017.',
+        acervo: 'Artigo acadêmico completo, enviado pelo professor em 2026-08-23 — a pauta real do Comitê de Defesa Proletária de São Paulo, não um modelo comparável.',
         natureza: 'documental',
       },
       investigacao: {
@@ -542,18 +547,20 @@ export default {
       amplitude: 30,
       efeitosFixos: { direitos_papel: 65, carestia: -12 },
       cena:
-        'Depois de dias de cidade parada, a mediação — imprensa, comércio, o próprio Comitê — ' +
-        'chega a um acordo: aumento em torno de 20%, promessa de readmissão sem represálias. Os ' +
+        'Entre sábado e segunda-feira (14 a 16 de julho), com o secretário de Justiça Eloy ' +
+        'Chaves reunido com os principais empresários da cidade e uma comissão de diretores de ' +
+        'jornais mediando, os patrões vão assinando o acordo: direito de reunião reconhecido, ' +
+        'aumento de 20% nos salários, libertação dos presos, proibição de demitir grevistas. Os ' +
         'operários voltam ao trabalho. Nas semanas seguintes, porém, o que foi prometido nem ' +
         'sempre é o que se cumpre.',
       fonte: {
         texto:
-          'O acordo que encerrou a Greve Geral de 1917 previa aumento salarial e readmissão sem ' +
-          'perseguição. O grau em que isso foi de fato cumprido — fábrica por fábrica, operário ' +
-          'por operário — é exatamente o que esta rodada decide.',
-        autor: 'Reconstituição histórica — síntese de bibliografia sobre o desfecho da Greve Geral de 1917, não é a transcrição de uma fonte primária.',
-        acervo: null,
-        natureza: 'recriada',
+          'Entre o sábado 14 e a segunda-feira 16 de julho, vários empresários foram assinando ' +
+          'um acordo que reconhecia o direito de reunião, concedia aumento de 20% nos salários, ' +
+          'garantia a libertação dos presos e proibia a demissão dos operários grevistas.',
+        autor: 'TOLEDO, E. "Um ano extraordinário: greves, revoltas e circulação de ideias no Brasil em 1917." Estudos Históricos, Rio de Janeiro, v. 30, n. 61, p. 497-518, 2017.',
+        acervo: 'Artigo acadêmico completo, enviado pelo professor em 2026-08-23.',
+        natureza: 'documental',
       },
       investigacao: {
         olhar:
