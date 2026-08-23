@@ -67,7 +67,7 @@ Cronologia real, para quem pegar este repositório sem contexto:
 |---|---|
 | Motor puro (`lib/simulacao`) | Pronto e testado — sorteio por cota, regra da coesão, agregação ponderada, efeitos fixos, saldo geral. |
 | Conteúdo — **3 cenários completos** | Ver tabela abaixo. Todos com fontes creditadas, texto de consequência em toda opção, e caixas `imagemSugerida` indicando o que buscar e onde. |
-| Tela do aluno | **Jogável de ponta a ponta em modo solo**, mas só para `sao-paulo-1917.js` ainda — os outros dois cenários existem como dado, sem tela ligada. |
+| Tela do aluno | **Jogável de ponta a ponta em modo solo, para qualquer um dos 3 cenários** — uma tela de escolha aparece antes do apelido. Mostra o texto de `consequencia` depois de cada decisão. |
 | Testes | 46 passando (`npm test`) — genéricos, cobrem os 3 cenários automaticamente (estrutura, fontes, destranca-opção, partida completa). |
 | Banco (`supabase/schema.sql`) | Aplicado no Supabase — 6 tabelas, RLS ligada sem políticas ainda. |
 | Painel do professor | Stub de rota apenas, sem implementação. |
@@ -87,8 +87,6 @@ absolutismo, mercantilismo) — nenhum foi escrito.
 
 - **Multiplayer.** Hoje cada aluno joga sozinho e sua decisão move as barras pelo próprio peso.
   A turma inteira somando — que é o coração do projeto — depende de ligar a tela ao Supabase.
-- **Tela para os 2 cenários novos.** Só `sao-paulo-1917.js` está jogável; `a-terra-do-favor.js` e
-  `o-plano-que-nao-existia.js` existem como dado, prontos, mas sem rota.
 - **Mecanismo Investigar.** As fontes de investigação (olhar/ler/ouvir) estão escritas em todo
   cenário, mas ainda não aparecem na tela — hoje o aluno só vê a `fonte` principal da cena.
 - **Glossário.** Termos como "contracheque", "carestia", "açambarcamento" precisam de apoio de
@@ -255,12 +253,11 @@ barras final — *direitos no papel* × *direitos cumpridos* — e essa distânc
 
 ## Próximos passos
 
-1. Ligar `a-terra-do-favor.js` e `o-plano-que-nao-existia.js` à tela (hoje só `sao-paulo-1917.js`
-   é jogável) — provavelmente generalizando `app/simulacao/[codigo]/page.js` para receber
-   qualquer cenário em vez de importar um só, hardcoded.
-2. Ligar ao Supabase → multiplayer de verdade, com a turma somando.
-3. Mecanismo Investigar na tela (as fontes já estão escritas nos 3 cenários).
-4. Bater o martelo nas decisões em aberto acima (glossário, React Native, game master de IA).
-5. Curadoria de imagens reais para as caixas `imagemSugerida`.
-6. Painel do professor: abrir partida, acompanhar, ler justificativas, fechar, exportar.
-7. Cenários da 1ª série ("A Coroa e o Cofre") — ainda não escritos.
+1. Ligar ao Supabase → multiplayer de verdade, com a turma somando (hoje é sempre solo — a
+   escolha de cenário na tela é provisória e vai sumir quando o código de partida já vier
+   associado a um cenário só, como no desenho real do GDD).
+2. Mecanismo Investigar na tela (as fontes já estão escritas nos 3 cenários).
+3. Bater o martelo nas decisões em aberto acima (glossário, React Native, game master de IA).
+4. Curadoria de imagens reais para as caixas `imagemSugerida`.
+5. Painel do professor: abrir partida, acompanhar, ler justificativas, fechar, exportar.
+6. Cenários da 1ª série ("A Coroa e o Cofre") — ainda não escritos.
