@@ -146,6 +146,24 @@ export default function EntrarNaPartida({ params }) {
             Rodada {rodadaIndice + 1} de {cenario.rodadas.length} · {papel.nome}
           </span>
           <h1>{rodadaAtual.titulo}</h1>
+          {rodadaAtual.imagemSugerida && (
+            rodadaAtual.imagemSugerida.arquivo ? (
+              <figure className={styles.imagemReal}>
+                <img src={rodadaAtual.imagemSugerida.arquivo} alt={rodadaAtual.imagemSugerida.descricao} />
+                <figcaption>{rodadaAtual.imagemSugerida.onde}</figcaption>
+              </figure>
+            ) : (
+              <div className={styles.imagemPlaceholder}>
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="M21 15l-5-5L5 21" />
+                </svg>
+                <p className={styles.imagemDescricao}>{rodadaAtual.imagemSugerida.descricao}</p>
+                <p className={styles.imagemOnde}>{rodadaAtual.imagemSugerida.onde}</p>
+              </div>
+            )
+          )}
           <p>{rodadaAtual.cena}</p>
           {rodadaAtual.fonte && (
             <div className={styles.fonte}>
@@ -199,6 +217,12 @@ export default function EntrarNaPartida({ params }) {
           {rodadaAtual.contexto && (
             <div className={styles.fonte}>
               <span className={styles.selo}>Enquanto isso</span>
+              {rodadaAtual.imagemContexto?.arquivo && (
+                <figure className={styles.imagemReal}>
+                  <img src={rodadaAtual.imagemContexto.arquivo} alt="" />
+                  {rodadaAtual.imagemContexto.onde && <figcaption>{rodadaAtual.imagemContexto.onde}</figcaption>}
+                </figure>
+              )}
               <p>{rodadaAtual.contexto}</p>
             </div>
           )}
@@ -247,43 +271,6 @@ export default function EntrarNaPartida({ params }) {
             ))}
           </ul>
           <button onClick={handleTrocarCenario}>Jogar outra simulação</button>
-        </div>
-      )}
-
-      {cenario && (
-        <div className={styles.quadro}>
-          <h2 className={styles.quadroTitulo}>Rodadas de {cenario.titulo}</h2>
-          <div className={styles.quadroGrade}>
-            {cenario.rodadas.map((r, indice) => {
-              const feita = indice < rodadaIndice || etapa === 'fim'
-              const atual = indice === rodadaIndice && etapa !== 'fim'
-              return (
-                <div
-                  key={r.slug}
-                  className={[styles.quadroItem, feita && styles.quadroItemFeita, atual && styles.quadroItemAtual]
-                    .filter(Boolean)
-                    .join(' ')}
-                >
-                  <div className={styles.imagemPlaceholder}>
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <path d="M21 15l-5-5L5 21" />
-                    </svg>
-                  </div>
-                  <strong>
-                    {indice + 1}. {r.titulo}
-                  </strong>
-                  {r.imagemSugerida && (
-                    <>
-                      <p className={styles.imagemDescricao}>{r.imagemSugerida.descricao}</p>
-                      <p className={styles.imagemOnde}>{r.imagemSugerida.onde}</p>
-                    </>
-                  )}
-                </div>
-              )
-            })}
-          </div>
         </div>
       )}
     </div>

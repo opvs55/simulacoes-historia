@@ -52,6 +52,19 @@ export default {
       // (marcos históricos fixos; ver seção 16.2 do GDD)
       efeitosFixos: { producao: -10 },
 
+      // opcional — parágrafo "enquanto isso": o que acontecia mais amplamente
+      // no mesmo momento histórico, fora da cena do papel do jogador. Só
+      // entra se for genuinely sourced (citação real) — não é para inventar
+      // um paralelo pra cada opção. Mostrado na tela de resultado.
+      contexto: 'O Crespi não é a única fábrica sob essa tensão... (TOLEDO, 2017)',
+
+      // opcional — imagem real para acompanhar o texto de `contexto` acima.
+      // Mesmo formato de `imagemSugerida` abaixo.
+      imagemContexto: {
+        arquivo: '/imagens/sao-paulo-1917/preco-do-pao-enquanto-isso.jpg', // caminho em /public
+        onde: 'crédito/acervo da foto',
+      },
+
       investigacao: {
         olhar: 'Trezentos teares e três janelas...',
         fontes: [
@@ -86,8 +99,20 @@ export default {
             slug: 'lista',
             texto: 'Assinar a lista que corre no galpão',
             deltas: { coesao: 8, repressao: 2 }, // chave = slug de indicador, valor = delta em pontos
+            consequencia: 'O que essa escolha causou, pessoalmente, pro papel que decidiu isso — mostrado na tela de resultado, antes do "enquanto isso".',
           },
         ],
+      },
+
+      // opcional — placeholder/imagem real pra cena principal da rodada.
+      // `descricao` e `onde` sempre existem (pelo menos como pista de
+      // pesquisa pro professor); `arquivo` só existe quando já há uma foto
+      // real salva em /public — nesse caso a tela mostra a foto, não a caixa
+      // tracejada de placeholder.
+      imagemSugerida: {
+        descricao: 'O que a imagem deveria mostrar, se existisse.',
+        arquivo: '/imagens/sao-paulo-1917/preco-do-pao.jpg', // opcional — caminho em /public
+        onde: 'onde buscar (acervo/livro) ou, se `arquivo` existe, o crédito da foto',
       },
     },
   ],

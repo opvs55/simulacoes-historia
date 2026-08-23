@@ -110,10 +110,15 @@ export default {
         'na cidade inteira. O mesmo cálculo que se faz na Mooca hoje vai se repetir em outras ' +
         'fábricas nas semanas seguintes: no fim do mês, os 1.600 operários da fábrica Ipiranga, ' +
         'do libanês Nami Jafet, também vão parar. (TOLEDO, 2017)',
+      imagemContexto: {
+        arquivo: '/imagens/sao-paulo-1917/preco-do-pao-enquanto-isso.jpg',
+        onde: 'Foto fornecida pelo professor — acervo/fonte a confirmar.',
+      },
       imagemSugerida: {
         descricao:
           'O Cotonifício Crespi na Mooca — galpão de tijolo aparente ocupando um quarteirão inteiro, chaminés altas, fileira de janelas idênticas.',
-        onde: 'Não há foto do prédio no livro enviado. Buscar em: acervo do Instituto Moreira Salles, Arquivo Público do Estado de São Paulo, ou KUHL, B. M. Preservação do patrimônio arquitetônico da industrialização (2008), já citado por TOLEDO (2017).',
+        arquivo: '/imagens/sao-paulo-1917/preco-do-pao.jpg',
+        onde: 'Foto fornecida pelo professor — acervo/fonte a confirmar.',
       },
       investigacao: {
         olhar:
