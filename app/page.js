@@ -1,95 +1,30 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from './page.module.css'
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <span className={styles.status}>Infraestrutura — sem conteúdo de cenário ainda</span>
+        <h1>Módulo Simulações</h1>
+        <p className={styles.pergunta}>
+          &ldquo;Quem foi que decidiu que o pão ia custar o dobro?&rdquo;
+        </p>
+        <p>
+          Simulação social de turma para aulas de História: o aluno é sorteado para uma
+          posição social, decide dentro de uma crise histórica real ao longo de 5 rodadas
+          assíncronas, e no fim descobre que o resultado foi da turma inteira — não dele.
+        </p>
+        <ul className={styles.lista}>
+          <li>Motor puro (sorteio, coesão, agregação ponderada, saldo) — implementado e testado</li>
+          <li>Banco de dados (Supabase) — schema pronto, aguardando um projeto real</li>
+          <li>Conteúdo de &ldquo;São Paulo, 1917&rdquo; — ainda não escrito (Fase 1 do roadmap)</li>
+          <li>Telas de aluno e painel do professor — ainda não implementadas</li>
+        </ul>
+        <nav className={styles.links}>
+          <a href="/simulacao/DEMO01">/simulacao/[codigo]</a>
+          <a href="/professor">/professor</a>
+        </nav>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+  )
 }
