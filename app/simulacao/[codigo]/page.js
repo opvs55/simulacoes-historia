@@ -1,19 +1,27 @@
 'use client'
 
 import { useState } from 'react'
-import cenario from '@/cenarios/sao-paulo-1917.js'
+import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
+import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
+import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
 import { estadoInicial, aplicarRodada } from '@/lib/simulacao/motor.js'
 import { sortearPapeis } from '@/lib/simulacao/sorteio.js'
 import styles from './page.module.css'
 
-// Fatia jogável mínima da Fase 3 (seção 14 do GDD): entrar → sorteio →
-// decidir as 5 rodadas em sequência → ver o fecho. Um jogador só, sem
-// Supabase — o sorteio usa uma turma fictícia de 12 (semeada pelo apelido,
-// então é reprodutível por sessão) só para as cotas terem sentido. A
-// agregação de verdade (a turma inteira decidindo, cada voz pesando o que
-// pesa) só existe quando isso estiver ligado ao banco — ainda não está.
+const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
+
+// Fatia jogável mínima da Fase 3 (seção 14 do GDD): escolher cenário →
+// entrar → sorteio → decidir as rodadas em sequência → ver o fecho. Um
+// jogador só, sem Supabase — o sorteio usa uma turma fictícia de 12
+// (semeada pelo apelido, então é reprodutível por sessão) só para as cotas
+// terem sentido. A agregação de verdade (a turma inteira decidindo, cada
+// voz pesando o que pesa) só existe quando isso estiver ligado ao banco —
+// ainda não está. A escolha de cenário aqui é provisória: no desenho real
+// (seção 4 do GDD) é o código de partida que já vem associado a um
+// cenário — isso substitui esta tela quando o Supabase entrar.
 export default function EntrarNaPartida({ params }) {
-  const [etapa, setEtapa] = useState('entrar')
+  const [etapa, setEtapa] = useState('escolher-cenario')
+  const [cenario, setCenario] = useState(null)
   const [apelido, setApelido] = useState('')
   const [papelSlug, setPapelSlug] = useState(null)
   const [rodadaIndice, setRodadaIndice] = useState(0)
@@ -22,9 +30,14 @@ export default function EntrarNaPartida({ params }) {
   const [opcaoEscolhida, setOpcaoEscolhida] = useState(null)
   const [justificativa, setJustificativa] = useState('')
 
-  const papel = cenario.papeis.find((p) => p.slug === papelSlug)
-  const rodadaAtual = cenario.rodadas[rodadaIndice]
-  const ehUltimaRodada = rodadaIndice === cenario.rodadas.length - 1
+  const papel = cenario?.papeis.find((p) => p.slug === papelSlug)
+  const rodadaAtual = cenario?.rodadas[rodadaIndice]
+  const ehUltimaRodada = cenario ? rodadaIndice === cenario.rodadas.length - 1 : false
+
+  function handleEscolherCenario(cenarioEscolhido) {
+    setCenario(cenarioEscolhido)
+    setEtapa('entrar')
+  }
 
   function handleEntrar(evento) {
     evento.preventDefault()
@@ -59,15 +72,46 @@ export default function EntrarNaPartida({ params }) {
     setEtapa('rodada')
   }
 
+  function handleTrocarCenario() {
+    setEtapa('escolher-cenario')
+    setCenario(null)
+    setApelido('')
+    setPapelSlug(null)
+    setRodadaIndice(0)
+    setEstado(null)
+    setUltimoEfeito(null)
+    setOpcaoEscolhida(null)
+    setJustificativa('')
+  }
+
   return (
     <div className={styles.page}>
       <p className={styles.aviso}>
         Modo demonstração — partida &ldquo;{params.codigo}&rdquo;. O sorteio usa uma turma fictícia de 12
         pessoas; a agregação real, com a turma inteira decidindo de verdade, ainda depende do
-        Supabase, que é o próximo passo.
+        Supabase, que é o próximo passo. A escolha de cenário abaixo também é provisória — no
+        desenho final, o código da partida já vem associado a um cenário só.
       </p>
 
-      {etapa === 'entrar' && (
+      {etapa === 'escolher-cenario' && (
+        <div className={styles.blocoEscolha}>
+          <h1>Escolha a simulação</h1>
+          <div className={styles.listaCenarios}>
+            {CENARIOS.map((c) => (
+              <button key={c.slug} className={styles.cenarioItem} onClick={() => handleEscolherCenario(c)}>
+                <strong>{c.titulo}</strong>
+                {c.subtitulo && <span className={styles.subtitulo}>{c.subtitulo}</span>}
+                <span className={styles.pergunta}>{c.pergunta}</span>
+                <span className={styles.selo}>
+                  {c.serie === '1a' ? '1ª série' : '2ª série'} · {c.rodadas.length} rodadas · {c.papeis.length} papéis
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {etapa === 'entrar' && cenario && (
         <form onSubmit={handleEntrar} className={styles.card}>
           <h1>Entrar na partida</h1>
           <p className={styles.pergunta}>{cenario.titulo}</p>
@@ -95,7 +139,7 @@ export default function EntrarNaPartida({ params }) {
         </div>
       )}
 
-      {etapa === 'rodada' && papel && (
+      {etapa === 'rodada' && papel && rodadaAtual && (
         <div className={styles.card}>
           <span className={styles.selo}>
             Rodada {rodadaIndice + 1} de {cenario.rodadas.length} · {papel.nome}
@@ -128,9 +172,12 @@ export default function EntrarNaPartida({ params }) {
         </div>
       )}
 
-      {etapa === 'resultado' && ultimoEfeito && papel && (
+      {etapa === 'resultado' && ultimoEfeito && papel && rodadaAtual && (
         <div className={styles.card}>
           <h1>O que sua decisão moveu</h1>
+          <p className={styles.aviso2}>
+            {rodadaAtual.opcoesPorPapel[papelSlug].find((opcao) => opcao.slug === opcaoEscolhida)?.consequencia}
+          </p>
           <p className={styles.aviso2}>
             Sozinho, sua voz vale só o seu peso ({papel.peso}) — numa turma real, o resultado é a
             soma ponderada de todo mundo que jogou.
@@ -153,7 +200,7 @@ export default function EntrarNaPartida({ params }) {
         </div>
       )}
 
-      {etapa === 'fim' && estado && papel && (
+      {etapa === 'fim' && estado && papel && cenario && (
         <div className={styles.card}>
           <h1>Fecho</h1>
           <p>{cenario.desfecho.textoFecho}</p>
@@ -175,6 +222,7 @@ export default function EntrarNaPartida({ params }) {
               <li key={pergunta}>{pergunta}</li>
             ))}
           </ul>
+          <button onClick={handleTrocarCenario}>Jogar outra simulação</button>
         </div>
       )}
     </div>

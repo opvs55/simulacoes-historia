@@ -139,3 +139,50 @@
   border-radius: 999px;
   transition: width 0.4s ease;
 }
+
+.blocoEscolha {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
+  width: 100%;
+}
+
+.blocoEscolha h1 {
+  margin: 0;
+}
+
+.listaCenarios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cenarioItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  padding: 16px 18px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.cenarioItem:hover {
+  background: var(--fundo-barra);
+}
+
+.cenarioItem strong {
+  font-size: 1.1rem;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: var(--texto-fraco);
+}
