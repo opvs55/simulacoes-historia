@@ -1279,5 +1279,21 @@ export default {
       'Quem, na turma, propôs salário igual para as mulheres na pauta — e quem só decidiu depois de ler as Bases de 1906? O que isso mudou?',
       'Se vocês fossem sorteados de novo, para outro papel, decidiriam diferente? O que isso diz sobre o peso que cada papel carrega?',
     ],
+    // Reflexão individual (currículo em espiral — GDD seção 3): mesmo
+    // conceito revisitado em 3 camadas crescentes, não 3 perguntas soltas.
+    perguntasReflexao: [
+      {
+        nivel: 'Sua experiência',
+        pergunta: 'No papel que você jogou, houve algum momento em que sua decisão pesou mais — ou menos — do que você esperava?',
+      },
+      {
+        nivel: 'O conceito',
+        pergunta: 'A greve só virou "geral" quando a coesão operária passou de um certo ponto — e aí cada decisão popular passou a valer mais. Por que um mecanismo desses existe? O que ele representa da vida real?',
+      },
+      {
+        nivel: 'Além desta aula',
+        pergunta: 'Onde mais — na história, ou hoje — você já viu um grupo pequeno pesar mais que um grupo grande numa decisão coletiva?',
+      },
+    ],
   },
 }

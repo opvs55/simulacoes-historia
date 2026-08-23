@@ -29,6 +29,7 @@ export default function EntrarNaPartida({ params }) {
   const [ultimoEfeito, setUltimoEfeito] = useState(null)
   const [opcaoEscolhida, setOpcaoEscolhida] = useState(null)
   const [justificativa, setJustificativa] = useState('')
+  const [respostasReflexao, setRespostasReflexao] = useState({})
 
   const papel = cenario?.papeis.find((p) => p.slug === papelSlug)
   const rodadaAtual = cenario?.rodadas[rodadaIndice]
@@ -87,6 +88,7 @@ export default function EntrarNaPartida({ params }) {
     setUltimoEfeito(null)
     setOpcaoEscolhida(null)
     setJustificativa('')
+    setRespostasReflexao({})
   }
 
   return (
@@ -298,6 +300,29 @@ export default function EntrarNaPartida({ params }) {
               <li key={pergunta}>{pergunta}</li>
             ))}
           </ul>
+
+          {cenario.desfecho.perguntasReflexao && (
+            <div className={styles.reflexao}>
+              <h2>Antes de sair, uma reflexão sua</h2>
+              <p className={styles.aviso2}>
+                Ninguém mais vê isso por enquanto — ainda não é salvo em lugar nenhum. Mas vale escrever mesmo assim.
+              </p>
+              {cenario.desfecho.perguntasReflexao.map((item, indice) => (
+                <div key={item.nivel} className={styles.reflexaoItem}>
+                  <span className={styles.selo}>{item.nivel}</span>
+                  <p>{item.pergunta}</p>
+                  <textarea
+                    value={respostasReflexao[indice] ?? ''}
+                    onChange={(evento) =>
+                      setRespostasReflexao((anterior) => ({ ...anterior, [indice]: evento.target.value }))
+                    }
+                    rows={2}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+
           <button onClick={handleTrocarCenario}>Jogar outra simulação</button>
         </div>
       )}

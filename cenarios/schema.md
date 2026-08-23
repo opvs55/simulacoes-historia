@@ -135,7 +135,19 @@ export default {
     fixo: 'A greve acontece e o acordo de 20% é firmado.', // nunca muda entre partidas — seção 5.4 do GDD
     variavel: ['cumprimento', 'repressao', 'quem-ficou-de-fora'],
     textoFecho: '...',
-    perguntasDebate: ['...', '...', '...'],
+    perguntasDebate: ['...', '...', '...'], // roda de conversa em grupo, conduzida pelo professor
+
+    // opcional — reflexão individual, respondida por escrito pelo próprio
+    // aluno na tela de fecho (ainda não é salva — não há Supabase ligado
+    // ao jogo, então isso é só o campo pronto pra quando existir). Sempre
+    // 3 níveis, na mesma ordem — é o currículo em espiral (GDD seção 3):
+    // não são 3 perguntas soltas, é o mesmo conceito revisitado em
+    // camadas cada vez mais largas.
+    perguntasReflexao: [
+      { nivel: 'Sua experiência', pergunta: 'Ancorada na decisão que o aluno acabou de tomar, no papel que teve.' },
+      { nivel: 'O conceito', pergunta: 'Usa o nome que só aparece no fecho para reinterpretar o que ele acabou de viver.' },
+      { nivel: 'Além desta aula', pergunta: 'Puxa o padrão pra fora do episódio histórico — outro cenário já jogado, ou hoje.' },
+    ],
   },
 }
 ```

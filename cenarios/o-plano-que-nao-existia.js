@@ -785,5 +785,19 @@ export default {
       'O "Círculo de Vargas" e o "Alto-comando militar" tinham o maior peso do jogo. Eles também foram os que menos investigaram a origem do documento?',
       'A Constituição de 1937 deu ao presidente o poder de "decretar o estado de guerra". Uma lei real e uma ameaça falsa produziram, juntas, oito anos de ditadura — o que isso ensina sobre onde mora o perigo: na lei, na mentira, ou na combinação das duas?',
     ],
+    perguntasReflexao: [
+      {
+        nivel: 'Sua experiência',
+        pergunta: 'Seu papel chegou a desconfiar do documento em algum momento — ou aceitou ele como verdadeiro até o fim?',
+      },
+      {
+        nivel: 'O conceito',
+        pergunta: 'O Plano Cohen era falso, mas o Estado Novo que ele ajudou a justificar durou oito anos de verdade. O que isso ensina sobre a diferença entre uma mentira ser desmentida e uma mentira deixar de fazer efeito?',
+      },
+      {
+        nivel: 'Além desta aula',
+        pergunta: 'Pensando em como informação circula hoje — o que, nesse episódio de 1937, ainda se parece com alguma coisa que você já viu acontecer?',
+      },
+    ],
   },
 }

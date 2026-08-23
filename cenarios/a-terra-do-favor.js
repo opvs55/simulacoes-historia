@@ -894,5 +894,19 @@ export default {
       'O boato da "lista" do coronel não existia. Quantas decisões da turma foram tomadas por causa dele mesmo assim?',
       'Se o resultado da eleição estava decidido de antemão, o que exatamente vocês estavam disputando durante as quatro rodadas?',
     ],
+    perguntasReflexao: [
+      {
+        nivel: 'Sua experiência',
+        pergunta: 'No papel que você jogou, você teve alguma escolha real — ou o resultado já estava dado desde o alistamento?',
+      },
+      {
+        nivel: 'O conceito',
+        pergunta: 'A Constituição de 1891 dizia que o voto era livre. Qual foi o mecanismo mais forte que fez, na prática, ele não ser — o dinheiro, o medo, ou a falta de alternativa?',
+      },
+      {
+        nivel: 'Além desta aula',
+        pergunta: 'Vocês conseguem pensar numa regra de hoje que também é "livre" no papel, mas funciona diferente pra quem tem menos poder?',
+      },
+    ],
   },
 }

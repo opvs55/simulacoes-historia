@@ -331,6 +331,36 @@
   color: var(--tinta-fraca);
 }
 
+.reflexao {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 2px solid var(--tinta);
+  padding-top: 16px;
+}
+
+.reflexao h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.reflexaoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 0;
+  border-top: 1px solid var(--regua-fraca);
+}
+
+.reflexaoItem textarea {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--regua);
+  background: var(--papel-alt);
+  color: inherit;
+  resize: vertical;
+}
+
 @media (max-width: 600px) {
   .page {
     padding: 32px 16px;
