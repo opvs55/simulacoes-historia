@@ -243,6 +243,43 @@ export default function EntrarNaPartida({ params }) {
           <button onClick={handleTrocarCenario}>Jogar outra simulação</button>
         </div>
       )}
+
+      {cenario && (
+        <div className={styles.quadro}>
+          <h2 className={styles.quadroTitulo}>Rodadas de {cenario.titulo}</h2>
+          <div className={styles.quadroGrade}>
+            {cenario.rodadas.map((r, indice) => {
+              const feita = indice < rodadaIndice || etapa === 'fim'
+              const atual = indice === rodadaIndice && etapa !== 'fim'
+              return (
+                <div
+                  key={r.slug}
+                  className={[styles.quadroItem, feita && styles.quadroItemFeita, atual && styles.quadroItemAtual]
+                    .filter(Boolean)
+                    .join(' ')}
+                >
+                  <div className={styles.imagemPlaceholder}>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <path d="M21 15l-5-5L5 21" />
+                    </svg>
+                  </div>
+                  <strong>
+                    {indice + 1}. {r.titulo}
+                  </strong>
+                  {r.imagemSugerida && (
+                    <>
+                      <p className={styles.imagemDescricao}>{r.imagemSugerida.descricao}</p>
+                      <p className={styles.imagemOnde}>{r.imagemSugerida.onde}</p>
+                    </>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
