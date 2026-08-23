@@ -239,6 +239,11 @@ export default function EntrarNaPartida({ params }) {
             Rodada {rodadaIndice + 1} de {cenario.rodadas.length} · {rodadaAtual.titulo} · {papel.nome}
           </span>
           <h1>O que sua decisão moveu</h1>
+          {rodadaAtual.imagemSugerida?.arquivo && (
+            <figure className={styles.imagemReal}>
+              <img src={rodadaAtual.imagemSugerida.arquivo} alt="" />
+            </figure>
+          )}
           <div className={styles.recapo}>
             <strong>Você decidiu</strong>
             {opcaoSelecionada?.texto}
