@@ -186,3 +186,36 @@
   font-size: 13px;
   color: var(--texto-fraco);
 }
+
+.fonte {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-left: 3px solid var(--borda);
+  padding: 4px 0 4px 16px;
+}
+
+.fonteTexto {
+  font-style: italic;
+}
+
+.fonteCredito {
+  font-size: 12px;
+  color: var(--texto-fraco);
+}
+
+.recapo {
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.recapo strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--texto-fraco);
+}

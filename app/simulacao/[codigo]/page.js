@@ -33,6 +33,7 @@ export default function EntrarNaPartida({ params }) {
   const papel = cenario?.papeis.find((p) => p.slug === papelSlug)
   const rodadaAtual = cenario?.rodadas[rodadaIndice]
   const ehUltimaRodada = cenario ? rodadaIndice === cenario.rodadas.length - 1 : false
+  const opcaoSelecionada = rodadaAtual?.opcoesPorPapel[papelSlug]?.find((opcao) => opcao.slug === opcaoEscolhida)
 
   function handleEscolherCenario(cenarioEscolhido) {
     setCenario(cenarioEscolhido)
@@ -146,6 +147,18 @@ export default function EntrarNaPartida({ params }) {
           </span>
           <h1>{rodadaAtual.titulo}</h1>
           <p>{rodadaAtual.cena}</p>
+          {rodadaAtual.fonte && (
+            <div className={styles.fonte}>
+              <span className={styles.selo}>
+                Fonte {rodadaAtual.fonte.natureza === 'documental' ? 'documental' : 'recriada'}
+              </span>
+              <p className={styles.fonteTexto}>&ldquo;{rodadaAtual.fonte.texto}&rdquo;</p>
+              <p className={styles.fonteCredito}>
+                {rodadaAtual.fonte.autor}
+                {rodadaAtual.fonte.acervo ? ` — ${rodadaAtual.fonte.acervo}` : ''}
+              </p>
+            </div>
+          )}
           <div className={styles.opcoes}>
             {rodadaAtual.opcoesPorPapel[papelSlug].map((opcao) => (
               <label key={opcao.slug} className={styles.opcao}>
@@ -174,10 +187,15 @@ export default function EntrarNaPartida({ params }) {
 
       {etapa === 'resultado' && ultimoEfeito && papel && rodadaAtual && (
         <div className={styles.card}>
+          <span className={styles.selo}>
+            Rodada {rodadaIndice + 1} de {cenario.rodadas.length} · {rodadaAtual.titulo} · {papel.nome}
+          </span>
           <h1>O que sua decisão moveu</h1>
-          <p className={styles.aviso2}>
-            {rodadaAtual.opcoesPorPapel[papelSlug].find((opcao) => opcao.slug === opcaoEscolhida)?.consequencia}
-          </p>
+          <div className={styles.recapo}>
+            <strong>Você decidiu</strong>
+            {opcaoSelecionada?.texto}
+          </div>
+          <p>{opcaoSelecionada?.consequencia}</p>
           <p className={styles.aviso2}>
             Sozinho, sua voz vale só o seu peso ({papel.peso}) — numa turma real, o resultado é a
             soma ponderada de todo mundo que jogou.
