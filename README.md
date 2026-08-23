@@ -8,15 +8,16 @@ Especificação completa em [`docs/GDD-v2-modulo-simulacoes.md`](docs/GDD-v2-mod
 
 ## Status
 
-Infraestrutura criada em 2026-08-23. Ainda **não há conteúdo de cenário** (isso é a Fase 1
-do roadmap — seção 14 do GDD — e exige pesquisa histórica, não código).
+Infraestrutura criada em 2026-08-23. Conteúdo de cenário: só a Rodada 1 de "São Paulo, 1917"
+está escrita, com fontes reais do livro do 2º ano — o resto é Fase 1 em andamento (seção 14
+do GDD), não concluída.
 
 | Camada | Estado |
 |---|---|
 | Motor puro (`lib/simulacao`) | Implementado e testado: sorteio por cota, regra da coesão, agregação ponderada, saldo geral. |
-| Cliente Supabase (`lib/supabase`) | Implementado, aguardando um projeto Supabase real (`.env.local`). |
-| Schema do banco (`supabase/schema.sql`) | Escrito, ainda não aplicado a nenhum projeto Supabase. |
-| Conteúdo de cenário (`/cenarios`) | Vazio — só o contrato (`cenarios/schema.md`). Fase 1. |
+| Cliente Supabase (`lib/supabase`) | Implementado e conectado a um projeto Supabase real. |
+| Schema do banco (`supabase/schema.sql`) | Aplicado — 6 tabelas, RLS ligada sem políticas. |
+| Conteúdo de cenário (`/cenarios`) | `sao-paulo-1917.js`: Rodada 1 ("O preço do pão") completa e testada contra o motor, com fontes reais creditadas do livro (Aula 2 e 3). Rodadas 2-5 pendentes — ver o `TODO` no fim do arquivo para o que falta e por quê. |
 | Telas do aluno / painel do professor | Stubs de rota apenas, sem implementação (`app/simulacao/[codigo]`, `app/professor`). |
 
 ## Stack
