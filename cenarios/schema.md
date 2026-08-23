@@ -38,6 +38,10 @@ export default {
       cota: 8,
       perguntaGuia: 'Por que meu salário é menor pela mesma máquina?',
       contexto: 'Você tem 19 anos, trabalha 13 horas...',
+
+      // opcional — retrato do papel (ver scripts/gerar-icones-papeis.mjs).
+      // Mostrado no "quadro" da tela de entrada e em destaque no sorteio.
+      icone: '/imagens/sao-paulo-1917/papeis/operaria-textil.jpg',
     },
   ],
 

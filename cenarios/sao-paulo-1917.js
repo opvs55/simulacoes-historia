@@ -47,36 +47,43 @@ export default {
       slug: 'coronel-cafe', nome: 'Fazendeiro de café / coronel', bloco: 'elite', peso: 6, cota: 3,
       perguntaGuia: 'O que garante meu lucro: o preço ou o voto?',
       contexto: 'Sua renda vem do café que sai pelo porto de Santos. A guerra na Europa bagunçou o câmbio, e uma fábrica parada na cidade não é, a princípio, problema seu — até virar.',
+      icone: '/imagens/sao-paulo-1917/papeis/coronel-cafe.jpg',
     },
     {
       slug: 'industrial-textil', nome: 'Industrial têxtil', bloco: 'elite', peso: 6, cota: 3,
       perguntaGuia: 'Até onde a máquina aguenta parar?',
       contexto: 'O Cotonifício Crespi é uma das maiores fábricas da Mooca. Você tem contrato de fornecimento para cumprir e um turno noturno que criou para dar conta da demanda da guerra.',
+      icone: '/imagens/sao-paulo-1917/papeis/industrial-textil.jpg',
     },
     {
       slug: 'autoridade-estadual', nome: 'Autoridade estadual / Força Pública', bloco: 'elite', peso: 8, cota: 2,
       perguntaGuia: 'Ordem para quem?',
       contexto: 'Sua função é impedir que uma parede de 400 operários vire uma cidade parada. Em junho de 1917, ainda dá para tratar isso como caso de polícia local.',
+      icone: '/imagens/sao-paulo-1917/papeis/autoridade-estadual.jpg',
     },
     {
       slug: 'grande-imprensa', nome: 'Grande imprensa', bloco: 'mediador', peso: 4, cota: 2,
       perguntaGuia: 'Notícia ou mediação?',
       contexto: 'Seu jornal chega às casas da elite paulistana. Uma greve de fábrica é, por enquanto, nota de pé de página — a questão é se ela vai continuar sendo.',
+      icone: '/imagens/sao-paulo-1917/papeis/grande-imprensa.jpg',
     },
     {
       slug: 'imprensa-operaria', nome: 'Imprensa operária', bloco: 'mediador', peso: 2, cota: 2,
       perguntaGuia: 'Denunciar ou organizar?',
       contexto: 'Você escreve para A Plebe. Ninguém na Mooca depende de você para saber que o horário aumentou — mas todo mundo depende de você para saber que não está sozinho.',
+      icone: '/imagens/sao-paulo-1917/papeis/imprensa-operaria.jpg',
     },
     {
       slug: 'operaria-textil', nome: 'Operária têxtil', bloco: 'popular', peso: 1, cota: 8,
       perguntaGuia: 'Por que meu salário é menor pela mesma máquina?',
       contexto: 'Você trabalha no Crespi. O turno da noite começou há pouco, o aluguel do cortiço subiu de novo, e a mesma máquina que você opera rende menos no seu contracheque do que no de um homem.',
+      icone: '/imagens/sao-paulo-1917/papeis/operaria-textil.jpg',
     },
     {
       slug: 'operario-imigrante', nome: 'Operário imigrante', bloco: 'popular', peso: 1, cota: 10,
       perguntaGuia: 'Greve me dá direito ou passagem de volta?',
       contexto: 'Você veio de longe para trabalhar nessa fábrica. Ter seu nome numa lista de grevistas pode significar solidariedade — ou, se a coisa piorar, virar motivo de deportação.',
+      icone: '/imagens/sao-paulo-1917/papeis/operario-imigrante.jpg',
     },
   ],
 

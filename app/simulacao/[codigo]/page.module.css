@@ -198,6 +198,63 @@
   margin: 0;
 }
 
+.retratoGrande {
+  align-self: center;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 3px solid var(--tinta);
+  border-radius: 50%;
+}
+
+.elenco {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 640px;
+  width: 100%;
+}
+
+.elencoTitulo {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+  border-top: 1px solid var(--regua-fraca);
+  padding-top: 12px;
+}
+
+.elencoGrade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 16px;
+}
+
+.elencoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.elencoItem img,
+.elencoSemIcone {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border: 2px solid var(--regua);
+  border-radius: 50%;
+  background: var(--papel-alt);
+}
+
+.elencoItem span {
+  font-size: 12px;
+  color: var(--tinta-fraca);
+  line-height: 1.25;
+}
+
 .listaCenarios {
   display: flex;
   flex-direction: column;

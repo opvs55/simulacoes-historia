@@ -117,23 +117,46 @@ export default function EntrarNaPartida({ params }) {
       )}
 
       {etapa === 'entrar' && cenario && (
-        <form onSubmit={handleEntrar} className={styles.card}>
-          <h1>Entrar na partida</h1>
-          <p className={styles.pergunta}>{cenario.titulo}</p>
-          <label htmlFor="apelido">Seu apelido</label>
-          <input
-            id="apelido"
-            value={apelido}
-            onChange={(evento) => setApelido(evento.target.value)}
-            placeholder="ex.: girassol23"
-            autoComplete="off"
-          />
-          <button type="submit">Entrar</button>
-        </form>
+        <>
+          <form onSubmit={handleEntrar} className={styles.card}>
+            <h1>Entrar na partida</h1>
+            <p className={styles.pergunta}>{cenario.titulo}</p>
+            <label htmlFor="apelido">Seu apelido</label>
+            <input
+              id="apelido"
+              value={apelido}
+              onChange={(evento) => setApelido(evento.target.value)}
+              placeholder="ex.: girassol23"
+              autoComplete="off"
+            />
+            <button type="submit">Entrar</button>
+          </form>
+
+          {cenario.papeis.some((p) => p.icone) && (
+            <div className={styles.elenco}>
+              <p className={styles.elencoTitulo}>Você pode virar qualquer um destes</p>
+              <div className={styles.elencoGrade}>
+                {cenario.papeis.map((p) => (
+                  <div key={p.slug} className={styles.elencoItem}>
+                    {p.icone ? (
+                      <img src={p.icone} alt="" />
+                    ) : (
+                      <div className={styles.elencoSemIcone} />
+                    )}
+                    <span>{p.nome}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       {etapa === 'sorteio' && papel && (
         <div className={styles.card}>
+          {papel.icone && (
+            <img src={papel.icone} alt="" className={styles.retratoGrande} />
+          )}
           <span className={styles.selo}>
             {papel.bloco} · peso {papel.peso}
           </span>
