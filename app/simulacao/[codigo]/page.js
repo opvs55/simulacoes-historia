@@ -196,6 +196,12 @@ export default function EntrarNaPartida({ params }) {
             {opcaoSelecionada?.texto}
           </div>
           <p>{opcaoSelecionada?.consequencia}</p>
+          {rodadaAtual.contexto && (
+            <div className={styles.fonte}>
+              <span className={styles.selo}>Enquanto isso</span>
+              <p>{rodadaAtual.contexto}</p>
+            </div>
+          )}
           <p className={styles.aviso2}>
             Sozinho, sua voz vale só o seu peso ({papel.peso}) — numa turma real, o resultado é a
             soma ponderada de todo mundo que jogou.

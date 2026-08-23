@@ -105,6 +105,11 @@ export default {
         acervo: 'Livro do 2º ano, Aula 3',
         natureza: 'documental',
       },
+      contexto:
+        'O Crespi não é a única fábrica sob essa tensão — a carestia da guerra aperta salários ' +
+        'na cidade inteira. O mesmo cálculo que se faz na Mooca hoje vai se repetir em outras ' +
+        'fábricas nas semanas seguintes: no fim do mês, os 1.600 operários da fábrica Ipiranga, ' +
+        'do libanês Nami Jafet, também vão parar. (TOLEDO, 2017)',
       imagemSugerida: {
         descricao:
           'O Cotonifício Crespi na Mooca — galpão de tijolo aparente ocupando um quarteirão inteiro, chaminés altas, fileira de janelas idênticas.',
@@ -341,6 +346,12 @@ export default {
         acervo: 'Livro do 2º ano, Aula 3',
         natureza: 'documental',
       },
+      contexto:
+        'A cidade inteira sente o confronto. A tipografia de A Plebe é invadida e destruída, seu ' +
+        'diretor Edgard Leuenroth é preso. Alguns dias antes, em 3 de julho, os socialistas do ' +
+        'jornal Avanti! já tinham distribuído 10 mil cópias de um manifesto convocando a ' +
+        'população a se solidarizar com os grevistas — a rede que sustenta o movimento é maior ' +
+        'do que uma fábrica sozinha. (TOLEDO, 2017)',
       imagemSugerida: {
         descricao:
           'Um cordão de soldados da Força Pública enfileirados numa rua estreita do centro, de costas para o fotógrafo — a tropa formada antes de qualquer confronto acontecer.',
@@ -579,6 +590,11 @@ export default {
         acervo: 'Artigo acadêmico completo, enviado pelo professor em 2026-08-23.',
         natureza: 'documental',
       },
+      contexto:
+        'O cortejo não é feito só de operários têxteis — padeiro, sapateiro, gente que nunca ' +
+        'pisou numa fábrica se junta à passagem. É o mesmo padrão que vai se repetir: dias ' +
+        'depois, a greve batizada de "geral" chega ao seu pico com quase 44 mil operários ' +
+        'parados de uma vez só — número que nenhuma fábrica isolada produz sozinha. (TOLEDO, 2017)',
       imagemSugerida: {
         descricao:
           'Multidão preenchendo uma rua do centro de São Paulo de calçada a calçada, vista de cima ou de longe, sem cartazes nem uniformes — só a escala da massa de gente.',
@@ -784,6 +800,12 @@ export default {
         acervo: 'Artigo acadêmico completo, enviado pelo professor em 2026-08-23 — a pauta real do Comitê de Defesa Proletária de São Paulo, não um modelo comparável.',
         natureza: 'documental',
       },
+      contexto:
+        'Não é só em São Paulo. No mesmo mês, em 18 de julho, uma onda de greves toma o Rio de ' +
+        'Janeiro — marceneiros, têxteis, sapateiros, padeiros, metalúrgicos — organizada pela ' +
+        'Federação Operária do Rio de Janeiro, que pede salário mínimo e equiparação salarial ' +
+        'entre homens e mulheres. A mesma pauta que está sendo escrita aqui surgiu, de forma ' +
+        'independente, a centenas de quilômetros de distância. (TOLEDO, 2017)',
       imagemSugerida: {
         descricao:
           'Retrato de Edgard Leuenroth — o diretor de A Plebe, uma das figuras centrais do Comitê de Defesa Proletária.',
@@ -1007,6 +1029,13 @@ export default {
         acervo: 'Artigo acadêmico completo, enviado pelo professor em 2026-08-23.',
         natureza: 'documental',
       },
+      contexto:
+        'Enquanto São Paulo assina o acordo, o resto do país ainda está em polvorosa: no Rio ' +
+        'Grande do Sul, uma greve geral toma Porto Alegre entre 31 de julho e 4 de agosto, com ' +
+        'pauta parecida — redução do preço dos alimentos, jornada de 8 horas. Em Pernambuco, o ' +
+        'movimento vai se intensificar em agosto e setembro. 1917 não foi a crise de uma fábrica, ' +
+        'nem de uma cidade: foi, como escreveu a historiadora que documentou esse ano, "um ano ' +
+        'extraordinário" para o país inteiro. (TOLEDO, 2017)',
       imagemSugerida: {
         descricao:
           'Operários entrando de volta pelo portão de uma fábrica têxtil, expressões neutras ou cansadas — o retorno ao trabalho depois do acordo, sem clima de celebração.',
