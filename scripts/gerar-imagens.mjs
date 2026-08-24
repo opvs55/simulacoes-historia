@@ -77,6 +77,21 @@ const IMAGENS_RODADAS = {
   },
 }
 
+const IMAGENS_EVENTOS = {
+  'a-terra-do-favor': {
+    'visita-noturna':
+      'Two menacing men on horseback stopped at the door of a modest 1920s Brazilian rural house at dusk, silhouetted, ominous but no visible weapons or violence, tense atmosphere.',
+  },
+  'sao-paulo-1917': {
+    'notificacao-expulsao':
+      'A worried immigrant factory worker reading an official notification letter inside a modest 1917 São Paulo boarding house room, oil lamp light, tense atmosphere.',
+  },
+  'o-plano-que-nao-existia': {
+    'batida-policial':
+      'Plainclothes political police agents at a door during a 1930s Brazilian pre-dawn raid, dim hallway light, tense atmosphere, no visible weapons or violence.',
+  },
+}
+
 async function gerarImagem(prompt, apiKey) {
   const resposta = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${MODELO}:generateContent`,
@@ -125,7 +140,7 @@ async function main() {
     process.exit(1)
   }
 
-  const cenarios = new Set([...Object.keys(ICONES_PAPEIS), ...Object.keys(IMAGENS_RODADAS)])
+  const cenarios = new Set([...Object.keys(ICONES_PAPEIS), ...Object.keys(IMAGENS_RODADAS), ...Object.keys(IMAGENS_EVENTOS)])
   for (const cenario of cenarios) {
     if (filtroCenario && cenario !== filtroCenario) continue
 
@@ -142,6 +157,14 @@ async function main() {
       await gerarLote(
         new URL(`../public/imagens/${cenario}/`, import.meta.url).pathname.slice(1),
         IMAGENS_RODADAS[cenario],
+        apiKey
+      )
+    }
+    if (IMAGENS_EVENTOS[cenario]) {
+      console.log(`[${cenario}] imagens de evento`)
+      await gerarLote(
+        new URL(`../public/imagens/${cenario}/eventos/`, import.meta.url).pathname.slice(1),
+        IMAGENS_EVENTOS[cenario],
         apiKey
       )
     }

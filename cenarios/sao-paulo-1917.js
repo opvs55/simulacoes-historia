@@ -477,6 +477,28 @@ export default {
             texto: 'Aderir ao protesto, mesmo sabendo o que uma ficha na polícia pode significar',
             deltas: { coesao: 10, repressao: 3 },
             consequencia: 'Você entra na rua sabendo que seu nome pode acabar numa ficha diferente da dos colegas nascidos aqui. Foi mesmo assim que você decidiu.',
+            evento: {
+              imagem: '/imagens/sao-paulo-1917/eventos/notificacao-expulsao.jpg',
+              texto:
+                'Dois dias depois, uma notificação chega na pensão onde você mora: sua ficha na Força Pública foi aberta, e o texto menciona "expulsão de estrangeiro indesejável" — o instrumento que a Lei Adolfo Gordo (1907, endurecida em 1913) já vinha dando ao governo contra imigrantes ligados a greves.',
+              reacoes: [
+                {
+                  slug: 'esconder',
+                  texto: 'Não aparecer na fábrica por uns dias, dormindo em casa de um conhecido',
+                  resultado: 'Você passa uma semana sem rotina fixa, sempre num teto diferente. A notificação não vira nada — pelo menos dessa vez.',
+                },
+                {
+                  slug: 'advogado',
+                  texto: 'Buscar alguém do Comitê que conheça um advogado',
+                  resultado: 'Alguém te indica um advogado que já defendeu outros casos parecidos. Não é barato, e não há garantia nenhuma — mas é mais do que você tinha ontem.',
+                },
+                {
+                  slug: 'embarcar',
+                  texto: 'Não arriscar — embarcar de volta antes que a notificação vire ordem de fato',
+                  resultado: 'Você decide não esperar para descobrir se a ameaça era séria. Ninguém te culpa. Mas a fábrica continua com um posto vazio, e o Comitê, com uma assinatura a menos.',
+                },
+              ],
+            },
           },
           {
             slug: 'manter-distancia',

@@ -30,6 +30,7 @@ export default function EntrarNaPartida({ params }) {
   const [opcaoEscolhida, setOpcaoEscolhida] = useState(null)
   const [justificativa, setJustificativa] = useState('')
   const [respostasReflexao, setRespostasReflexao] = useState({})
+  const [reacaoEscolhida, setReacaoEscolhida] = useState(null)
 
   const papel = cenario?.papeis.find((p) => p.slug === papelSlug)
   const rodadaAtual = cenario?.rodadas[rodadaIndice]
@@ -39,6 +40,7 @@ export default function EntrarNaPartida({ params }) {
   // foto diferente da operária têxtil) — usa a versão específica do papel
   // quando existir, senão cai na imagem padrão da rodada.
   const imagemContexto = rodadaAtual?.imagemContexto?.porPapel?.[papelSlug] ?? rodadaAtual?.imagemContexto
+  const reacaoSelecionada = opcaoSelecionada?.evento?.reacoes.find((reacao) => reacao.slug === reacaoEscolhida)
 
   function handleEscolherCenario(cenarioEscolhido) {
     setCenario(cenarioEscolhido)
@@ -61,9 +63,15 @@ export default function EntrarNaPartida({ params }) {
 
   function handleDecidir() {
     if (!opcaoEscolhida) return
+    const opcao = rodadaAtual.opcoesPorPapel[papelSlug].find((o) => o.slug === opcaoEscolhida)
     const resultado = aplicarRodada(estado, [{ papelSlug, opcaoSlug: opcaoEscolhida }], cenario, rodadaAtual.slug)
     setUltimoEfeito(resultado)
     setEstado(resultado)
+    setEtapa(opcao.evento ? 'evento' : 'resultado')
+  }
+
+  function handleResolverEvento() {
+    if (!reacaoEscolhida) return
     setEtapa('resultado')
   }
 
@@ -75,6 +83,7 @@ export default function EntrarNaPartida({ params }) {
     setRodadaIndice((indice) => indice + 1)
     setOpcaoEscolhida(null)
     setJustificativa('')
+    setReacaoEscolhida(null)
     setEtapa('rodada')
   }
 
@@ -89,6 +98,7 @@ export default function EntrarNaPartida({ params }) {
     setOpcaoEscolhida(null)
     setJustificativa('')
     setRespostasReflexao({})
+    setReacaoEscolhida(null)
   }
 
   return (
@@ -233,6 +243,36 @@ export default function EntrarNaPartida({ params }) {
         </div>
       )}
 
+      {etapa === 'evento' && opcaoSelecionada?.evento && (
+        <div className={styles.card}>
+          <span className={styles.selo}>Aconteceu depois</span>
+          <h1>{rodadaAtual.titulo}</h1>
+          {opcaoSelecionada.evento.imagem && (
+            <figure className={styles.imagemReal}>
+              <img src={opcaoSelecionada.evento.imagem} alt="" />
+            </figure>
+          )}
+          <p>{opcaoSelecionada.evento.texto}</p>
+          <div className={styles.opcoes}>
+            {opcaoSelecionada.evento.reacoes.map((reacao) => (
+              <label key={reacao.slug} className={styles.opcao}>
+                <input
+                  type="radio"
+                  name="reacao"
+                  value={reacao.slug}
+                  checked={reacaoEscolhida === reacao.slug}
+                  onChange={() => setReacaoEscolhida(reacao.slug)}
+                />
+                {reacao.texto}
+              </label>
+            ))}
+          </div>
+          <button onClick={handleResolverEvento} disabled={!reacaoEscolhida}>
+            Confirmar
+          </button>
+        </div>
+      )}
+
       {etapa === 'resultado' && ultimoEfeito && papel && rodadaAtual && (
         <div className={styles.card}>
           <span className={styles.selo}>
@@ -249,6 +289,12 @@ export default function EntrarNaPartida({ params }) {
             {opcaoSelecionada?.texto}
           </div>
           <p>{opcaoSelecionada?.consequencia}</p>
+          {reacaoSelecionada && (
+            <div className={styles.recapo}>
+              <strong>Você decidiu (evento)</strong>
+              {reacaoSelecionada.resultado}
+            </div>
+          )}
           {rodadaAtual.contexto && (
             <div className={styles.fonte}>
               <span className={styles.selo}>Enquanto isso</span>

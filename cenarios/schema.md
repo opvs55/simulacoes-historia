@@ -114,6 +114,24 @@ export default {
             texto: 'Assinar a lista que corre no galpão',
             deltas: { coesao: 8, repressao: 2 }, // chave = slug de indicador, valor = delta em pontos
             consequencia: 'O que essa escolha causou, pessoalmente, pro papel que decidiu isso — mostrado na tela de resultado, antes do "enquanto isso".',
+
+            // opcional — só em opções de risco real e historicamente
+            // fundamentado (não é pra toda opção "ousada"; avaliar cenário
+            // a cenário). Determinístico: acontece sempre que a opção é
+            // escolhida, não por sorte — o motor não tem RNG em lugar
+            // nenhum, e não deveria ganhar um aqui. Mostrado numa tela
+            // própria entre a decisão e o resultado. As `deltas` das
+            // reações são só narrativas — não voltam a passar pelo motor
+            // (cada rodada já é uma decisão por papel; a reação ao evento
+            // é uma segunda camada pessoal, não uma segunda rodada).
+            evento: {
+              imagem: '/imagens/sao-paulo-1917/eventos/nome.jpg', // opcional
+              texto: 'O que aconteceu — fixo, historicamente plausível pro papel/cenário.',
+              reacoes: [
+                { slug: 'a', texto: 'Como reagir', resultado: 'O que esse jeito de reagir causa.' },
+                { slug: 'b', texto: 'Outra forma de reagir', resultado: '...' },
+              ],
+            },
           },
         ],
       },

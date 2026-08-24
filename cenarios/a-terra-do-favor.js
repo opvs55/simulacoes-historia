@@ -691,6 +691,28 @@ export default {
             deltas: { autonomia: 18, curral: -12, coercao: 8 },
             consequencia:
               'A mesa viu. O homem da janela viu. Você votou no que quis e saiu andando — e passou o resto do dia calculando o preço disso. No coronelismo real, esse preço variava de um aviso a uma visita armada à sua porta à noite. É por isso que votar diferente, sozinho e à vista de todos, era um dos atos mais raros — e mais corajosos — que um trabalhador rural podia fazer.',
+            evento: {
+              imagem: '/imagens/a-terra-do-favor/eventos/visita-noturna.jpg',
+              texto:
+                'Dias depois, dois homens a cavalo param na porta da sua casa ao anoitecer. Não dizem muito — não precisam. Episódios como esse, documentados por LEAL (1949), eram a forma mais comum de coerção no coronelismo: não a violência em si, mas a certeza de que ela podia vir a qualquer hora.',
+              reacoes: [
+                {
+                  slug: 'negar',
+                  texto: 'Negar que votou diferente',
+                  resultado: 'Você diz que não sabe do que estão falando. Eles não insistem — mas também não parecem convencidos. A visita, de todo jeito, já foi o recado.',
+                },
+                {
+                  slug: 'recuar',
+                  texto: 'Pedir desculpas e prometer se explicar com o coronel',
+                  resultado: 'Você diz que foi engano, que vai resolver isso pessoalmente. Eles vão embora satisfeitos. Você passa a semana seguinte sem dormir direito, mesmo assim.',
+                },
+                {
+                  slug: 'enfrentar',
+                  texto: 'Perguntar, de frente, o que eles querem ali',
+                  resultado: 'Um dos dois desce do cavalo devagar, sem pressa nenhuma. O que acontece depois não fica nesta tela — mas também não precisa: quem pergunta assim, naquele lugar, já sabe que arriscou o corpo, não só o voto.',
+                },
+              ],
+            },
           },
           {
             slug: 'nao-votar',

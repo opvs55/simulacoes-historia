@@ -709,6 +709,28 @@ export default {
             deltas: { oposicao: 6, medo: 4, liberdades: -4 },
             consequencia:
               'A rede sobrevive, mas encolhida e escondida. Cada reunião agora carrega um risco que, há dois anos, não existia da mesma forma: a polícia política do Estado Novo prendia e interrogava sob violência quem considerava subversivo — não era exceção, era rotina.',
+            evento: {
+              imagem: '/imagens/o-plano-que-nao-existia/eventos/batida-policial.jpg',
+              texto:
+                'Numa madrugada, agentes da polícia política batem na porta do local onde vocês se reuniam. Alguém tinha informado.',
+              reacoes: [
+                {
+                  slug: 'negar',
+                  texto: 'Negar que a reunião era política',
+                  resultado: 'Você diz que estava só de passagem, visitando um amigo. Não convence ninguém — mas atrasa o processo em algumas horas.',
+                },
+                {
+                  slug: 'resistir',
+                  texto: 'Recusar-se a acompanhar os agentes sem mandado',
+                  resultado: 'Você exige ver o mandado. Eles não têm, e não se importam com isso. Você é levado do mesmo jeito — só que agora com um motivo a mais registrado contra você.',
+                },
+                {
+                  slug: 'delatar',
+                  texto: 'Sob pressão, confirmar dois nomes que já pareciam saber',
+                  resultado: 'Você aponta dois nomes que os agentes já citavam, meio de leve. Talvez já soubessem mesmo. Você sai mais cedo. Os outros dois, não — e isso não é algo que se decide sozinho outra vez.',
+                },
+              ],
+            },
           },
           {
             slug: 'exilio',
