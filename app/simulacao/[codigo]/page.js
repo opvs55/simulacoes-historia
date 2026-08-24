@@ -130,6 +130,13 @@ export default function EntrarNaPartida({ params }) {
 
       {etapa === 'entrar' && cenario && (
         <>
+          {cenario.videoAbertura && (
+            <figure className={styles.videoAbertura}>
+              <video src={cenario.videoAbertura.arquivo} controls playsInline />
+              <figcaption className={styles.videoAviso}>⚠ {cenario.videoAbertura.legenda}</figcaption>
+            </figure>
+          )}
+
           <form onSubmit={handleEntrar} className={styles.card}>
             <h1>Entrar na partida</h1>
             <p className={styles.pergunta}>{cenario.titulo}</p>

@@ -24,6 +24,17 @@ export default {
   // `pergunta` (frase-gancho curta): aqui é a ambientação de verdade.
   introducao: 'A Primeira Guerra Mundial, do outro lado do Atlântico...',
 
+  // opcional — vídeo de abertura na tela "Entrar na partida", antes do
+  // formulário. `legenda` é OBRIGATÓRIA na prática quando o vídeo é
+  // gerado por IA — aparece com aviso visual forte (não é uma legenda de
+  // crédito discreta como a de `imagemSugerida.onde`), porque um vídeo
+  // com gente "falando" é mais fácil de confundir com depoimento real do
+  // que uma ilustração estática.
+  videoAbertura: {
+    arquivo: '/videos/sao-paulo-1917/abertura.mp4',
+    legenda: 'Vídeo dramatizado, gerado por Inteligência Artificial — não é filmagem nem depoimento de época.',
+  },
+
   indicadores: [
     // slug: chave usada em `deltas` e em `efeitosFixos`
     // inicial: valor 0-100 no começo da partida

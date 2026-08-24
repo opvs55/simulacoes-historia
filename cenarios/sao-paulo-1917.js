@@ -32,6 +32,10 @@ export default {
     'migrantes internos dividem galpões de tijolo com máquinas de tear. Em junho de 1917, ' +
     'ninguém imagina que uma fábrica parada vai virar a primeira greve geral da história do ' +
     'Brasil — e que o resultado dela vai depender de decisões como as que você está prestes a tomar.',
+  videoAbertura: {
+    arquivo: '/videos/sao-paulo-1917/abertura.mp4',
+    legenda: 'Vídeo dramatizado, gerado por Inteligência Artificial — não é filmagem nem depoimento de época.',
+  },
   era: 'republica',
   aulasRelacionadas: [2, 3, 4],
 

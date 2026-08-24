@@ -186,6 +186,29 @@
   color: var(--tinta-fraca);
 }
 
+.videoAbertura {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 640px;
+  width: 100%;
+  margin: 0;
+}
+
+.videoAbertura video {
+  width: 100%;
+  border: 1px solid var(--regua-fraca);
+  background: #000;
+}
+
+.videoAviso {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--destaque);
+  border: 1px solid var(--destaque);
+  padding: 8px 12px;
+}
+
 .blocoEscolha {
   display: flex;
   flex-direction: column;
