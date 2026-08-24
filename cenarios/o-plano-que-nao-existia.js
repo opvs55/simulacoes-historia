@@ -708,7 +708,7 @@ export default {
             texto: 'Organizar resistência clandestina ao novo regime',
             deltas: { oposicao: 6, medo: 4, liberdades: -4 },
             consequencia:
-              'A rede sobrevive, mas encolhida e escondida. Cada reunião agora carrega um risco que, há dois anos, não existia da mesma forma.',
+              'A rede sobrevive, mas encolhida e escondida. Cada reunião agora carrega um risco que, há dois anos, não existia da mesma forma: a polícia política do Estado Novo prendia e interrogava sob violência quem considerava subversivo — não era exceção, era rotina.',
           },
           {
             slug: 'exilio',
@@ -779,7 +779,8 @@ export default {
     fixo: 'O Estado Novo é instaurado em 10 de novembro de 1937. Em toda partida.',
     variavel: ['medo-final', 'liberdades-restantes', 'quem-soube-da-fraude-a-tempo'],
     textoFecho:
-      'Em março de 1945 — oito anos depois — o general Góes Monteiro admitiu publicamente: o Plano Cohen foi forjado pelo capitão Olímpio Mourão Filho, chefe do serviço secreto da própria Ação Integralista Brasileira. Não havia agente soviético, não havia plano de tomada, não havia Internacional Comunista por trás de nada daquilo. Vocês decidiram, rodada após rodada, com base num documento que nunca existiu — e o Estado Novo que ele ajudou a justificar durou oito anos de qualquer forma. Isso não é sobre terem "caído" numa mentira. É sobre o que uma mentira bem colocada, no momento certo, é capaz de fazer um país inteiro fazer.',
+      'Em março de 1945 — oito anos depois — o general Góes Monteiro admitiu publicamente: o Plano Cohen foi forjado pelo capitão Olímpio Mourão Filho, chefe do serviço secreto da própria Ação Integralista Brasileira. Não havia agente soviético, não havia plano de tomada, não havia Internacional Comunista por trás de nada daquilo. Vocês decidiram, rodada após rodada, com base num documento que nunca existiu — e o Estado Novo que ele ajudou a justificar durou oito anos de qualquer forma. Isso não é sobre terem "caído" numa mentira. É sobre o que uma mentira bem colocada, no momento certo, é capaz de fazer um país inteiro fazer.\n\n' +
+      'Uma coisa que o jogo simplifica: quem jogou como militante da ANL sentiu o "medo" subir como número numa barra. No Estado Novo real, esse medo tinha corpo — prisão, interrogatório sob tortura, exílio. Milhares de pessoas foram presas nos anos seguintes ao golpe, boa parte delas por associação com uma organização que a essa altura já nem existia mais oficialmente. O jogo não encena isso a cada rodada porque faria da simulação uma sequência previsível de punição — mas o preço de estar do lado errado de um Estado que acabou de se tornar absoluto era esse, e era real.',
     perguntasDebate: [
       'Quantas decisões da turma mudariam se todo mundo já soubesse, desde a Rodada 2, que o documento era falso?',
       'O "Círculo de Vargas" e o "Alto-comando militar" tinham o maior peso do jogo. Eles também foram os que menos investigaram a origem do documento?',

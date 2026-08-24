@@ -1273,7 +1273,12 @@ export default {
       'O acordo de 20% foi real — mas o que a turma acabou de viver, nas duas últimas rodadas, ' +
       'é que "no papel" e "na prática" raramente são a mesma coisa. O nome que os livros dão a ' +
       'isso vem por último: vocês passaram por dentro da Primeira República — o mesmo sistema ' +
-      'que a Aula 2 chama de liberalismo oligárquico.',
+      'que a Aula 2 chama de liberalismo oligárquico.\n\n' +
+      'Uma coisa que o jogo simplifica: vocês viram um nome — José Gimenez Martinez — e uma ' +
+      'prisão — a de Edgard Leuenroth. Mas a investigação do jornal Fanfulla, já em julho de ' +
+      '1917, contou cerca de 200 vítimas só no cemitério do Araçá (TOLEDO, 2017). O jogo dá ' +
+      'nome a uma morte para que ela não vire estatística — mas o preço de 1917 não foi de uma ' +
+      'pessoa só, foi de muitas cujo nome a maioria de vocês nunca vai ler em lugar nenhum.',
     perguntasDebate: [
       'A barra de "direitos cumpridos" ficou bem abaixo da de "direitos no papel"? Por quê, na visão de vocês?',
       'Quem, na turma, propôs salário igual para as mulheres na pauta — e quem só decidiu depois de ler as Bases de 1906? O que isso mudou?',

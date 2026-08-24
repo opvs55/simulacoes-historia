@@ -300,7 +300,7 @@ export default {
             texto: 'Não se alistar — isso não é assunto seu',
             deltas: { autonomia: -3, curral: -3 },
             consequencia:
-              'Ninguém veio te buscar e você não foi atrás. Você não deve nada a ninguém — e também não vai constar em lugar nenhum quando a conta política for feita.',
+              'Ninguém veio te buscar dessa vez — sozinho, não se alistar não chama atenção de ninguém. Mas o coronel tem capangas pra quem chama atenção de verdade, e faltam três rodadas pra você descobrir se vai precisar disso.',
           },
         ],
       },
@@ -498,7 +498,7 @@ export default {
             texto: 'Aceitar o que precisa, mas avisar que o voto é seu',
             deltas: { autonomia: 15, curral: -8, coercao: 6 },
             consequencia:
-              'Você disse em voz alta o que muita gente pensou baixinho. Duas ou três pessoas concordaram na hora; o resto olhou para o chão — e alguém contou ao coronel antes do jantar.',
+              'Você disse em voz alta o que muita gente pensou baixinho. Duas ou três pessoas concordaram na hora; o resto olhou para o chão — e alguém contou ao coronel antes do jantar. Historicamente, isso podia significar uma visita do capanga só pra "conversar" — ou coisa pior: espancamento, queima de roça, despejo da terra. Nem toda desobediência terminava assim. Mas quem falava alto sabia que podia.',
           },
           {
             slug: 'combinar-com-os-outros',
@@ -690,7 +690,7 @@ export default {
             texto: 'Votar diferente do que combinaram, mesmo com todo mundo olhando',
             deltas: { autonomia: 18, curral: -12, coercao: 8 },
             consequencia:
-              'A mesa viu. O homem da janela viu. Você votou no que quis e saiu andando — e passou o resto do dia calculando o preço disso.',
+              'A mesa viu. O homem da janela viu. Você votou no que quis e saiu andando — e passou o resto do dia calculando o preço disso. No coronelismo real, esse preço variava de um aviso a uma visita armada à sua porta à noite. É por isso que votar diferente, sozinho e à vista de todos, era um dos atos mais raros — e mais corajosos — que um trabalhador rural podia fazer.',
           },
           {
             slug: 'nao-votar',
@@ -888,7 +888,8 @@ export default {
     fixo: 'O candidato do governo é diplomado. Em toda partida.',
     variavel: ['coerção', 'autonomia conquistada', 'legitimidade queimada'],
     textoFecho:
-      'O resultado nunca esteve em disputa — e agora vocês sabem por quê: o voto era aberto, quem pagava o alistamento escolhia o eleitor, e quem escrevia a ata decidia mais que a urna. Isso tem nome, e o nome só vem agora: coronelismo, clientelismo, mandonismo — as três peças do que os historiadores chamam de liberalismo oligárquico. A Constituição de 1891 era liberal no papel. Vocês acabaram de atravessar o que ela era na prática.',
+      'O resultado nunca esteve em disputa — e agora vocês sabem por quê: o voto era aberto, quem pagava o alistamento escolhia o eleitor, e quem escrevia a ata decidia mais que a urna. Isso tem nome, e o nome só vem agora: coronelismo, clientelismo, mandonismo — as três peças do que os historiadores chamam de liberalismo oligárquico. A Constituição de 1891 era liberal no papel. Vocês acabaram de atravessar o que ela era na prática.\n\n' +
+      'Uma coisa que o jogo simplifica: a coerção que vocês sentiram aqui — o medo, a pressão, o "alguém contou ao coronel" — no coronelismo real também incluía capangas armados, e desobedecer podia custar mais do que reputação. LEAL (1949), a mesma obra citada nas fontes deste cenário, documenta esse tipo de violência como parte estrutural do sistema, não exceção. O jogo não mostra isso acontecer a cada rodada porque, se mostrasse, toda partida viraria uma sequência previsível de punição — e a coerção do coronelismo funcionava, em parte, por nunca ser previsível. Mas o preço de resistir era real, e às vezes era esse.',
     perguntasDebate: [
       'A barra de "Autonomia do eleitor" começou em 15. Onde ela terminou — e quem, na turma, a empurrou para cima?',
       'O boato da "lista" do coronel não existia. Quantas decisões da turma foram tomadas por causa dele mesmo assim?',
