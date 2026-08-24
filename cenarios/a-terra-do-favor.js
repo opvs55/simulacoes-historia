@@ -321,8 +321,9 @@ export default {
       },
       imagemSugerida: {
         descricao:
-          'Charge "As eleições de cabresto": um homem conduz outro por um cabresto, como se leva um animal. Diálogo: "— É o Zé Besta? — Não, é o Zé Burro!"',
-        onde: 'Livro do 2º ano, Aula 2, Fonte I — charge de Alfredo Storni, revista Careta, Rio de Janeiro, 19 de fevereiro de 1927.',
+          'Cena genérica da véspera — caminhão, churrasco, sapatos distribuídos — não é a charge "As eleições de cabresto" mencionada em `onde`; recriar essa charge específica por IA a apresentaria como algo que ela não é.',
+        arquivo: '/imagens/a-terra-do-favor/a-vespera.jpg',
+        onde: 'A charge real "As eleições de cabresto" está no Livro do 2º ano, Aula 2, Fonte I — charge de Alfredo Storni, revista Careta, Rio de Janeiro, 19 de fevereiro de 1927. Use-a se quiser a imagem documental de verdade.',
       },
       investigacao: {
         olhar:

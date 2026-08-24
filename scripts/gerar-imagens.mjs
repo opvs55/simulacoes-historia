@@ -62,6 +62,8 @@ const IMAGENS_RODADAS = {
   'a-terra-do-favor': {
     'o-alistamento':
       'A line of rural Brazilian men in work clothes, some barefoot, waiting at an outdoor voter registration table in the 1920s, a hired overseer checking names off a list nearby.',
+    'a-vespera':
+      'A 1920s Brazilian rural village square at night, the eve of an election: a truck parked, a barbecue fire going, new shoes being handed out to rural workers, festive surface mood with a coercive undertone.',
     'dia-da-eleicao':
       'A 1920s Brazilian rural election polling table: seated officials, a voter standing and handing over an open (unsecret) ballot, men watching closely — voting happening in plain view of everyone.',
     'a-degola':
