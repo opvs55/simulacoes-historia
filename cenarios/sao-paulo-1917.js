@@ -1291,6 +1291,25 @@ export default {
     },
   ],
 
+  // opcional — atividade em grupo, fora do fluxo de decisão individual
+  // (ver app/juri). Cada lado só referencia fontes com confiavel !== false
+  // — nunca um boato como se fosse evidência real. 'principal:<rodadaSlug>'
+  // aponta pra rodada.fonte; qualquer outro valor é slug de
+  // investigacao.fontes.
+  juri: {
+    pergunta: 'O acordo de 20% foi uma vitória dos operários, ou o mínimo que a elite paulistana ofereceu pra conter uma ameaça maior?',
+    lados: [
+      {
+        nome: 'Foi vitória',
+        fontesSlugs: ['principal:preco-do-pao', 'terra-livre-mulheres', 'principal:o-acordo'],
+      },
+      {
+        nome: 'Foi contenção calculada',
+        fontesSlugs: ['murmurio-patronal', 'lista-demitidos', 'aviso-lei-adolfo-gordo'],
+      },
+    ],
+  },
+
   desfecho: {
     fixo: 'A greve acontece e o acordo de 20% é firmado.',
     variavel: ['cumprimento', 'repressao', 'quem-ficou-de-fora'],

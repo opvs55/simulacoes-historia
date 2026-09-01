@@ -797,6 +797,20 @@ export default {
     },
   ],
 
+  juri: {
+    pergunta: 'O governo sabia que o Plano Cohen era falso e usou como pretexto, ou foi enganado como o resto do país?',
+    lados: [
+      {
+        nome: 'Sabia e usou como pretexto',
+        fontesSlugs: ['aib-e-o-plano', 'lei-seguranca-charge'],
+      },
+      {
+        nome: 'Foi enganado como todo mundo',
+        fontesSlugs: ['discurso-de-posse', 'anl-de-verdade'],
+      },
+    ],
+  },
+
   desfecho: {
     fixo: 'O Estado Novo é instaurado em 10 de novembro de 1937. Em toda partida.',
     variavel: ['medo-final', 'liberdades-restantes', 'quem-soube-da-fraude-a-tempo'],

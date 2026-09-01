@@ -907,6 +907,20 @@ export default {
     },
   ],
 
+  juri: {
+    pergunta: 'O sistema eleitoral de 1927 era uma fraude ilegítima, ou só "como a política funcionava" dentro das regras aceitas da época?',
+    lados: [
+      {
+        nome: 'Era fraude',
+        fontesSlugs: ['voto-a-descoberto', 'bico-de-pena', 'grande-fazenda'],
+      },
+      {
+        nome: 'Era o sistema aceito',
+        fontesSlugs: ['liberalismo-oligarquico', 'o-patrao-benfeitor', 'politica-dos-governadores'],
+      },
+    ],
+  },
+
   desfecho: {
     fixo: 'O candidato do governo é diplomado. Em toda partida.',
     variavel: ['coerção', 'autonomia conquistada', 'legitimidade queimada'],

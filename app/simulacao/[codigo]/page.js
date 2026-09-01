@@ -125,6 +125,7 @@ export default function EntrarNaPartida({ params }) {
               </button>
             ))}
           </div>
+          <a href="/materiais" className={styles.linkMateriais}>Ver materiais alternativos →</a>
         </div>
       )}
 

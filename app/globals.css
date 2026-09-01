@@ -7,6 +7,7 @@
   --regua: rgba(32, 26, 20, 0.8);
   --regua-fraca: rgba(32, 26, 20, 0.22);
   --destaque: #7d2c20;
+  --verde: #3d5c3a;
 
   --fonte-titulo: var(--font-titulo), Georgia, "Times New Roman", serif;
   --fonte-corpo: var(--font-corpo), Georgia, "Times New Roman", serif;
@@ -22,6 +23,7 @@
     --regua: rgba(233, 224, 201, 0.82);
     --regua-fraca: rgba(233, 224, 201, 0.24);
     --destaque: #d3826a;
+    --verde: #8fb589;
   }
 
   html {

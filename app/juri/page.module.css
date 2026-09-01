@@ -1,0 +1,186 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 640px;
+}
+
+.kicker {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+}
+
+.intro {
+  color: var(--tinta-fraca);
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.seletor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cenarioBotao,
+.cenarioBotaoAtivo {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 1px solid var(--regua);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.cenarioBotaoAtivo {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+.pergunta {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--destaque);
+  max-width: 720px;
+}
+
+.lados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.lado {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 3px solid var(--tinta);
+  padding-top: 12px;
+}
+
+.lado h2 {
+  font-size: 1.2rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--regua-fraca);
+  background: var(--papel-alt);
+  padding: 16px 18px;
+  break-inside: avoid;
+}
+
+.cardRodada {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--destaque);
+}
+
+.card blockquote {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.cardCredito {
+  font-size: 12px;
+  color: var(--tinta-fraca);
+}
+
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.acoes button {
+  font: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: 2px solid var(--tinta);
+  background: transparent;
+  color: var(--tinta);
+  cursor: pointer;
+}
+
+.acoes button:hover {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+.voltar {
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--regua-fraca);
+  text-underline-offset: 4px;
+}
+
+.voltar:hover {
+  text-decoration-color: var(--tinta);
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 40px 18px 60px;
+  }
+
+  .lados {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .cabecalho,
+  .seletor,
+  .acoes {
+    display: none;
+  }
+
+  .page {
+    padding: 0;
+    max-width: none;
+  }
+
+  .lados {
+    gap: 16px;
+  }
+
+  .card {
+    background: none;
+    border: 1px solid #000;
+  }
+}

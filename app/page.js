@@ -23,12 +23,18 @@ export default function Home() {
             <li>Motor puro (sorteio, coesão, agregação ponderada, saldo) — implementado e testado</li>
             <li>Banco de dados (Supabase) — ligado, schema aplicado</li>
             <li>3 simulações jogáveis: São Paulo 1917, coronelismo/voto de cabresto, Plano Cohen</li>
+            <li>&ldquo;Fonte ou boato?&rdquo; — jogo de cards pra treinar reconhecer fonte confiável de boato</li>
+            <li>Júri histórico — atividade em grupo, cada time argumenta só com as evidências que recebeu</li>
+            <li>Materiais alternativos indicados pelo professor</li>
             <li>Painel do professor e fluxo de código de turma — ainda não implementados</li>
           </ul>
         </div>
 
         <nav className={styles.links}>
           <a href="/simulacao/DEMO01">Jogar uma simulação →</a>
+          <a href="/fonte-ou-boato">Fonte ou boato? →</a>
+          <a href="/juri">Júri histórico (atividade em grupo) →</a>
+          <a href="/materiais">Materiais alternativos →</a>
           <a href="/professor">Painel do professor →</a>
         </nav>
       </main>

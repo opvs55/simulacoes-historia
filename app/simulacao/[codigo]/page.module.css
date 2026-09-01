@@ -221,6 +221,19 @@
   margin: 0;
 }
 
+.linkMateriais {
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--regua-fraca);
+  text-underline-offset: 4px;
+}
+
+.linkMateriais:hover {
+  text-decoration-color: var(--tinta);
+}
+
 .retratoGrande {
   align-self: center;
   width: 140px;

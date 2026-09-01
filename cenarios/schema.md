@@ -160,6 +160,21 @@ export default {
     },
   ],
 
+  // opcional — dados pra app/juri: atividade em GRUPO, presencial, fora do
+  // fluxo de decisão individual. Uma pergunta sem resposta fechada e 2+
+  // lados, cada um só com fontes já catalogadas acima (nunca reescreve
+  // conteúdo). fontesSlugs aceita 'principal:<rodadaSlug>' (aponta pra
+  // rodada.fonte) ou o slug de uma investigacao.fontes qualquer no
+  // cenário. Nenhuma fonte referenciada pode ter confiavel: false — o
+  // teste estrutural barra isso (um boato nunca deve virar "evidência").
+  juri: {
+    pergunta: 'Uma pergunta genuinamente em aberto sobre o cenário — não a mesma de `pergunta` acima.',
+    lados: [
+      { nome: 'Um lado', fontesSlugs: ['principal:preco-do-pao', 'algum-slug-de-investigacao'] },
+      { nome: 'Outro lado', fontesSlugs: ['outro-slug'] },
+    ],
+  },
+
   desfecho: {
     fixo: 'A greve acontece e o acordo de 20% é firmado.', // nunca muda entre partidas — seção 5.4 do GDD
     variavel: ['cumprimento', 'repressao', 'quem-ficou-de-fora'],
