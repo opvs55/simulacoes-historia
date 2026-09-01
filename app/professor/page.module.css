@@ -35,5 +35,6 @@
 }
 
 .voltar:hover {
-  text-decoration-color: var(--tinta);
+  text-decoration-color: var(--destaque);
+  color: var(--destaque-700);
 }

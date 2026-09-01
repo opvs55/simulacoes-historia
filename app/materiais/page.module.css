@@ -81,6 +81,7 @@
   font-size: 12px;
   color: var(--tinta-fraca);
   border: 1px solid var(--regua-fraca);
+  border-radius: 4px;
   padding: 2px 8px;
 }
 
@@ -95,7 +96,8 @@
 }
 
 .link:hover {
-  text-decoration-color: var(--tinta);
+  text-decoration-color: var(--destaque);
+  color: var(--destaque-700);
 }
 
 .voltar {
@@ -109,7 +111,8 @@
 }
 
 .voltar:hover {
-  text-decoration-color: var(--tinta);
+  text-decoration-color: var(--destaque);
+  color: var(--destaque-700);
 }
 
 @media (max-width: 600px) {
