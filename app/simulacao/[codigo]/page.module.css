@@ -7,6 +7,20 @@
   padding: 60px 24px;
 }
 
+.voltar {
+  align-self: center;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--regua-fraca);
+  text-underline-offset: 4px;
+}
+
+.voltar:hover {
+  text-decoration-color: var(--destaque);
+  color: var(--destaque-700);
+}
+
 .aviso {
   max-width: 640px;
   font-size: 13px;

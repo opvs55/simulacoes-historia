@@ -17,7 +17,7 @@ export default function Home() {
       </header>
 
       <nav className={styles.tabs}>
-        <a href="#simulacoes">Simulações</a>
+        <a href="/simulacoes">Simulações</a>
         <a href="#conteudos">Conteúdos</a>
         <a href="/fonte-ou-boato">Fonte ou boato?</a>
         <a href="/juri">Júri histórico</a>
@@ -38,44 +38,46 @@ export default function Home() {
             é da turma inteira, não de um aluno. A discussão começa aí.
           </p>
           <div className={styles.acoes}>
-            <a className={styles.btn} href="/simulacao/DEMO01">Jogar uma simulação <span className={styles.arrow}>→</span></a>
+            <a className={styles.btn} href="/simulacoes">Jogar uma simulação <span className={styles.arrow}>→</span></a>
             <a className={styles.linkStrong} href="#professor">Entrar com código de turma</a>
           </div>
         </div>
         <div className={styles.col}>
           <div className={`${styles.plate} ${styles.heroPlate}`}>
-            <div className={styles.frame}>Foto de arquivo — manifestação ou primeira página de jornal de época</div>
+            <img src="/imagens/sao-paulo-1917/capa.jpg" alt="" className={styles.plateImg} />
           </div>
-          <div className={styles.caption}>Arquivo. Legenda da imagem de abertura.</div>
+          <div className={styles.caption}>São Paulo, 1917. Ilustração de época recriada para a simulação.</div>
         </div>
       </section>
 
       <div className={styles.sectionHead} id="simulacoes">
         <h2>Três simulações jogáveis</h2>
-        <div className={styles.meta}>15–20 min · turma inteira</div>
+        <div className={styles.meta}>
+          15–20 min · turma inteira · <a href="/simulacoes" className={styles.metaLink}>ver todas →</a>
+        </div>
       </div>
 
       <section className={`${styles.row} ${styles.three}`}>
-        <a className={`${styles.col} ${styles.card}`} href="/simulacao/DEMO01">
-          <div className={`${styles.plate} ${styles.cardPlate}`}><div className={styles.frame}>Greve de 1917</div></div>
+        <a className={`${styles.col} ${styles.card}`} href="/simulacoes/sao-paulo-1917">
+          <div className={`${styles.plate} ${styles.cardPlate}`}><img src="/imagens/sao-paulo-1917/capa.jpg" alt="" className={styles.plateImg} /></div>
           <div className={`${styles.kicker} ${styles.tnum}`}>01 · 1917</div>
           <h3>São Paulo, 1917</h3>
           <p>A greve geral vista de dentro da fábrica, da redação e do palácio. Salário, pão e polícia na mesma semana.</p>
-          <span className={styles.linkArrow}>Jogar →</span>
+          <span className={styles.linkArrow}>Ver detalhes →</span>
         </a>
-        <a className={`${styles.col} ${styles.card}`} href="/simulacao/DEMO01">
-          <div className={`${styles.plate} ${styles.cardPlate}`}><div className={styles.frame}>Voto de cabresto</div></div>
+        <a className={`${styles.col} ${styles.card}`} href="/simulacoes/a-terra-do-favor">
+          <div className={`${styles.plate} ${styles.cardPlate}`}><img src="/imagens/a-terra-do-favor/capa.jpg" alt="" className={styles.plateImg} /></div>
           <div className={`${styles.kicker} ${styles.tnum}`}>02 · República Velha</div>
           <h3>Coronelismo e voto de cabresto</h3>
           <p>Uma eleição no interior: quem deve favor a quem, e o que custa votar contra o coronel.</p>
-          <span className={styles.linkArrow}>Jogar →</span>
+          <span className={styles.linkArrow}>Ver detalhes →</span>
         </a>
-        <a className={`${styles.col} ${styles.card}`} href="/simulacao/DEMO01">
-          <div className={`${styles.plate} ${styles.cardPlate}`}><div className={styles.frame}>Plano Cohen, 1937</div></div>
+        <a className={`${styles.col} ${styles.card}`} href="/simulacoes/o-plano-que-nao-existia">
+          <div className={`${styles.plate} ${styles.cardPlate}`}><img src="/imagens/o-plano-que-nao-existia/capa.jpg" alt="" className={styles.plateImg} /></div>
           <div className={`${styles.kicker} ${styles.tnum}`}>03 · 1937</div>
           <h3>Plano Cohen</h3>
           <p>Um documento falso circula. A turma decide o que publicar, o que acreditar e o que fazer com o medo.</p>
-          <span className={styles.linkArrow}>Jogar →</span>
+          <span className={styles.linkArrow}>Ver detalhes →</span>
         </a>
       </section>
 

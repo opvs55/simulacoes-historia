@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
 import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
 import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
@@ -20,6 +21,7 @@ const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
 // (seção 4 do GDD) é o código de partida que já vem associado a um
 // cenário — isso substitui esta tela quando o Supabase entrar.
 export default function EntrarNaPartida({ params }) {
+  const searchParams = useSearchParams()
   const [etapa, setEtapa] = useState('escolher-cenario')
   const [cenario, setCenario] = useState(null)
   const [apelido, setApelido] = useState('')
@@ -31,6 +33,18 @@ export default function EntrarNaPartida({ params }) {
   const [justificativa, setJustificativa] = useState('')
   const [respostasReflexao, setRespostasReflexao] = useState({})
   const [reacaoEscolhida, setReacaoEscolhida] = useState(null)
+
+  // Vindo de /simulacoes/[slug] com "Jogar esta simulação": pula a tela de
+  // escolha e já entra direto no cenário pedido, se o slug for válido.
+  useEffect(() => {
+    const slugPedido = searchParams.get('cenario')
+    const encontrado = CENARIOS.find((c) => c.slug === slugPedido)
+    if (encontrado) {
+      setCenario(encontrado)
+      setEtapa('entrar')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const papel = cenario?.papeis.find((p) => p.slug === papelSlug)
   const rodadaAtual = cenario?.rodadas[rodadaIndice]
@@ -103,6 +117,7 @@ export default function EntrarNaPartida({ params }) {
 
   return (
     <div className={styles.page}>
+      <a href="/simulacoes" className={styles.voltar}>← Voltar às simulações</a>
       <p className={styles.aviso}>
         Modo demonstração — partida &ldquo;{params.codigo}&rdquo;. O sorteio usa uma turma fictícia de 12
         pessoas; a agregação real, com a turma inteira decidindo de verdade, ainda depende do

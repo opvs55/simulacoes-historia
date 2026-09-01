@@ -79,6 +79,18 @@ const IMAGENS_RODADAS = {
   },
 }
 
+// Uma capa por cenário — usada nos cards de /simulacoes e na home. Cena
+// panorâmica que resume o tema inteiro (não uma rodada específica), em
+// formato paisagem (3:2) para caber bem num card retangular.
+const IMAGENS_CAPA = {
+  'sao-paulo-1917':
+    'Wide panoramic view of an industrial São Paulo street in 1917 during a general strike: textile factory smokestacks in the background, a dense crowd of workers filling the street from sidewalk to sidewalk in the foreground, no banners or readable signs, tense collective atmosphere emphasizing the scale of an entire city stopping.',
+  'a-terra-do-favor':
+    'Wide panoramic view of a 1920s Brazilian rural landscape: a grand fazenda house on a hilltop in the distance, a dirt road lined with modest worker houses in the foreground, one rural worker standing on the road looking toward the fazenda, composition symbolizing everyday hierarchy and dependence.',
+  'o-plano-que-nao-existia':
+    'Wide panoramic view of a 1930s Brazilian city street corner at dusk, generic skyline with no recognizable real landmarks or monuments: a small newspaper stand with blank, unlabeled papers and completely blank signage (absolutely no text, letters, or writing anywhere in the image), a small worried crowd reading in silence, a radio antenna visible on a rooftop above, tense uncertain atmosphere of a rumor spreading through the city.',
+}
+
 const IMAGENS_EVENTOS = {
   'a-terra-do-favor': {
     'visita-noturna':
@@ -94,13 +106,14 @@ const IMAGENS_EVENTOS = {
   },
 }
 
-async function gerarImagem(prompt, apiKey) {
+async function gerarImagem(prompt, apiKey, aspectRatio) {
+  const config = aspectRatio ? { imageConfig: { aspectRatio } } : undefined
   const resposta = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${MODELO}:generateContent`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
-      body: JSON.stringify({ contents: [{ parts: [{ text: `${prompt} ${ESTILO}` }] }] }),
+      body: JSON.stringify({ contents: [{ parts: [{ text: `${prompt} ${ESTILO}` }] }], ...(config ? { generationConfig: config } : {}) }),
     }
   )
   const corpo = await resposta.json()
@@ -112,7 +125,7 @@ async function gerarImagem(prompt, apiKey) {
   return { base64: inline.data, mimeType: inline.mimeType ?? inline.mime_type }
 }
 
-async function gerarLote(pastaSaida, itens, apiKey) {
+async function gerarLote(pastaSaida, itens, apiKey, aspectRatio) {
   mkdirSync(pastaSaida, { recursive: true })
   for (const [nome, prompt] of Object.entries(itens)) {
     const jaExiste = ['png', 'jpg', 'jpeg'].some((ext) => existsSync(path.join(pastaSaida, `${nome}.${ext}`)))
@@ -122,7 +135,7 @@ async function gerarLote(pastaSaida, itens, apiKey) {
     }
     process.stdout.write(`  gerando ${nome}... `)
     try {
-      const { base64, mimeType } = await gerarImagem(prompt, apiKey)
+      const { base64, mimeType } = await gerarImagem(prompt, apiKey, aspectRatio)
       const ext = mimeType?.includes('png') ? 'png' : 'jpg'
       const destino = path.join(pastaSaida, `${nome}.${ext}`)
       writeFileSync(destino, Buffer.from(base64, 'base64'))
@@ -142,10 +155,24 @@ async function main() {
     process.exit(1)
   }
 
-  const cenarios = new Set([...Object.keys(ICONES_PAPEIS), ...Object.keys(IMAGENS_RODADAS), ...Object.keys(IMAGENS_EVENTOS)])
+  const cenarios = new Set([
+    ...Object.keys(ICONES_PAPEIS),
+    ...Object.keys(IMAGENS_RODADAS),
+    ...Object.keys(IMAGENS_EVENTOS),
+    ...Object.keys(IMAGENS_CAPA),
+  ])
   for (const cenario of cenarios) {
     if (filtroCenario && cenario !== filtroCenario) continue
 
+    if (IMAGENS_CAPA[cenario]) {
+      console.log(`[${cenario}] capa`)
+      await gerarLote(
+        new URL(`../public/imagens/${cenario}/`, import.meta.url).pathname.slice(1),
+        { capa: IMAGENS_CAPA[cenario] },
+        apiKey,
+        '3:2'
+      )
+    }
     if (ICONES_PAPEIS[cenario]) {
       console.log(`[${cenario}] ícones de papéis`)
       await gerarLote(
