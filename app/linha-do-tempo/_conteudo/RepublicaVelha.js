@@ -187,12 +187,12 @@ export default function RepublicaVelha({ onSair }) {
         <div data-anim className={s.barras}>
           <div className={s.barraColuna}>
             <span className={s.barraValor}>3.250</span>
-            <div className={s.barra} style={{ height: '38%', animationDuration: '.9s', animationDelay: '.35s' }} />
+            <div data-anim className={s.barra} style={{ height: '38%', animationDuration: '.9s', animationDelay: '.35s' }} />
             <span className={s.barraAno}>1907</span>
           </div>
           <div className={s.barraColuna}>
             <span className={`${s.barraValor} ${s.barraValorDestaque}`}>13.500</span>
-            <div className={`${s.barra} ${s.barraDestaque}`} style={{ height: '100%', animationDuration: '1.1s', animationDelay: '.5s' }} />
+            <div data-anim className={`${s.barra} ${s.barraDestaque}`} style={{ height: '100%', animationDuration: '1.1s', animationDelay: '.5s' }} />
             <span className={s.barraAno}>1920</span>
           </div>
           <div className={s.barraLegenda}>Estabelecimentos industriais no país. O salto se concentra em São Paulo e no Distrito Federal.</div>
@@ -277,8 +277,8 @@ export default function RepublicaVelha({ onSair }) {
         </Texto>
         <div data-anim className={s.pelotao}>
           <div className={s.pelotaoLinha}>
-            <span className={`${s.soldado} ${s.soldadoVivo}`} />
-            <span className={`${s.soldado} ${s.soldadoVivo}`} />
+            <span data-anim className={`${s.soldado} ${s.soldadoVivo}`} />
+            <span data-anim className={`${s.soldado} ${s.soldadoVivo}`} />
             {Array.from({ length: 16 }, (_, i) => <span key={i} className={s.soldado} />)}
           </div>
           <div className={s.pelotaoTexto}>
@@ -345,6 +345,7 @@ export default function RepublicaVelha({ onSair }) {
         <div data-anim className={s.grafico}>
           <svg viewBox="0 0 200 100" preserveAspectRatio="none" className={s.graficoSvg}>
             <path
+              data-anim
               className={s.graficoLinha}
               d="M0,22 L40,18 L80,26 L110,20 L140,64 L170,80 L200,86"
               fill="none"
