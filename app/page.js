@@ -18,7 +18,7 @@ export default function Home() {
 
       <nav className={styles.tabs}>
         <a href="/simulacoes">Simulações</a>
-        <a href="#conteudos">Conteúdos</a>
+        <a href="/materiais">Conteúdos</a>
         <a href="/fonte-ou-boato">Fonte ou boato?</a>
         <a href="/juri">Júri histórico</a>
         <a href="#professor">Professor</a>

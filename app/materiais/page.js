@@ -2,6 +2,7 @@ import materiais from '@/materiais/dados.js'
 import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
 import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
 import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
+import VideoEmbutido from './VideoEmbutido.js'
 import styles from './page.module.css'
 
 const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
@@ -49,9 +50,13 @@ export default function Materiais() {
                 })}
               </div>
             )}
-            <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
-              Assistir →
-            </a>
+            {item.tipo === 'video' ? (
+              <VideoEmbutido url={item.url} titulo={item.titulo} />
+            ) : (
+              <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                Assistir →
+              </a>
+            )}
           </article>
         ))}
       </div>

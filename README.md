@@ -138,6 +138,12 @@ absolutismo, mercantilismo) — nenhum foi escrito.
 - **Painel do professor por aluno + perguntas de acompanhamento.** Mencionado, ainda sem desenho
   — fica para a Fase 4 do roadmap (seção 14 do GDD).
 - **Curadoria de vídeos/referências complementares.** Sugerido pelo professor, não iniciado.
+- **Reorganizar em seções conforme o conteúdo crescer.** Hoje `/simulacoes` e `/materiais` são
+  listas simples — funcionam bem para 3 itens. Conforme mais simulações e materiais forem
+  entrando (outras séries, outros temas), a navegação deve virar seções bem organizadas, com uma
+  experiência mais fluida e dinâmica — pensada para o jeito como o aluno jovem já consome
+  conteúdo (scroll rápido, blocos visuais, tipo TikTok), não como um índice de livro didático.
+  Levantado pelo professor, ainda sem desenho — fica para quando o volume de conteúdo justificar.
 
 ---
 
