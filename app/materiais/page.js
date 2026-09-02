@@ -11,6 +11,14 @@ const ROTULO_TIPO = {
   video: 'Vídeo',
   documentario: 'Documentário',
   texto: 'Texto',
+  'linha-do-tempo': 'Linha do tempo',
+}
+
+const ROTULO_ACAO = {
+  video: 'Assistir →',
+  documentario: 'Assistir →',
+  texto: 'Ler →',
+  'linha-do-tempo': 'Começar →',
 }
 
 export default function Materiais() {
@@ -52,9 +60,13 @@ export default function Materiais() {
             )}
             {item.tipo === 'video' ? (
               <VideoEmbutido url={item.url} titulo={item.titulo} />
+            ) : item.tipo === 'linha-do-tempo' ? (
+              <a href={item.url} className={styles.link}>
+                {ROTULO_ACAO[item.tipo]}
+              </a>
             ) : (
               <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                Assistir →
+                {ROTULO_ACAO[item.tipo] ?? 'Assistir →'}
               </a>
             )}
           </article>

@@ -1,0 +1,341 @@
+/* Shell da experiência "story mode": fundo sempre escuro, cinematográfico —
+   deliberadamente independente do tema claro/escuro do resto do site,
+   igual a um filme continua preto quando a sala acende a luz. */
+
+.shell {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #191713;
+  font-family: var(--fonte-corpo);
+  z-index: 30;
+}
+
+.sair {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 21;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(243, 242, 242, 0.3);
+  background: rgba(25, 23, 19, 0.4);
+  color: #f3f2f2;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sair:hover {
+  background: rgba(25, 23, 19, 0.7);
+}
+
+.progressoTopo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: 14px 60px 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(to bottom, rgba(25, 23, 19, 0.6), transparent);
+  pointer-events: none;
+}
+
+.progressoTrilho {
+  flex: 1;
+  height: 2px;
+  background: rgba(243, 242, 242, 0.24);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressoPreenchido {
+  height: 100%;
+  background: var(--destaque-300);
+  border-radius: 2px;
+  transition: width 0.35s ease;
+}
+
+.progressoTexto {
+  font-family: var(--fonte-titulo);
+  font-feature-settings: 'tnum';
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: rgba(243, 242, 242, 0.8);
+}
+
+.scroller {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---- Tela genérica (uma "página" cheia da experiência) ---- */
+
+.tela {
+  position: relative;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 96px 26px 80px;
+  background: #191713;
+  color: #f3f2f2;
+  overflow: hidden;
+}
+
+.telaClara {
+  justify-content: center;
+  padding: 96px 26px 100px;
+  background: var(--papel);
+  color: var(--tinta);
+  gap: 18px;
+}
+
+.fundo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  animation-name: ken;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+
+.gradiente {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(25, 23, 19, 0.4) 0%,
+    rgba(25, 23, 19, 0.84) 44%,
+    rgba(25, 23, 19, 0.98) 100%
+  );
+}
+
+.conteudo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 440px;
+}
+
+@keyframes ken {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.16); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wide {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes grow {
+  from { transform: scaleY(0.04); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes draw {
+  from { stroke-dashoffset: 1200; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.35); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Toda animação de entrada começa pausada; o IntersectionObserver do Shell
+   soma esta classe assim que a tela entra em vista. !important porque duas
+   classes CSS-Module aplicadas juntas (ex. .titulo + .animar) têm a mesma
+   especificidade — sem isso, qual delas "ganha" dependeria da ordem de
+   declaração neste arquivo, o que é frágil. */
+.animar {
+  animation-play-state: running !important;
+}
+
+/* ---- blocos de texto reutilizáveis ---- */
+
+.kicker {
+  font-family: var(--fonte-titulo);
+  font-feature-settings: 'tnum';
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--destaque-300);
+  animation-name: fade;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-play-state: paused;
+}
+
+.titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+  animation-name: rise;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+  animation-delay: 0.08s;
+  animation-play-state: paused;
+}
+
+.tituloGrande {
+  font-size: 52px;
+  line-height: 1;
+}
+
+.texto {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(243, 242, 242, 0.86);
+  max-width: 34ch;
+  animation-name: rise;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  animation-delay: 0.16s;
+  animation-play-state: paused;
+}
+
+.textoMuted {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: rgba(243, 242, 242, 0.62);
+  animation-name: fade;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  animation-delay: 0.5s;
+  animation-play-state: paused;
+}
+
+.termo {
+  font-weight: 600;
+  color: var(--destaque-300);
+  border-bottom: 1px dotted var(--destaque-300);
+  cursor: pointer;
+}
+
+.citacao {
+  border-left: 2px solid var(--destaque-300);
+  padding: 2px 0 2px 15px;
+  font-family: var(--fonte-titulo);
+  font-size: 21px;
+  line-height: 1.3;
+  font-style: italic;
+  animation-name: rise;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  animation-delay: 0.3s;
+  animation-play-state: paused;
+}
+
+.citacaoAutor {
+  display: block;
+  font-family: var(--fonte-corpo);
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(243, 242, 242, 0.55);
+  margin-top: 9px;
+}
+
+/* ---- glossário: bottom sheet ---- */
+
+.glossOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(25, 23, 19, 0.55);
+  display: flex;
+  align-items: flex-end;
+}
+
+.glossFolha {
+  width: 100%;
+  background: var(--papel);
+  color: var(--tinta);
+  border-top: 1px solid var(--destaque);
+  border-radius: 16px 16px 0 0;
+  padding: 22px 24px 34px;
+  animation: sheet 0.28s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes sheet {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+
+.glossAlca {
+  width: 38px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--regua-fraca);
+  margin: 0 auto 16px;
+}
+
+.glossKicker {
+  font-family: var(--fonte-titulo);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--destaque-700);
+  margin-bottom: 8px;
+}
+
+.glossTitulo {
+  font-family: var(--fonte-titulo);
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.glossTexto {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (min-width: 700px) {
+  .glossFolha {
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 16px 16px 0 0;
+  }
+}
