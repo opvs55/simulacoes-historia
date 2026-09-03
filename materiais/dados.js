@@ -36,4 +36,52 @@ export default [
       'termina no Estado Novo, sete anos depois).',
     cenariosRelacionados: ['a-terra-do-favor', 'o-plano-que-nao-existia'],
   },
+  {
+    slug: 'getulio-vargas-ditadura-ou-lideranca',
+    titulo: 'Getúlio Vargas: ditadura implacável ou liderança histórica? (1/2)',
+    tipo: 'video',
+    serie: '2a',
+    url: 'https://www.youtube.com/watch?v=c-JXN-QIZoA',
+    descricao:
+      'Indicado pelo professor. Primeira parte de duas sobre a trajetória de Vargas — ' +
+      'complementa "O plano que não existia" (Estado Novo) e o período depois dele, quando ' +
+      'Vargas volta ao poder eleito em 1950.',
+    cenariosRelacionados: ['o-plano-que-nao-existia'],
+  },
+  {
+    slug: '1932-revolucao-paulista',
+    titulo: '1932: a revolução paulista quando São Paulo enfrentou o Brasil',
+    tipo: 'video',
+    serie: '2a',
+    url: 'https://www.youtube.com/watch?v=NGKl_4f8KYk',
+    descricao:
+      'Indicado pelo professor. A Revolta Constitucionalista de 1932 — as elites paulistas ' +
+      'contra o governo provisório de Vargas, entre 1930 e o Estado Novo de "O plano que não ' +
+      'existia". Ainda não é uma simulação própria no site (ver plano de currículo), mas já ' +
+      'é pano de fundo direto.',
+    cenariosRelacionados: ['o-plano-que-nao-existia'],
+  },
+  {
+    slug: 'nerdologia-proclamacao-da-republica',
+    titulo: 'Proclamação da República (Nerdologia)',
+    tipo: 'video',
+    serie: '2a',
+    url: 'https://www.youtube.com/watch?v=4xSQkZ8jzeM',
+    descricao:
+      'Indicado pelo professor. O 15 de novembro de 1889 explicado rápido — o mesmo &ldquo;povo ' +
+      'bestializado&rdquo; que abre a Linha do tempo da República Velha.',
+    cenariosRelacionados: ['a-terra-do-favor'],
+  },
+  {
+    slug: 'nerdologia-tenentismo',
+    titulo: 'Tenentismo (Nerdologia)',
+    tipo: 'video',
+    serie: '2a',
+    url: 'https://www.youtube.com/watch?v=50GbBByAgcI',
+    descricao:
+      'Indicado pelo professor. O movimento dos jovens oficiais nos anos 1920 — moralizar a ' +
+      'República, não fazer revolução social. Pano de fundo direto da Revolta de 1932 e do ' +
+      'grupo que chega ao poder com Vargas em 1930.',
+    cenariosRelacionados: [],
+  },
 ]

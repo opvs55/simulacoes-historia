@@ -6,6 +6,15 @@ import styles from './page.module.css'
 // catálogo de /simulacoes).
 const LINHAS_DO_TEMPO = [
   {
+    slug: 'absolutismo-e-mercantilismo',
+    titulo: 'O rei, a fé e o mercado',
+    periodo: 'Séculos XV — XVII',
+    serie: '1a',
+    resumo: 'Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis absolutos: Contrarreforma, formação das monarquias, os teóricos do absolutismo, navegações e mercantilismo.',
+    capa: '/imagens/linha-do-tempo/absolutismo-e-mercantilismo/capa.jpg',
+    telas: 11,
+  },
+  {
     slug: 'republica-velha',
     titulo: 'A República que o povo assistiu',
     periodo: '1889 — 1930',
