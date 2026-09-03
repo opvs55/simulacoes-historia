@@ -3,13 +3,15 @@ import { notFound } from 'next/navigation'
 import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
 import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
 import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
+import coroaECofre from '@/cenarios/coroa-e-cofre.js'
 import styles from './page.module.css'
 
-const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
+const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia, coroaECofre]
 
 const NOME_ERA = {
   republica: 'República Velha',
   'era-vargas': 'Era Vargas',
+  absolutismo: 'Absolutismo',
 }
 
 export function generateStaticParams() {

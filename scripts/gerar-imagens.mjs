@@ -48,6 +48,24 @@ const ICONES_PAPEIS = {
     'cidadao-comum':
       'Portrait of a 1930s Brazilian ordinary city resident reading a newspaper: everyday clothes, worried uncertain expression.',
   },
+  'coroa-e-cofre': {
+    // "conselho-coroa" é deliberadamente um conselheiro/ministro genérico,
+    // NUNCA um retrato de Luís XIV — sem a peruca longa cacheada icônica
+    // nem pose de "Rei Sol" associadas a ele. Ver comentário no topo de
+    // cenarios/coroa-e-cofre.js.
+    'conselho-coroa':
+      'Portrait of a generic 17th century French royal court minister/advisor: dark formal coat, short wig, holding a sealed document, calculating composed expression. Not a king, not a specific historical figure — a generic court official.',
+    'nobreza-espada':
+      'Portrait of a 17th century French sword nobleman: formal court coat, ceremonial sword at hip, proud but slightly weary expression, no specific historical figure.',
+    'alto-clero':
+      'Portrait of a generic 17th century French Catholic high clergyman (bishop): formal ecclesiastical vestments, composed authoritative expression, no specific historical figure.',
+    'burguesia-mercantil':
+      'Portrait of a wealthy 17th century French merchant: fine but modest coat (no ceremonial sword, no nobility markers), calculating ambitious expression.',
+    'mestres-artesaos':
+      'Portrait of a 17th century French master craftsman: work apron over simple clothes, tools visible nearby, weathered skilled hands, steady confident expression.',
+    'camponeses':
+      'Portrait of a 17th century French peasant farmer: simple worn work clothes, weathered resigned expression, rural background.',
+  },
 }
 
 const IMAGENS_RODADAS = {
@@ -77,6 +95,18 @@ const IMAGENS_RODADAS = {
     'o-golpe':
       'Getúlio Vargas-like 1930s Brazilian president figure speaking gravely into an old radio microphone, a crowd in a plaza listening attentively nearby. Generic dramatized scene, not a reproduction of a specific real cartoon.',
   },
+  'coroa-e-cofre': {
+    'um-rei-uma-lei':
+      'Three different antique measuring rods of visibly different lengths laid side by side across a sack of grain at a 17th century French rural market stall, no people, no readable text or markings.',
+    'ouro-que-nao-se-deixa-sair':
+      'Bundles of fine cloth being loaded onto a wooden ship at a 17th century French port, a royal official checking a manifest against a wax-sealed monopoly charter, no readable text, overcast harbor light.',
+    'uma-fe-um-reino':
+      'Modest interior of a 17th century French Protestant (Huguenot) meeting house, plain wooden benches, no religious imagery on the walls, soft light through a small window, empty of people, solemn quiet mood.',
+    'guerra-gloria-conta':
+      'A column of 17th century French infantry soldiers marching along a dirt road, supply carts trailing behind, generic countryside, no specific battle, no readable flags or banners.',
+    'a-conta-chega':
+      'A family cart loaded with modest belongings stopped on a rural road at dawn near a French border checkpoint, figures small and distant, looking back toward the direction they came from, quiet somber mood, no readable text.',
+  },
 }
 
 // Uma capa por cenário — usada nos cards de /simulacoes e na home. Cena
@@ -89,6 +119,8 @@ const IMAGENS_CAPA = {
     'Wide panoramic view of a 1920s Brazilian rural landscape: a grand fazenda house on a hilltop in the distance, a dirt road lined with modest worker houses in the foreground, one rural worker standing on the road looking toward the fazenda, composition symbolizing everyday hierarchy and dependence.',
   'o-plano-que-nao-existia':
     'Wide panoramic view of a 1930s Brazilian city street corner at dusk, generic skyline with no recognizable real landmarks or monuments: a small newspaper stand with blank, unlabeled papers and completely blank signage (absolutely no text, letters, or writing anywhere in the image), a small worried crowd reading in silence, a radio antenna visible on a rooftop above, tense uncertain atmosphere of a rumor spreading through the city.',
+  'coroa-e-cofre':
+    'Wide panoramic view of a lavish 17th century French royal palace throne room seen from the back of the hall toward an ornate empty throne on a distant dais, courtiers in period dress standing in rows, tall windows, generic palace architecture not matching any specific real palace, nobody\'s face prominent or identifiable as a specific person.',
 }
 
 const IMAGENS_EVENTOS = {
