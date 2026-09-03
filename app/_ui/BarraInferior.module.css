@@ -1,0 +1,61 @@
+/* Mobile: fixa no rodapé (alcance do polegar). Desktop: sobe para o
+   topo (rodapé fixo não é um padrão de navegação ali). A página que usa
+   esta barra precisa reservar espaço (padding-bottom no mobile,
+   padding-top no desktop) do tamanho de --altura-barra-inferior. */
+.barra {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  height: var(--altura-barra-inferior);
+  background: var(--papel-alt);
+  border-top: 1px solid var(--regua-fraca);
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  font-family: var(--fonte-titulo);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+  border-top: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.itemAtivo {
+  color: var(--destaque-700);
+  border-top-color: var(--destaque);
+}
+
+@media (min-width: 900px) {
+  .barra {
+    top: 0;
+    bottom: auto;
+    border-top: 0;
+    border-bottom: 1px solid var(--regua-fraca);
+    width: 280px;
+    left: auto;
+    right: 24px;
+    margin-top: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--regua-fraca);
+    overflow: hidden;
+  }
+
+  .item {
+    border-top: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .itemAtivo {
+    border-bottom-color: var(--destaque);
+  }
+}

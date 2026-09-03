@@ -1,0 +1,105 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 24px calc(var(--altura-barra-inferior, 58px) + 32px);
+}
+
+@media (min-width: 900px) {
+  .page {
+    padding: 96px 24px 60px;
+  }
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cabecalho h1 {
+  font-size: 2rem;
+}
+
+.seg {
+  display: inline-flex;
+  align-self: flex-start;
+  gap: 0;
+  margin-top: 4px;
+}
+
+.segOpt {
+  padding: 8px 18px;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--tinta-fraca);
+  background: transparent;
+  border: 1px solid var(--regua-fraca);
+  cursor: pointer;
+}
+
+.segOpt:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+}
+
+.segOpt:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.segOptAtivo {
+  border-color: var(--destaque);
+  background: var(--destaque-100);
+  color: var(--destaque-700);
+  font-weight: 700;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid var(--tinta);
+}
+
+.eraItem {
+  display: flex;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--regua-fraca);
+  color: var(--tinta);
+}
+
+.eraCapa {
+  width: 84px;
+  height: 84px;
+}
+
+.eraCorpo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eraCorpo h2 {
+  font-size: 1.3rem;
+}
+
+.eraCorpo p {
+  font-size: 14.5px;
+  color: var(--tinta-fraca);
+  margin: 2px 0 4px;
+}
+
+.eraItem:hover h2 {
+  color: var(--destaque-700);
+}
+
+.linkArrow {
+  align-self: flex-start;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--destaque-700);
+}

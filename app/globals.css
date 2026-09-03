@@ -15,6 +15,11 @@
 
   --fonte-titulo: var(--font-titulo), Georgia, "Times New Roman", serif;
   --fonte-corpo: var(--font-corpo), Georgia, "Times New Roman", serif;
+
+  /* altura da barra de navegação fixa (app/_ui/BarraInferior.js) — global
+     porque páginas que a usam precisam reservar espaço para ela (padding)
+     em elementos que não são descendentes da própria barra. */
+  --altura-barra-inferior: 58px;
 }
 
 @media (prefers-color-scheme: dark) {

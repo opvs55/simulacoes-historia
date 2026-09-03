@@ -1,0 +1,113 @@
+/* Base compartilhada — kicker, botões, moldura de foto, selo, link de
+   voltar. Ver docs/plano-navegacao-por-periodo.md, fase 1: as páginas
+   já existentes mantêm suas cópias locais por enquanto (migrar 11
+   arquivos de uma vez é risco desnecessário sem ganho imediato) — as
+   páginas novas da navegação por período usam isto desde o início, pra
+   não criar mais uma cópia divergente. */
+
+.kicker {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 17px 32px;
+  border-radius: 2px;
+  border: 1px solid var(--destaque);
+  box-shadow: inset 0 0 0 3px var(--papel), inset 0 0 0 4px var(--destaque-300);
+  background: transparent;
+  color: var(--tinta);
+  transition: background 0.15s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--destaque-100);
+}
+
+.btn:active {
+  border-color: var(--destaque-700);
+}
+
+.btnSecondary {
+  border-color: var(--tinta-mais-fraca);
+  box-shadow: inset 0 0 0 3px var(--papel), inset 0 0 0 4px var(--regua-fraca);
+}
+
+.btnGhost {
+  border: 0;
+  box-shadow: none;
+  padding: 17px 6px;
+  border-bottom: 1px solid var(--regua-fraca);
+  border-radius: 0;
+}
+
+.btnGhost:hover {
+  background: transparent;
+  border-bottom-color: var(--destaque);
+}
+
+/* moldura de foto pequena — capas de simulação/era/linha do tempo */
+.plate {
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--papel-alt);
+  flex: none;
+}
+
+.plate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: sepia(0.22) saturate(0.82) contrast(1.05);
+}
+
+.selo {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--tinta-mais-fraca);
+}
+
+.voltar {
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--regua-fraca);
+  text-underline-offset: 4px;
+}
+
+.voltar:hover {
+  text-decoration-color: var(--destaque);
+  color: var(--destaque-700);
+}
+
+/* barra de progresso fina — "onde você parou" */
+.progresso {
+  height: 2px;
+  background: var(--regua-fraca);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressoTraco {
+  height: 100%;
+  background: var(--destaque);
+}

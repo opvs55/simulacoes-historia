@@ -6,7 +6,8 @@ import coroaECofre from '@/cenarios/coroa-e-cofre.js'
 import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
 import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
 import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
-import LinhaItem from './LinhaItem.js'
+import LinhaItem from '../_ui/LinhaItem.js'
+import listaStyles from '../_ui/LinhaItem.module.css'
 import styles from './page.module.css'
 
 // mesma ordem de /simulacoes: 1ª série primeiro.
@@ -47,7 +48,7 @@ function ordenarGrupo(itens) {
 
 function ListaDeItens({ itens, cenario }) {
   return (
-    <div className={styles.videoLista}>
+    <div className={listaStyles.videoLista}>
       {itens.map((item, indice) => (
         <LinhaItem key={item.slug} item={item} cenario={cenario} proximoItem={itens[indice + 1] ?? null} />
       ))}

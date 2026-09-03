@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { extrairIdYoutube } from '@/materiais/youtube.js'
 import { estaVisto, marcarVisto } from '@/materiais/visto.js'
-import styles from './page.module.css'
+import styles from './LinhaItem.module.css'
 
 const ROTULO_TIPO = {
   video: 'Vídeo',
@@ -13,12 +13,13 @@ const ROTULO_TIPO = {
 }
 
 // Uma linha por item, qualquer tipo — reaproveita o mesmo visual pra
-// vídeo, linha do tempo, texto ou documentário (ver design_handoff em
-// docs/, Parte 2). Só o vídeo expande inline (mostra o player ali
-// mesmo); os outros tipos são link direto, iguais em forma. "Visto" é
-// lido do localStorage só depois de montar (ver materiais/visto.js),
-// pra não gerar erro de hidratação — a primeira renderização é sempre
-// "não visto", igual no servidor e no cliente.
+// vídeo, linha do tempo, texto ou documentário. Usado em /materiais e
+// /estudar/[era] (ver docs/plano-navegacao-por-periodo.md). Só o vídeo
+// expande inline (mostra o player ali mesmo); os outros tipos são link
+// direto, iguais em forma. "Visto" é lido do localStorage só depois de
+// montar (ver materiais/visto.js), pra não gerar erro de hidratação — a
+// primeira renderização é sempre "não visto", igual no servidor e no
+// cliente.
 export default function LinhaItem({ item, cenario, proximoItem }) {
   const [aberto, setAberto] = useState(false)
   const [visto, setVisto] = useState(false)

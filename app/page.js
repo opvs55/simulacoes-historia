@@ -1,114 +1,130 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import eras from '@/cenarios/eras.js'
+import linhasDoTempo from '@/materiais/linhas-do-tempo.js'
+import coroaECofre from '@/cenarios/coroa-e-cofre.js'
+import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
+import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
+import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
+import { lerSeriePreferida, salvarSeriePreferida } from '@/lib/serie-preferida.js'
+import { encontrarEmAndamento } from '@/lib/progresso-timeline.js'
+import BarraInferior from './_ui/BarraInferior.js'
+import comum from './_ui/comum.module.css'
 import styles from './page.module.css'
-import EntrarComCodigo from './EntrarComCodigo.js'
 
+const CENARIOS = [coroaECofre, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
+const ROTULO_SERIE = { '1a': '1ª série', '2a': '2ª série' }
+
+// Home nova, seguindo docs/plano-navegacao-por-periodo.md — "papel para
+// escolher": faixa compacta no lugar do masthead de 96px, "onde você
+// parou" (lê o progresso que TimelineShell já grava sozinho) e "o tema
+// de agora" no lugar da grade de 3 simulações + roadmap técnico. Client
+// component porque depende de localStorage (série escolhida, progresso);
+// tudo começa "vazio" (igual no servidor) e só aparece depois de montar,
+// pra não dar erro de hidratação.
 export default function Home() {
+  const [serie, setSerie] = useState('1a')
+  const [montado, setMontado] = useState(false)
+
+  useEffect(() => {
+    setSerie(lerSeriePreferida())
+    setMontado(true)
+  }, [])
+
+  function trocarSerie() {
+    const proxima = serie === '1a' ? '2a' : '1a'
+    setSerie(proxima)
+    salvarSeriePreferida(proxima)
+  }
+
+  const erasDaSerie = eras.filter((e) => e.serie === serie)
+  const linhasDaSerie = linhasDoTempo.filter((l) => l.serie === serie)
+  const emAndamento = montado ? encontrarEmAndamento(linhasDaSerie) : null
+
+  const temaDeAgora = emAndamento
+    ? eras.find((e) => e.slug === emAndamento.era)
+    : erasDaSerie[0]
+  const linhaDoTema = temaDeAgora ? linhasDaSerie.find((l) => l.era === temaDeAgora.slug) : null
+  const cenarioDoTema = temaDeAgora ? CENARIOS.find((c) => c.era === temaDeAgora.slug) : null
+
   return (
-    <div className={styles.wrap}>
-
-      <div className={styles.dateline}>
-        <span>Aulas de História · Ensino Médio</span>
-        <span>Simulação social de turma</span>
-        <span>Edição do professor</span>
-      </div>
-
-      <header className={styles.masthead}>
-        <h1>Histórificando</h1>
-        <div className={styles.sub}>Simulações, fontes e debate para a aula de História</div>
+    <div className={styles.page}>
+      <header className={styles.cabecalho}>
+        <div className={styles.marca}>Histórificando</div>
+        <button type="button" className={styles.serieBotao} onClick={trocarSerie}>
+          {ROTULO_SERIE[serie]} ⌄
+        </button>
       </header>
 
-      <nav className={styles.tabs}>
-        <a href="/simulacoes">Simulações</a>
-        <a href="/materiais">Conteúdos</a>
-        <a href="#professor">Professor</a>
-      </nav>
+      <div className={styles.corpo}>
+        {emAndamento && (
+          <section className={styles.bloco}>
+            <div className={comum.kicker}>Onde você parou</div>
+            <Link href={`/linha-do-tempo/${emAndamento.slug}`} className={styles.retomarLinha}>
+              <div className={`${comum.plate} ${styles.retomarCapa}`}>
+                <img src={emAndamento.capa} alt="" />
+              </div>
+              <div className={styles.retomarCorpo}>
+                <div className={styles.retomarTitulo}>{emAndamento.titulo}</div>
+                <div className={comum.progresso}>
+                  <div className={comum.progressoTraco} style={{ width: `${emAndamento.percentual}%` }} />
+                </div>
+                <div className={styles.retomarMeta}>
+                  tela {emAndamento.indice + 1} de {emAndamento.telas}
+                </div>
+              </div>
+            </Link>
+            <Link href={`/linha-do-tempo/${emAndamento.slug}`} className={`${comum.btn} ${styles.retomarBotao}`}>
+              Continuar de onde parei
+            </Link>
+          </section>
+        )}
 
-      <section className={`${styles.row} ${styles.hero}`}>
-        <div className={styles.col}>
-          <div className={styles.kicker}>A aula de hoje</div>
-          <h2 className={styles.lede}>&ldquo;Quem foi que decidiu que o pão ia custar o dobro?&rdquo;</h2>
-          <p className={styles.bodyText}>
-            Cada aluno é sorteado para uma posição social dentro de uma crise histórica real —
-            operário, comerciante, jornalista, tenente — e decide rodada após rodada com o que
-            aquela posição sabe e pode. Ninguém vê o tabuleiro inteiro.
-          </p>
-          <p className={`${styles.bodyText} ${styles.muted}`}>
-            No fim, a turma descobre o resultado: greve, acordo, repressão ou silêncio. O desfecho
-            é da turma inteira, não de um aluno. A discussão começa aí.
-          </p>
-          <div className={styles.acoes}>
-            <a className={styles.btn} href="/simulacoes">Jogar uma simulação <span className={styles.arrow}>→</span></a>
-            <a className={styles.linkStrong} href="#professor">Entrar com código de turma</a>
-          </div>
-        </div>
-        <div className={styles.col}>
-          <div className={`${styles.plate} ${styles.heroPlate}`}>
-            <img src="/imagens/sao-paulo-1917/capa.jpg" alt="" className={styles.plateImg} />
-          </div>
-          <div className={styles.caption}>São Paulo, 1917. Ilustração de época recriada para a simulação.</div>
-        </div>
-      </section>
+        {temaDeAgora && (
+          <section className={styles.bloco}>
+            <div className={comum.kicker}>O tema de agora</div>
+            <Link href={`/estudar/${temaDeAgora.slug}`} className={styles.temaFaixa}>
+              <img src={temaDeAgora.capa} alt="" />
+              <div className={styles.temaGradiente} />
+              <div className={styles.temaTexto}>
+                <div className={styles.temaPeriodo}>{temaDeAgora.periodo}</div>
+                <div className={styles.temaNome}>{temaDeAgora.nome}</div>
+              </div>
+            </Link>
+            <div className={styles.temaAcoes}>
+              {linhaDoTema && (
+                <Link href={`/linha-do-tempo/${linhaDoTema.slug}`} className={styles.temaAcaoLinha}>
+                  <span className={styles.temaAcaoVerbo}>Ler</span>
+                  <span className={styles.temaAcaoTexto}>Linha do tempo, {linhaDoTema.telas} telas</span>
+                  <span className={styles.temaAcaoMeta}>{linhaDoTema.duracaoMin} min</span>
+                </Link>
+              )}
+              {cenarioDoTema && (
+                <Link href={`/simulacoes/${cenarioDoTema.slug}`} className={styles.temaAcaoLinha}>
+                  <span className={styles.temaAcaoVerbo}>Jogar</span>
+                  <span className={styles.temaAcaoTexto}>{cenarioDoTema.titulo}</span>
+                  <span className={styles.temaAcaoMeta}>turma</span>
+                </Link>
+              )}
+            </div>
+            <Link href={`/estudar/${temaDeAgora.slug}`} className={styles.verPeriodo}>
+              Ver o período inteiro →
+            </Link>
+          </section>
+        )}
 
-      <div className={styles.sectionHead} id="simulacoes">
-        <h2>Três simulações jogáveis</h2>
-        <div className={styles.meta}>
-          15–20 min · turma inteira · <a href="/simulacoes" className={styles.metaLink}>ver todas →</a>
-        </div>
+        {!temaDeAgora && (
+          <section className={styles.bloco}>
+            <p className={styles.semConteudo}>
+              Ainda não há período cadastrado para a {ROTULO_SERIE[serie]}.
+            </p>
+          </section>
+        )}
       </div>
 
-      <section className={`${styles.row} ${styles.three}`}>
-        <a className={`${styles.col} ${styles.card}`} href="/simulacoes/sao-paulo-1917">
-          <div className={`${styles.plate} ${styles.cardPlate}`}><img src="/imagens/sao-paulo-1917/capa.jpg" alt="" className={styles.plateImg} /></div>
-          <div className={`${styles.kicker} ${styles.tnum}`}>01 · 1917</div>
-          <h3>São Paulo, 1917</h3>
-          <p>A greve geral vista de dentro da fábrica, da redação e do palácio. Salário, pão e polícia na mesma semana.</p>
-          <span className={styles.linkArrow}>Ver detalhes →</span>
-        </a>
-        <a className={`${styles.col} ${styles.card}`} href="/simulacoes/a-terra-do-favor">
-          <div className={`${styles.plate} ${styles.cardPlate}`}><img src="/imagens/a-terra-do-favor/capa.jpg" alt="" className={styles.plateImg} /></div>
-          <div className={`${styles.kicker} ${styles.tnum}`}>02 · República Velha</div>
-          <h3>Coronelismo e voto de cabresto</h3>
-          <p>Uma eleição no interior: quem deve favor a quem, e o que custa votar contra o coronel.</p>
-          <span className={styles.linkArrow}>Ver detalhes →</span>
-        </a>
-        <a className={`${styles.col} ${styles.card}`} href="/simulacoes/o-plano-que-nao-existia">
-          <div className={`${styles.plate} ${styles.cardPlate}`}><img src="/imagens/o-plano-que-nao-existia/capa.jpg" alt="" className={styles.plateImg} /></div>
-          <div className={`${styles.kicker} ${styles.tnum}`}>03 · 1937</div>
-          <h3>Plano Cohen</h3>
-          <p>Um documento falso circula. A turma decide o que publicar, o que acreditar e o que fazer com o medo.</p>
-          <span className={styles.linkArrow}>Ver detalhes →</span>
-        </a>
-      </section>
-
-      <section className={`${styles.row} ${styles.three} ${styles.ruleHeavy}`} id="professor">
-        <div className={styles.col} id="conteudos">
-          <div className={styles.kicker}>Antes de jogar</div>
-          <h3 className={styles.small}>Conteúdos</h3>
-          <p className={styles.justify}>Vídeos curtos e leituras selecionadas para cada simulação, mais os materiais alternativos indicados pelo professor.</p>
-          <a className={styles.linkArrow} href="/materiais">Ver vídeos e leituras →</a>
-        </div>
-        <div className={styles.col}>
-          <h3 className={styles.small}>Para o professor</h3>
-          <p className={styles.justify}>Abra uma sala, gere o código de turma e acompanhe as rodadas pelo painel. Os alunos entram pelo código, sem cadastro.</p>
-          <div className={styles.acoes}>
-            <a className={`${styles.btn} ${styles.btnSecondary}`} href="/professor">Painel do professor</a>
-          </div>
-        </div>
-        <div className={styles.col}>
-          <h3 className={styles.small}>Entrar na sala</h3>
-          <p className={styles.justify}>Alunos: digite o código que o professor projetou na lousa.</p>
-          <EntrarComCodigo />
-        </div>
-      </section>
-
-      <div className={styles.status}>
-        <span className={styles.label}>Estado do módulo</span>
-        <span>Motor de sorteio e agregação — testado</span>
-        <span>Banco de dados (Supabase) — schema aplicado, ainda não ligado ao jogo</span>
-        <span>Painel do professor e código de turma — em desenvolvimento</span>
-      </div>
-
-      <div className={styles.colophon}>Histórificando · Currículo em Ação · Simulação social de turma</div>
-
+      <BarraInferior />
     </div>
   )
 }

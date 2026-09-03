@@ -1,0 +1,123 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.cabecalho {
+  flex: none;
+  padding: 40px 20px 16px;
+  border-bottom: 1px solid var(--tinta);
+}
+
+@media (min-width: 900px) {
+  .cabecalho {
+    padding-top: 96px;
+  }
+}
+
+.cabecalho h1 {
+  font-size: 2rem;
+  margin-top: 4px;
+}
+
+.corpo {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 20px calc(var(--altura-barra-inferior, 58px) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pergunta {
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+.nota {
+  font-size: 12.5px;
+  color: var(--tinta-mais-fraca);
+}
+
+/* ---- código de 6 casas ---- */
+
+.codigoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.codigoCaixas {
+  display: flex;
+  gap: 8px;
+}
+
+.codigoCaixa {
+  flex: 1;
+  height: 62px;
+  min-width: 0;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--tinta);
+  background: var(--papel-alt);
+  border: 1px solid var(--regua-fraca);
+  border-radius: 4px;
+}
+
+.codigoCaixa:focus {
+  outline: none;
+  border-color: var(--destaque);
+  background: var(--destaque-100);
+}
+
+.codigoBotao {
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.linha {
+  height: 1px;
+  background: var(--regua-fraca);
+}
+
+.professorLinha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: var(--tinta);
+}
+
+.professorTitulo {
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.professorMeta {
+  font-size: 12px;
+  color: var(--tinta-mais-fraca);
+  margin-top: 2px;
+}
+
+.emObras {
+  flex: none;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-mais-fraca);
+  border: 1px solid var(--tinta-mais-fraca);
+  border-radius: 2px;
+  padding: 3px 8px;
+}
