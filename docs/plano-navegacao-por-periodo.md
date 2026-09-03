@@ -57,3 +57,12 @@ duplicaria dado) — tudo deriva de `.era` nas próprias fontes:
 
 Cada fase é testada e commitada antes da próxima. `/simulacoes`, `/materiais` e
 `/linha-do-tempo` (hub) continuam no ar, inalterados, durante e depois — não são removidos.
+
+## Estado em 2026-09-03
+
+Fases 1 (parcial — `ui/` criado, as 11 páginas com cópias locais não foram migradas: risco
+maior que ganho imediato), 2, 3, 4 e 5 concluídas e no ar. `cenarios/eras.js` tem 4 eras
+(`colonizacao`, `absolutismo`, `republica`, `era-vargas`) — a primeira ainda sem simulação.
+Home lê progresso real do `TimelineShell`, `/estudar/[era]` reúne linha do tempo + simulações
++ materiais sem duplicar (testado nas 4 eras), `/turma` tem o código em 6 casas com autoavanço
+de foco, testado ponta a ponta.
