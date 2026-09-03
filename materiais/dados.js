@@ -6,12 +6,15 @@
 // tipo: 'video' | 'texto' | 'documentario' | 'linha-do-tempo' — usado só pra
 // escolher o ícone e, no caso de linha-do-tempo, pra linkar dentro do
 // próprio site em vez de abrir um vídeo externo.
+// serie: '1a' | '2a' — usado pra agrupar a lista em /materiais (ver
+// docs/plano-curriculo-1a-2a-serie.md, seção 2).
 // cenariosRelacionados: slugs de cenarios/*.js que esse material ajuda a entender
 export default [
   {
     slug: 'republica-velha-1889-1930',
     titulo: 'A República que o povo assistiu',
     tipo: 'linha-do-tempo',
+    serie: '2a',
     url: '/linha-do-tempo/republica-velha',
     descricao:
       'Os quarenta anos da Primeira República em dezessete telas, em modo história — role como ' +
@@ -24,6 +27,7 @@ export default [
     slug: 'era-vargas-tempo-de-revolucao',
     titulo: 'Era Vargas — Tempo de Revolução',
     tipo: 'video',
+    serie: '2a',
     url: 'https://www.youtube.com/watch?v=b86dJnjDoDw',
     descricao:
       'Indicado pelo professor. Cobre o fim da Primeira República e a Revolução de 1930 — ' +

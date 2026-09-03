@@ -21,6 +21,47 @@ const ROTULO_ACAO = {
   'linha-do-tempo': 'Começar →',
 }
 
+// Agrupados por série em vez de uma lista única — ver
+// docs/plano-curriculo-1a-2a-serie.md, seção 2. Cada seção só aparece
+// quando tem pelo menos 1 material; hoje só a 2ª série está povoada.
+const SERIES = [
+  { slug: '1a', rotulo: '1ª série' },
+  { slug: '2a', rotulo: '2ª série' },
+]
+
+function ItemMaterial({ item }) {
+  return (
+    <article className={styles.item}>
+      <span className={styles.tipo}>{ROTULO_TIPO[item.tipo] ?? item.tipo}</span>
+      <h2>{item.titulo}</h2>
+      <p>{item.descricao}</p>
+      {item.cenariosRelacionados?.length > 0 && (
+        <div className={styles.tags}>
+          {item.cenariosRelacionados.map((slug) => {
+            const cenario = CENARIOS.find((c) => c.slug === slug)
+            return cenario ? (
+              <span key={slug} className={styles.tag}>
+                {cenario.titulo}
+              </span>
+            ) : null
+          })}
+        </div>
+      )}
+      {item.tipo === 'video' ? (
+        <VideoEmbutido url={item.url} titulo={item.titulo} />
+      ) : item.tipo === 'linha-do-tempo' ? (
+        <a href={item.url} className={styles.link}>
+          {ROTULO_ACAO[item.tipo]}
+        </a>
+      ) : (
+        <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
+          {ROTULO_ACAO[item.tipo] ?? 'Assistir →'}
+        </a>
+      )}
+    </article>
+  )
+}
+
 export default function Materiais() {
   return (
     <main className={styles.page}>
@@ -40,38 +81,21 @@ export default function Materiais() {
         quem estuda história entende o presente investigando o passado de verdade.
       </p>
 
-      <div className={styles.lista}>
-        {materiais.map((item) => (
-          <article key={item.slug} className={styles.item}>
-            <span className={styles.tipo}>{ROTULO_TIPO[item.tipo] ?? item.tipo}</span>
-            <h2>{item.titulo}</h2>
-            <p>{item.descricao}</p>
-            {item.cenariosRelacionados?.length > 0 && (
-              <div className={styles.tags}>
-                {item.cenariosRelacionados.map((slug) => {
-                  const cenario = CENARIOS.find((c) => c.slug === slug)
-                  return cenario ? (
-                    <span key={slug} className={styles.tag}>
-                      {cenario.titulo}
-                    </span>
-                  ) : null
-                })}
-              </div>
-            )}
-            {item.tipo === 'video' ? (
-              <VideoEmbutido url={item.url} titulo={item.titulo} />
-            ) : item.tipo === 'linha-do-tempo' ? (
-              <a href={item.url} className={styles.link}>
-                {ROTULO_ACAO[item.tipo]}
-              </a>
-            ) : (
-              <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                {ROTULO_ACAO[item.tipo] ?? 'Assistir →'}
-              </a>
-            )}
-          </article>
-        ))}
-      </div>
+      {SERIES.map((serie) => {
+        const itensDaSerie = materiais.filter((item) => item.serie === serie.slug)
+        if (itensDaSerie.length === 0) return null
+
+        return (
+          <section key={serie.slug} className={styles.grupo}>
+            <h2 className={styles.grupoTitulo}>{serie.rotulo}</h2>
+            <div className={styles.lista}>
+              {itensDaSerie.map((item) => (
+                <ItemMaterial key={item.slug} item={item} />
+              ))}
+            </div>
+          </section>
+        )
+      })}
 
       <a className={styles.voltar} href="/">← Voltar</a>
     </main>

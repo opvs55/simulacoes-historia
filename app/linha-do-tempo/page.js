@@ -9,10 +9,19 @@ const LINHAS_DO_TEMPO = [
     slug: 'republica-velha',
     titulo: 'A República que o povo assistiu',
     periodo: '1889 — 1930',
+    serie: '2a',
     resumo: 'Da proclamação sem povo até Getúlio Vargas, em dezessete telas: coronelismo, a greve de 1917, a Semana de 22, a Coluna Prestes e a crise que derruba a Primeira República.',
     capa: '/imagens/linha-do-tempo/republica-velha/capa.jpg',
     telas: 17,
   },
+]
+
+// Agrupadas por série em vez de uma lista única — ver
+// docs/plano-curriculo-1a-2a-serie.md, seção 2. Cada seção só aparece
+// quando tem pelo menos 1 linha do tempo; hoje só a 2ª série está povoada.
+const SERIES = [
+  { slug: '1a', rotulo: '1ª série' },
+  { slug: '2a', rotulo: '2ª série' },
 ]
 
 export const metadata = {
@@ -33,22 +42,32 @@ export default function LinhaDoTempoHub() {
         </p>
       </header>
 
-      <div className={styles.lista}>
-        {LINHAS_DO_TEMPO.map((linha) => (
-          <Link key={linha.slug} href={`/linha-do-tempo/${linha.slug}`} className={styles.item}>
-            <div className={styles.itemPlate}>
-              <img src={linha.capa} alt="" />
+      {SERIES.map((serie) => {
+        const linhasDaSerie = LINHAS_DO_TEMPO.filter((l) => l.serie === serie.slug)
+        if (linhasDaSerie.length === 0) return null
+
+        return (
+          <section key={serie.slug} className={styles.grupo}>
+            <h2 className={styles.grupoTitulo}>{serie.rotulo}</h2>
+            <div className={styles.lista}>
+              {linhasDaSerie.map((linha) => (
+                <Link key={linha.slug} href={`/linha-do-tempo/${linha.slug}`} className={styles.item}>
+                  <div className={styles.itemPlate}>
+                    <img src={linha.capa} alt="" />
+                  </div>
+                  <div className={styles.itemCorpo}>
+                    <div className={styles.kicker}>{linha.periodo}</div>
+                    <h2>{linha.titulo}</h2>
+                    <p className={styles.resumo}>{linha.resumo}</p>
+                    <span className={styles.selo}>{linha.telas} telas · 4 checagens rápidas</span>
+                    <span className={styles.linkArrow}>Começar →</span>
+                  </div>
+                </Link>
+              ))}
             </div>
-            <div className={styles.itemCorpo}>
-              <div className={styles.kicker}>{linha.periodo}</div>
-              <h2>{linha.titulo}</h2>
-              <p className={styles.resumo}>{linha.resumo}</p>
-              <span className={styles.selo}>{linha.telas} telas · 4 checagens rápidas</span>
-              <span className={styles.linkArrow}>Começar →</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+          </section>
+        )
+      })}
     </div>
   )
 }

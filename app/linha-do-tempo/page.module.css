@@ -42,11 +42,29 @@
   margin-top: 4px;
 }
 
+.grupo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.grupo:first-of-type {
+  margin-top: 8px;
+}
+
+.grupoTitulo {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--destaque-700);
+  padding-bottom: 8px;
+}
+
 .lista {
   display: flex;
   flex-direction: column;
   border-top: 2px solid var(--tinta);
-  margin-top: 8px;
 }
 
 .item {
