@@ -19,8 +19,6 @@ export default function Home() {
       <nav className={styles.tabs}>
         <a href="/simulacoes">Simulações</a>
         <a href="/materiais">Conteúdos</a>
-        <a href="/fonte-ou-boato">Fonte ou boato?</a>
-        <a href="/juri">Júri histórico</a>
         <a href="#professor">Professor</a>
       </nav>
 
@@ -81,34 +79,18 @@ export default function Home() {
         </a>
       </section>
 
-      <section className={`${styles.row} ${styles.three} ${styles.ruleHeavy}`}>
+      <section className={`${styles.row} ${styles.three} ${styles.ruleHeavy}`} id="professor">
         <div className={styles.col} id="conteudos">
           <div className={styles.kicker}>Antes de jogar</div>
           <h3 className={styles.small}>Conteúdos</h3>
           <p className={styles.justify}>Vídeos curtos e leituras selecionadas para cada simulação, mais os materiais alternativos indicados pelo professor.</p>
           <a className={styles.linkArrow} href="/materiais">Ver vídeos e leituras →</a>
         </div>
-        <div className={styles.col} id="cartas">
-          <div className={styles.kicker}>Jogo de cartas</div>
-          <h3 className={styles.small}>Fonte ou boato?</h3>
-          <p className={styles.justify}>Uma carta por vez: manchete, panfleto, telegrama, ofício. A turma julga o que é fonte confiável e o que é boato.</p>
-          <a className={styles.linkArrow} href="/fonte-ou-boato">Abrir o baralho →</a>
-        </div>
-        <div className={styles.col} id="juri-card">
-          <div className={styles.kicker}>Atividade em grupo</div>
-          <h3 className={styles.small}>Júri histórico</h3>
-          <p className={styles.justify}>Cada time recebe um conjunto de evidências e só pode argumentar com o que tem em mãos. O resto é defesa.</p>
-          <a className={styles.linkArrow} href="/juri">Montar o júri →</a>
-        </div>
-      </section>
-
-      <section className={`${styles.row} ${styles.two}`} id="professor">
         <div className={styles.col}>
           <h3 className={styles.small}>Para o professor</h3>
           <p className={styles.justify}>Abra uma sala, gere o código de turma e acompanhe as rodadas pelo painel. Os alunos entram pelo código, sem cadastro.</p>
           <div className={styles.acoes}>
             <a className={`${styles.btn} ${styles.btnSecondary}`} href="/professor">Painel do professor</a>
-            <a className={`${styles.btn} ${styles.btnGhost}`} href="/materiais">Materiais alternativos</a>
           </div>
         </div>
         <div className={styles.col}>
