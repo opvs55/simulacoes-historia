@@ -6,9 +6,17 @@
 // tipo: 'video' | 'texto' | 'documentario' | 'linha-do-tempo' — usado só pra
 // escolher o ícone e, no caso de linha-do-tempo, pra linkar dentro do
 // próprio site em vez de abrir um vídeo externo.
-// serie: '1a' | '2a' — usado pra agrupar a lista em /materiais (ver
-// docs/plano-curriculo-1a-2a-serie.md, seção 2).
-// cenariosRelacionados: slugs de cenarios/*.js que esse material ajuda a entender
+// serie: '1a' | '2a' — usado pra filtrar a lista em /materiais.
+// cenariosRelacionados: slugs de cenarios/*.js que esse material ajuda a
+// entender. /materiais agrupa cada item pelo PRIMEIRO slug da lista (um
+// item nunca aparece duplicado em duas seções); lista vazia joga o item
+// no grupo "Sem simulação ligada".
+// duracaoMin: quantos minutos leva, aproximado — a linha esconde o campo
+// quando ausente. Vídeos usam a duração real do YouTube; linhas do tempo
+// são uma estimativa (a leitura mostra "no seu ritmo" ao lado, então não
+// precisa ser exata).
+// momento: 'antes' | 'depois' de jogar a simulação relacionada — opcional,
+// só quando a ordem faz diferença de verdade pro que o material ensina.
 export default [
   {
     slug: 'da-revolta-ao-desenvolvimento',
@@ -21,6 +29,8 @@ export default [
       'operário, Dutra na Guerra Fria, o retorno e a queda de Vargas, e JK prometendo 50 anos ' +
       'em 5. O que fica entre "São Paulo, 1917" e a era de Brasília.',
     cenariosRelacionados: ['sao-paulo-1917', 'o-plano-que-nao-existia'],
+    duracaoMin: 10,
+    momento: 'antes',
   },
   {
     slug: 'povos-originarios-e-colonizacao',
@@ -33,6 +43,7 @@ export default [
       '— sem decisão jogável, com atenção a quem escreveu cada fonte e à resistência indígena ' +
       'documentada desde o início. Doze telas.',
     cenariosRelacionados: [],
+    duracaoMin: 11,
   },
   {
     slug: 'absolutismo-e-mercantilismo',
@@ -44,7 +55,9 @@ export default [
       'Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis ' +
       'absolutos, em onze telas — Contrarreforma, formação das monarquias, os três teóricos ' +
       'do absolutismo, navegações e mercantilismo. O mesmo pano de fundo de "A Coroa e o Cofre".',
-    cenariosRelacionados: [],
+    cenariosRelacionados: ['coroa-e-cofre'],
+    duracaoMin: 10,
+    momento: 'antes',
   },
   {
     slug: 'republica-velha-1889-1930',
@@ -58,6 +71,8 @@ export default [
       'cenários: o coronelismo de "A terra do favor", a greve de "São Paulo, 1917" e a ascensão ' +
       'de Vargas de "O plano que não existia".',
     cenariosRelacionados: ['sao-paulo-1917', 'a-terra-do-favor', 'o-plano-que-nao-existia'],
+    duracaoMin: 15,
+    momento: 'antes',
   },
   {
     slug: 'era-vargas-tempo-de-revolucao',
@@ -71,6 +86,8 @@ export default [
       'derruba) e o ponto de partida de "O plano que não existia" (a ascensão de Vargas que ' +
       'termina no Estado Novo, sete anos depois).',
     cenariosRelacionados: ['a-terra-do-favor', 'o-plano-que-nao-existia'],
+    duracaoMin: 48,
+    momento: 'antes',
   },
   {
     slug: 'getulio-vargas-ditadura-ou-lideranca',
@@ -83,6 +100,8 @@ export default [
       'complementa "O plano que não existia" (Estado Novo) e o período depois dele, quando ' +
       'Vargas volta ao poder eleito em 1950.',
     cenariosRelacionados: ['o-plano-que-nao-existia'],
+    duracaoMin: 112,
+    momento: 'depois',
   },
   {
     slug: '1932-revolucao-paulista',
@@ -96,6 +115,7 @@ export default [
       'existia". Ainda não é uma simulação própria no site (ver plano de currículo), mas já ' +
       'é pano de fundo direto.',
     cenariosRelacionados: ['o-plano-que-nao-existia'],
+    duracaoMin: 25,
   },
   {
     slug: 'nerdologia-proclamacao-da-republica',
@@ -107,6 +127,8 @@ export default [
       'Indicado pelo professor. O 15 de novembro de 1889 explicado rápido — o mesmo &ldquo;povo ' +
       'bestializado&rdquo; que abre a Linha do tempo da República Velha.',
     cenariosRelacionados: ['a-terra-do-favor'],
+    duracaoMin: 9,
+    momento: 'antes',
   },
   {
     slug: 'nerdologia-tenentismo',
@@ -119,6 +141,8 @@ export default [
       'República, não fazer revolução social. Pano de fundo direto da Revolta de 1932 e do ' +
       'grupo que chega ao poder com Vargas em 1930.',
     cenariosRelacionados: [],
+    duracaoMin: 9,
+    momento: 'antes',
   },
   {
     slug: 'economia-brasileira-ep01-brasil-de-portugal',
@@ -131,6 +155,8 @@ export default [
       'a lógica colonial e mercantilista vista pelo dinheiro, do início da colonização até a ' +
       'vinda da Corte portuguesa.',
     cenariosRelacionados: [],
+    duracaoMin: 27,
+    momento: 'antes',
   },
   {
     slug: 'economia-brasileira-ep02',
@@ -142,6 +168,7 @@ export default [
       'Indicado pelo professor. Segundo episódio — da vinda da Corte à véspera da República. ' +
       'Período de ponte entre a colonização (1ª série) e a Primeira República (2ª série).',
     cenariosRelacionados: [],
+    duracaoMin: 27,
   },
   {
     slug: 'economia-brasileira-ep03-brasil-dos-brasileiros',
@@ -153,5 +180,7 @@ export default [
       'Indicado pelo professor. Terceiro episódio — a economia da Primeira República até a ' +
       'véspera da crise de 1929. Pano de fundo direto de "São Paulo, 1917" e "A terra do favor".',
     cenariosRelacionados: ['sao-paulo-1917', 'a-terra-do-favor'],
+    duracaoMin: 27,
+    momento: 'antes',
   },
 ]

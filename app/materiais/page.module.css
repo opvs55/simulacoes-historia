@@ -30,55 +30,130 @@
   font-size: 15px;
 }
 
-.nota {
-  font-style: italic;
-  font-size: 14.5px;
+/* ---- filtro de série (controle segmentado) ---- */
+
+.seg {
+  display: inline-flex;
+  align-self: flex-start;
+  gap: 0;
+  margin: 4px 0 8px;
+}
+
+.segOpt {
+  padding: 8px 18px;
+  font: inherit;
+  font-size: 13.5px;
   color: var(--tinta-fraca);
-  border-left: 3px solid var(--destaque);
-  padding: 4px 0 4px 16px;
+  background: transparent;
+  border: 1px solid var(--regua-fraca);
+  cursor: pointer;
 }
 
-.grupo {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
+.segOpt:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
 }
 
-.grupo:first-of-type {
-  margin-top: 8px;
+.segOpt:last-child {
+  border-radius: 0 4px 4px 0;
 }
 
-.grupoTitulo {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.segOptAtivo {
+  border-color: var(--destaque);
+  background: var(--destaque-100);
   color: var(--destaque-700);
-  padding-bottom: 8px;
+  font-weight: 700;
 }
 
-.lista {
+/* ---- seção por simulação ---- */
+
+.grupoCenario {
   display: flex;
   flex-direction: column;
+  margin-top: 18px;
   border-top: 2px solid var(--tinta);
 }
 
-.subgrupo {
+.grupoCabecalho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0 12px;
+  color: var(--tinta);
+}
+
+.grupoCapa {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 3px;
+  filter: sepia(0.22) saturate(0.82) contrast(1.05);
+}
+
+.grupoIdentidade {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
 }
 
-.subgrupoTitulo {
+.grupoRotulo {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--tinta-mais-fraca);
-  padding: 14px 0 4px;
 }
 
-/* lista compacta de vídeos: uma linha, expande no clique */
+.grupoTitulo {
+  font-family: var(--fonte-titulo);
+  font-size: 18.5px;
+  line-height: 1.2;
+}
+
+.grupoCabecalho:hover .grupoTitulo {
+  color: var(--destaque-700);
+}
+
+.grupoJogar {
+  flex: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--destaque-700);
+}
+
+/* ---- "sem simulação ligada" (recolhido) ---- */
+
+.semCenario {
+  margin-top: 18px;
+  border-top: 2px solid var(--tinta);
+  padding-top: 4px;
+}
+
+.semCenario summary {
+  padding: 12px 0;
+  font-size: 13.5px;
+  color: var(--tinta-fraca);
+  cursor: pointer;
+  list-style: none;
+}
+
+.semCenario summary::-webkit-details-marker {
+  display: none;
+}
+
+.semCenario summary::before {
+  content: '▸ ';
+  color: var(--tinta-mais-fraca);
+}
+
+.semCenario[open] summary::before {
+  content: '▾ ';
+}
+
+/* ---- lista compacta: uma linha por item, qualquer tipo ---- */
+
 .videoLista {
   display: flex;
   flex-direction: column;
@@ -89,8 +164,13 @@
   border-bottom: 1px solid var(--regua-fraca);
 }
 
+.videoLinhaVisto {
+  opacity: 0.62;
+}
+
 .videoLinhaCabecalho {
   width: 100%;
+  min-height: 44px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -101,25 +181,65 @@
   text-align: left;
   cursor: pointer;
   color: var(--tinta);
+  text-decoration: none;
 }
 
 .videoLinhaThumb {
-  flex: 0 0 72px;
-  width: 72px;
-  height: 40px;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 44px;
   border-radius: 3px;
   object-fit: cover;
   background: var(--papel-alt);
   filter: sepia(0.15) saturate(0.85) contrast(1.05);
 }
 
-.videoLinhaTitulo {
+.videoLinhaThumbNeutro {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 44px;
+  border-radius: 3px;
+  background: var(--papel-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--tinta-mais-fraca);
+  padding: 2px;
+}
+
+.videoLinhaCorpoTexto {
   flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.videoLinhaTitulo {
   font-size: 14.5px;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .videoLinhaCabecalho:hover .videoLinhaTitulo {
+  color: var(--destaque-700);
+}
+
+.videoLinhaMeta {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--tinta-mais-fraca);
+}
+
+.videoLinhaTipo {
+  color: var(--destaque-700);
+}
+
+.videoLinhaVistoRotulo {
   color: var(--destaque-700);
 }
 
@@ -132,8 +252,8 @@
 .videoLinhaCorpo {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 0 0 16px 84px;
+  gap: 10px;
+  padding: 0 0 16px 76px;
 }
 
 .videoLinhaDescricao {
@@ -164,112 +284,57 @@
   }
 }
 
-.item {
+/* ---- fecho do vídeo aberto: ação, não beco ---- */
+
+.depoisBloco {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--regua-fraca);
-}
-
-.item h2 {
-  font-size: 1.3rem;
-}
-
-.item p {
-  font-size: 15px;
-  color: var(--tinta-fraca);
-}
-
-.tipo {
-  align-self: flex-start;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--destaque);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.tag {
-  font-size: 12px;
-  color: var(--tinta-fraca);
   border: 1px solid var(--regua-fraca);
   border-radius: 4px;
-  padding: 2px 8px;
+  padding: 13px 14px;
 }
 
-.link {
-  align-self: flex-start;
-  font-size: 14px;
+.depoisRotulo {
+  font-size: 11px;
   font-weight: 700;
-  text-decoration: underline;
-  text-decoration-color: var(--regua-fraca);
-  text-underline-offset: 4px;
-  margin-top: 4px;
-}
-
-.link:hover {
-  text-decoration-color: var(--destaque);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--destaque-700);
 }
 
-.videoPlate {
-  position: relative;
-  display: block;
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 16 / 9;
-  border: 0;
+.depoisTexto {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--tinta-fraca);
+}
+
+.depoisBotao {
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 11px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--papel);
+  background: var(--destaque-700);
   border-radius: 4px;
-  overflow: hidden;
-  background: var(--papel-alt);
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  margin-top: 6px;
 }
 
-.videoPlate img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: sepia(0.15) saturate(0.85) contrast(1.05);
+.depoisBotao:hover {
+  background: var(--tinta);
 }
 
-.videoPlate iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-.videoPlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--papel);
-  border: 1px solid var(--destaque);
-  box-shadow: inset 0 0 0 3px var(--papel), inset 0 0 0 4px var(--destaque-300);
+.proximoLinha {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: 20px;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--destaque-700);
-  transition: background 0.15s ease;
-}
-
-.videoPlate:hover .videoPlay {
-  background: var(--destaque-100);
+  border-top: 1px solid var(--regua-fraca);
+  padding-top: 10px;
+  margin-top: 2px;
 }
 
 .linkDiscreto {
@@ -280,7 +345,6 @@
   text-decoration: underline;
   text-decoration-color: var(--regua-fraca);
   text-underline-offset: 3px;
-  margin-top: 6px;
 }
 
 .linkDiscreto:hover {
@@ -295,7 +359,7 @@
   text-decoration: underline;
   text-decoration-color: var(--regua-fraca);
   text-underline-offset: 4px;
-  margin-top: 12px;
+  margin-top: 20px;
 }
 
 .voltar:hover {
