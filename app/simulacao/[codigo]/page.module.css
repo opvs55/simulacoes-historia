@@ -8,13 +8,30 @@
   min-height: 100dvh;
 }
 
+/* o body já pinta --papel-alt atrás (ver regra html/body abaixo) — em
+   telas largas isso sobra visível nas laterais do "cartão" de 640px, com
+   uma borda sutil marcando onde o app acaba. O translateX cria de
+   propósito um novo containing block: assim .investigarOverlay (fixed,
+   inset:0) fica contido nesses mesmos 640px, não na viewport inteira. */
 .telaCheia {
   position: fixed;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 640px;
   display: flex;
   flex-direction: column;
   z-index: 1;
   background: var(--papel);
+  box-shadow: 0 0 0 1px var(--regua-fraca);
+}
+
+@media (min-width: 641px) {
+  body:has(.telaCheia) {
+    background: var(--papel-alt);
+  }
 }
 
 /* ---- telas de entrada (sem casca fixa) ---- */
