@@ -11,6 +11,18 @@
 // cenariosRelacionados: slugs de cenarios/*.js que esse material ajuda a entender
 export default [
   {
+    slug: 'povos-originarios-e-colonizacao',
+    titulo: 'Um continente que já tinha nome',
+    tipo: 'linha-do-tempo',
+    serie: '1a',
+    url: '/linha-do-tempo/povos-originarios-e-colonizacao',
+    descricao:
+      'Maias, astecas e incas antes do contato; o encontro, a conquista e a colonização depois ' +
+      '— sem decisão jogável, com atenção a quem escreveu cada fonte e à resistência indígena ' +
+      'documentada desde o início. Doze telas.',
+    cenariosRelacionados: [],
+  },
+  {
     slug: 'absolutismo-e-mercantilismo',
     titulo: 'O rei, a fé e o mercado',
     tipo: 'linha-do-tempo',

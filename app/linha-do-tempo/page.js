@@ -15,6 +15,15 @@ const LINHAS_DO_TEMPO = [
     telas: 11,
   },
   {
+    slug: 'povos-originarios-e-colonizacao',
+    titulo: 'Um continente que já tinha nome',
+    periodo: 'Antes de 1500 — depois de hoje',
+    serie: '1a',
+    resumo: 'Maias, astecas e incas antes de qualquer navio chegar; o encontro, a conquista e a colonização depois — com atenção a quem escreveu cada fonte e à resistência que os livros às vezes esquecem.',
+    capa: '/imagens/linha-do-tempo/povos-originarios-e-colonizacao/capa.jpg',
+    telas: 12,
+  },
+  {
     slug: 'republica-velha',
     titulo: 'A República que o povo assistiu',
     periodo: '1889 — 1930',

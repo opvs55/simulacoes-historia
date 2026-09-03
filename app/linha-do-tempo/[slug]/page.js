@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation'
 import RepublicaVelha from '../_conteudo/RepublicaVelha.js'
 import AbsolutismoEMercantilismo from '../_conteudo/AbsolutismoEMercantilismo.js'
+import PovosOriginariosEColonizacao from '../_conteudo/PovosOriginariosEColonizacao.js'
 
 // Cada linha do tempo é um componente próprio (o conteúdo é curado demais
 // para valer a pena um schema genérico só para reaproveitar 1 vez) — este
@@ -10,6 +11,7 @@ import AbsolutismoEMercantilismo from '../_conteudo/AbsolutismoEMercantilismo.js
 const LINHAS_DO_TEMPO = {
   'republica-velha': RepublicaVelha,
   'absolutismo-e-mercantilismo': AbsolutismoEMercantilismo,
+  'povos-originarios-e-colonizacao': PovosOriginariosEColonizacao,
 }
 
 export default function PaginaLinhaDoTempo({ params }) {
