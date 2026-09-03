@@ -1,14 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { extrairIdYoutube } from '@/materiais/youtube.js'
 import styles from './page.module.css'
-
-// Aceita as formas mais comuns de URL do YouTube (watch?v=, youtu.be/,
-// já embutida) e extrai só o ID de 11 caracteres.
-function extrairIdYoutube(url) {
-  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]{11})/)
-  return match ? match[1] : null
-}
 
 // Clique-para-tocar: mostra a miniatura (uma imagem estática, sem custo)
 // e só carrega o player do YouTube depois que a pessoa decide assistir —

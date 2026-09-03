@@ -63,6 +63,107 @@
   border-top: 2px solid var(--tinta);
 }
 
+.subgrupo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.subgrupoTitulo {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-mais-fraca);
+  padding: 14px 0 4px;
+}
+
+/* lista compacta de vídeos: uma linha, expande no clique */
+.videoLista {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--regua-fraca);
+}
+
+.videoLinha {
+  border-bottom: 1px solid var(--regua-fraca);
+}
+
+.videoLinhaCabecalho {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  color: var(--tinta);
+}
+
+.videoLinhaThumb {
+  flex: 0 0 72px;
+  width: 72px;
+  height: 40px;
+  border-radius: 3px;
+  object-fit: cover;
+  background: var(--papel-alt);
+  filter: sepia(0.15) saturate(0.85) contrast(1.05);
+}
+
+.videoLinhaTitulo {
+  flex: 1 1 auto;
+  font-size: 14.5px;
+  line-height: 1.35;
+}
+
+.videoLinhaCabecalho:hover .videoLinhaTitulo {
+  color: var(--destaque-700);
+}
+
+.videoLinhaSeta {
+  flex: 0 0 auto;
+  color: var(--tinta-mais-fraca);
+  font-size: 12px;
+}
+
+.videoLinhaCorpo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 0 16px 84px;
+}
+
+.videoLinhaDescricao {
+  font-size: 14px;
+  color: var(--tinta-fraca);
+  margin: 0;
+}
+
+.videoPlateCompacto {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--papel-alt);
+}
+
+.videoPlateCompacto iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .videoLinhaCorpo {
+    padding-left: 0;
+  }
+}
+
 .item {
   display: flex;
   flex-direction: column;

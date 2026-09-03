@@ -49,6 +49,44 @@ const LINHAS_DO_TEMPO = {
       'wooden crates and sacks of goods, warehouses in the background, overcast sky, no ' +
       'readable text on any crate or building.',
   },
+  'povos-originarios-e-colonizacao': {
+    // Cuidado redobrado aqui: nenhuma imagem foca em rosto humano em
+    // close-up (risco de estereótipo impreciso sobre povos originários),
+    // nenhuma cena de combate/violência explícita, nenhuma pessoa nomeada
+    // real. Preferência por arquitetura, paisagem e objetos/padrões.
+    capa:
+      'Wide panoramic distant view of a large pre-colonial indigenous village in Brazil, seen ' +
+      'from a hilltop or across a river at dusk, communal houses (ocas) among dense forest, ' +
+      'no human face visible close-up, respectful and dignified, not exoticized, no readable text.',
+    diversidade:
+      'Close-up still life of indigenous Brazilian material culture: woven baskets, feather ' +
+      'ornaments, painted ceramic vessels with geometric patterns, laid out on a woven mat, no ' +
+      'human figures, no readable text, respectful documentary framing.',
+    civilizacoes:
+      'Wide view of a Mesoamerican stepped stone pyramid temple complex at a Maya or Aztec ' +
+      'ceremonial city, generic and not a specific named real site, plaza in foreground, jungle ' +
+      'or lake in the background, no human figures prominent, no readable text or glyphs.',
+    saberes:
+      'Wide view of Andean agricultural stone terraces built into a steep mountainside, generic ' +
+      'Inca-style stonework and irrigation channels, misty mountains in the background, no human ' +
+      'figures prominent, no readable text.',
+    encontro:
+      'A single 16th century Portuguese sailing ship anchored off a lush green tropical coastline ' +
+      'seen from a distance, small boats near the shore, forest and beach, no close-up human ' +
+      'faces on either side, calm overcast tone, no readable text or flags.',
+    fonte:
+      'Close-up still life of a 16th century handwritten letter on aged paper with a quill pen ' +
+      'and inkwell resting beside it, on a wooden desk, warm candlelight, the handwriting rendered ' +
+      'as generic illegible period cursive marks, not actual readable text.',
+    conquista:
+      'Generic 16th century Spanish colonial settlement under construction in the Americas, ' +
+      'wooden scaffolding and stone walls of a new town, workers in the distance, mountains ' +
+      'behind, no battle or weapons depicted, no readable text.',
+    colonizacaoportuguesa:
+      'Generic 16th century Brazilian sugar mill (engenho) complex seen from a distance, ' +
+      'thatched and tiled buildings near a river, cane fields around it, overcast sky, no human ' +
+      'figures prominent, no readable text.',
+  },
 }
 
 async function gerarImagem(prompt, apiKey, aspectRatio) {

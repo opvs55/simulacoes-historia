@@ -11,6 +11,18 @@
 // cenariosRelacionados: slugs de cenarios/*.js que esse material ajuda a entender
 export default [
   {
+    slug: 'absolutismo-e-mercantilismo',
+    titulo: 'O rei, a fé e o mercado',
+    tipo: 'linha-do-tempo',
+    serie: '1a',
+    url: '/linha-do-tempo/absolutismo-e-mercantilismo',
+    descricao:
+      'Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis ' +
+      'absolutos, em onze telas — Contrarreforma, formação das monarquias, os três teóricos ' +
+      'do absolutismo, navegações e mercantilismo. O mesmo pano de fundo de "A Coroa e o Cofre".',
+    cenariosRelacionados: [],
+  },
+  {
     slug: 'republica-velha-1889-1930',
     titulo: 'A República que o povo assistiu',
     tipo: 'linha-do-tempo',
@@ -83,5 +95,39 @@ export default [
       'República, não fazer revolução social. Pano de fundo direto da Revolta de 1932 e do ' +
       'grupo que chega ao poder com Vargas em 1930.',
     cenariosRelacionados: [],
+  },
+  {
+    slug: 'economia-brasileira-ep01-brasil-de-portugal',
+    titulo: 'Economia Brasileira, Ep. 01: 1492–1808, Brasil de Portugal',
+    tipo: 'video',
+    serie: '1a',
+    url: 'https://www.youtube.com/watch?v=zsC3u2861C4',
+    descricao:
+      'Indicado pelo professor. Primeiro episódio de uma série sobre a economia brasileira — ' +
+      'a lógica colonial e mercantilista vista pelo dinheiro, do início da colonização até a ' +
+      'vinda da Corte portuguesa.',
+    cenariosRelacionados: [],
+  },
+  {
+    slug: 'economia-brasileira-ep02',
+    titulo: 'Economia Brasileira, Ep. 02: 1808–1888',
+    tipo: 'video',
+    serie: '2a',
+    url: 'https://www.youtube.com/watch?v=MQJkeDatZRg',
+    descricao:
+      'Indicado pelo professor. Segundo episódio — da vinda da Corte à véspera da República. ' +
+      'Período de ponte entre a colonização (1ª série) e a Primeira República (2ª série).',
+    cenariosRelacionados: [],
+  },
+  {
+    slug: 'economia-brasileira-ep03-brasil-dos-brasileiros',
+    titulo: 'Economia Brasileira, Ep. 03: 1888–1929, Brasil dos brasileiros',
+    tipo: 'video',
+    serie: '2a',
+    url: 'https://www.youtube.com/watch?v=sf0sFLoYMoY',
+    descricao:
+      'Indicado pelo professor. Terceiro episódio — a economia da Primeira República até a ' +
+      'véspera da crise de 1929. Pano de fundo direto de "São Paulo, 1917" e "A terra do favor".',
+    cenariosRelacionados: ['sao-paulo-1917', 'a-terra-do-favor'],
   },
 ]
