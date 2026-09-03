@@ -6,6 +6,8 @@ atravessa 5 rodadas de decisões dentro de uma crise histórica real — e desco
 resultado não foi dele: foi da turma, e que o peso da sua voz dependia do lugar em que ele caiu.
 
 Especificação de design completa em [`docs/GDD-v2-modulo-simulacoes.md`](docs/GDD-v2-modulo-simulacoes.md).
+Plano de currículo (avaliação dos livros de 1ª/2ª série e cronograma de implementação) em
+[`docs/plano-curriculo-1a-2a-serie.md`](docs/plano-curriculo-1a-2a-serie.md).
 
 ---
 
@@ -266,4 +268,8 @@ barras final — *direitos no papel* × *direitos cumpridos* — e essa distânc
 3. Bater o martelo nas decisões em aberto acima (glossário, React Native, game master de IA).
 4. Curadoria de imagens reais para as caixas `imagemSugerida`.
 5. Painel do professor: abrir partida, acompanhar, ler justificativas, fechar, exportar.
-6. Cenários da 1ª série ("A Coroa e o Cofre") — ainda não escritos.
+6. Currículo da 1ª série e 4º cenário da 2ª ("9 de julho", Revolta Constitucionalista de
+   1932) — avaliação completa, arquitetura de navegação por série e cronograma de fases em
+   [`docs/plano-curriculo-1a-2a-serie.md`](docs/plano-curriculo-1a-2a-serie.md). Prioridade
+   imediata dentro desse plano: "A Coroa e o Cofre" (1ª série, já desenhada na seção 7 do GDD,
+   falta só implementar).
