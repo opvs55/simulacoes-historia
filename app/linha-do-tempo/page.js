@@ -32,6 +32,15 @@ const LINHAS_DO_TEMPO = [
     capa: '/imagens/linha-do-tempo/republica-velha/capa.jpg',
     telas: 17,
   },
+  {
+    slug: 'da-revolta-ao-desenvolvimento',
+    titulo: 'Do quartel ao canteiro de obras',
+    periodo: '1917 — 1961',
+    serie: '2a',
+    resumo: 'Mulheres operárias, a Revolta de 1932, a CLT como estratégia de controle, Dutra na Guerra Fria, o retorno e a queda de Vargas, e Juscelino prometendo 50 anos em 5.',
+    capa: '/imagens/linha-do-tempo/da-revolta-ao-desenvolvimento/capa.jpg',
+    telas: 11,
+  },
 ]
 
 // Agrupadas por série em vez de uma lista única — ver

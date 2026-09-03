@@ -11,6 +11,18 @@
 // cenariosRelacionados: slugs de cenarios/*.js que esse material ajuda a entender
 export default [
   {
+    slug: 'da-revolta-ao-desenvolvimento',
+    titulo: 'Do quartel ao canteiro de obras',
+    tipo: 'linha-do-tempo',
+    serie: '2a',
+    url: '/linha-do-tempo/da-revolta-ao-desenvolvimento',
+    descricao:
+      'Mulheres operárias, a Revolta de 1932, a CLT como estratégia de controle do movimento ' +
+      'operário, Dutra na Guerra Fria, o retorno e a queda de Vargas, e JK prometendo 50 anos ' +
+      'em 5. O que fica entre "São Paulo, 1917" e a era de Brasília.',
+    cenariosRelacionados: ['sao-paulo-1917', 'o-plano-que-nao-existia'],
+  },
+  {
     slug: 'povos-originarios-e-colonizacao',
     titulo: 'Um continente que já tinha nome',
     tipo: 'linha-do-tempo',

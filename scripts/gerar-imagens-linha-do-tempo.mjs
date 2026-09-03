@@ -87,6 +87,39 @@ const LINHAS_DO_TEMPO = {
       'thatched and tiled buildings near a river, cane fields around it, overcast sky, no human ' +
       'figures prominent, no readable text.',
   },
+  'da-revolta-ao-desenvolvimento': {
+    // 1930-1961: Revolta de 1932, mulheres operarias, CLT/trabalhismo,
+    // Dutra/Guerra Fria, 2o governo Vargas, JK. Nenhuma pessoa real
+    // nomeada retratada (nem Vargas, nem Dutra, nem JK).
+    capa:
+      'Wide panoramic view of a 1940s Brazilian industrial skyline at dusk, factory smokestacks ' +
+      'and a radio broadcast tower silhouetted against the sky, generic and not a specific real ' +
+      'city landmark, no readable text, no human figures prominent.',
+    mulheresoperarias:
+      'Generic interior of a 1910s-1920s Brazilian textile factory, several women working at ' +
+      'looms and spinning machines in a row, natural light from tall windows, documentary tone, ' +
+      'no close-up identifiable faces, no readable text.',
+    revolta1932:
+      'Generic 1932 São Paulo street scene with a makeshift barricade of furniture and sandbags, ' +
+      'a few volunteer civilians in improvised armbands nearby, no weapons fired, no visible ' +
+      'flags with readable text, daytime, tense but not violent.',
+    trabalhismo:
+      'Generic 1940s Brazilian radio broadcast studio interior, a large tabletop microphone on ' +
+      'a stand at an empty podium, on-air light glowing, technical equipment around, warm ' +
+      'lighting, no person present, no readable text on any panel or sign.',
+    guerrafria:
+      'Generic 1940s Brazilian polling station interior, empty wooden ballot booths and a ' +
+      'sealed ballot box on a table, national flag draped generically without readable text, ' +
+      'soft daylight, no people, documentary tone.',
+    segundovargas:
+      'Wide distant exterior view of a generic early 20th century Brazilian presidential palace ' +
+      'building at dusk, neoclassical facade, a single lit window among many dark ones, quiet ' +
+      'and somber mood, no people visible, no readable text or signage.',
+    jkbrasilia:
+      'Generic 1958 Brazilian construction site of a modernist government building, concrete ' +
+      'structural frame and cranes against an open sky, red dirt plain around it, a few small ' +
+      'distant construction workers, no readable text, optimistic dawn light.',
+  },
 }
 
 async function gerarImagem(prompt, apiKey, aspectRatio) {
