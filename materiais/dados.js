@@ -53,10 +53,11 @@ export default [
     url: '/linha-do-tempo/absolutismo-e-mercantilismo',
     descricao:
       'Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis ' +
-      'absolutos, em onze telas — Contrarreforma, formação das monarquias, os três teóricos ' +
-      'do absolutismo, navegações e mercantilismo. O mesmo pano de fundo de "A Coroa e o Cofre".',
+      'absolutos, em treze telas — Reforma, Contrarreforma, formação das monarquias, os três ' +
+      'teóricos do absolutismo, navegações e mercantilismo. O mesmo pano de fundo de "A Coroa ' +
+      'e o Cofre".',
     cenariosRelacionados: ['coroa-e-cofre'],
-    duracaoMin: 10,
+    duracaoMin: 12,
     momento: 'antes',
   },
   {

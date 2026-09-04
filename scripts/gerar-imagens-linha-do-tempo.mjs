@@ -28,6 +28,10 @@ const LINHAS_DO_TEMPO = {
       'Generic 16th century European scholar\'s study or artist\'s workshop, shelves of books ' +
       'and scrolls, a globe, drafting and painting tools on a table, warm light through a window, ' +
       'no visible faces close-up, no readable text on any book spine or page.',
+    reforma:
+      'Generic scene of a wooden church door with papers pinned to it, a small crowd of townspeople ' +
+      'reading and discussing at a distance in an early 16th century German town square, no ' +
+      'specific identifiable individual, no readable text on the papers, overcast morning light.',
     contrarreforma:
       'Generic interior of a 16th century Catholic church council chamber, rows of bishops and ' +
       'clergy seated in assembly facing an altar, tall gothic windows, solemn atmosphere, no ' +

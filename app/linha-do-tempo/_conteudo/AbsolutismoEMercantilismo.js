@@ -15,6 +15,14 @@ const GLOSSARIO = {
     'Concílio de Trento',
     'Assembleia de bispos reunida entre 1545 e 1563 que reafirmou dogmas centrais do catolicismo (autoridade do papa, celibato clerical, interpretação da Bíblia pela tradição da Igreja) em resposta à Reforma Protestante.',
   ],
+  indulgencias: [
+    'Indulgências',
+    'Perdão de penas religiosas concedido pela Igreja, na prática muitas vezes vendido — um dos principais alvos da crítica de Lutero em 1517.',
+  ],
+  solafide: [
+    'Sola fide, sola scriptura',
+    '"Só a fé, só a Escritura" — princípios centrais de Lutero: a salvação vem da fé, não de obras compradas, e a Bíblia (não a tradição da Igreja) é a autoridade final.',
+  ],
   jesuitas: [
     'Companhia de Jesus',
     'Ordem religiosa fundada por Inácio de Loyola, instrumento central da Contrarreforma através da educação, da catequização e das missões evangelizadoras — inclusive nas colônias.',
@@ -70,6 +78,7 @@ function Fecho() {
   const { reiniciar } = useTimeline()
   const marcos = [
     ['XV-XVI', 'Humanismo e Renascimento recuperam a cultura antiga sem romper com a Idade Média'],
+    ['1517', 'Lutero afixa as 95 teses e a cristandade ocidental começa a se fragmentar'],
     ['1545', 'Concílio de Trento reorganiza a Igreja Católica contra a Reforma Protestante'],
     ['XIV-XVI', 'Declínio do feudalismo e centralização política formam as monarquias nacionais'],
     ['—', 'Bodin, Bossuet e Hobbes justificam teoricamente o poder absoluto do rei'],
@@ -108,7 +117,7 @@ export default function AbsolutismoEMercantilismo({ onSair }) {
           O rei, a fé<br />e o <i className={s.capaDestaque}>mercado</i>
         </h1>
         <div data-anim className={s.capaRegua} />
-        <Texto>Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis absolutos, Igrejas reorganizadas e mercadores financiando tudo. Onze telas.</Texto>
+        <Texto>Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis absolutos, Igrejas reorganizadas e mercadores financiando tudo. Treze telas.</Texto>
         <div data-anim className={s.capaRodape}>
           <span className={s.capaSeta}>↑</span> deslize para começar
         </div>
@@ -135,12 +144,47 @@ export default function AbsolutismoEMercantilismo({ onSair }) {
         <Texto muted>&ldquo;Modernus&rdquo;, em latim, é só &ldquo;recente&rdquo; — a modernidade não é ruptura total, é transformação com continuidade.</Texto>
       </Tela>
 
+      <Tela id="reforma" label="Reforma" imagem={`${BASE}/reforma.jpg`} imagemPosicao="center 40%" brilho={0.48}>
+        <Kicker>31 de outubro de 1517</Kicker>
+        <Titulo>Um monge prega<br />noventa e cinco teses</Titulo>
+        <Texto>
+          Martinho Lutero, monge e professor alemão, afixa na porta da igreja de Wittenberg uma
+          lista de críticas às <Termo chave="indulgencias">indulgências</Termo> — o perdão de
+          pecados vendido pela Igreja para financiar obras em Roma.
+        </Texto>
+        <div data-anim className={s.painel}>
+          <div className={s.painelLinha}>
+            <span className={s.painelNome}><Termo chave="solafide">Sola fide, sola scriptura</Termo></span>
+            <span className={s.painelTexto}>A salvação vem só da fé, não de obras compradas; a Bíblia, não a tradição da Igreja, é a autoridade final</span>
+          </div>
+          <div className={s.painelLinha}>
+            <span className={s.painelNome}>A prensa de Gutenberg</span>
+            <span className={s.painelTexto}>Impressa e distribuída, a crítica de Lutero se espalha pela Europa em semanas, não em anos</span>
+          </div>
+        </div>
+        <Texto muted>A cristandade ocidental, até então uma só Igreja sob o papa, começa a se fragmentar — luteranos, depois calvinistas, depois anglicanos. Cada rei da Europa vai ter que escolher um lado.</Texto>
+      </Tela>
+
+      <TelaClara id="quiz-reforma" label="Quiz Reforma">
+        <Quiz
+          pergunta="O que Lutero criticava nas 95 teses?"
+          opcoes={[
+            'A existência da Bíblia traduzida para línguas locais',
+            'A venda de indulgências e a ideia de que obras compradas garantem a salvação',
+            'O uso da prensa de Gutenberg para divulgar textos religiosos',
+          ]}
+          certa={1}
+          feedbackCerto="Isso. Para Lutero, a salvação vinha só da fé — vender perdão de pecados contradizia esse princípio central."
+          feedbackErrado="Não. O alvo principal foi a venda de indulgências — Lutero defendia que a fé, não a compra de perdão, é que salva."
+        />
+      </TelaClara>
+
       <Tela id="contrarreforma" label="Contrarreforma" imagem={`${BASE}/contrarreforma.jpg`} imagemPosicao="center 30%" brilho={0.45}>
         <Kicker>A partir de 1545</Kicker>
         <Titulo>A Igreja<br />se reorganiza</Titulo>
         <Texto>
-          Reação da Igreja Católica ao avanço da Reforma Protestante — reafirmar poder espiritual
-          e institucional, com três pilares.
+          Reação da Igreja Católica ao avanço da Reforma Protestante que você acabou de ver —
+          reafirmar poder espiritual e institucional, com três pilares.
         </Texto>
         <div data-anim className={s.painel}>
           <div className={s.painelLinha}>
@@ -180,6 +224,7 @@ export default function AbsolutismoEMercantilismo({ onSair }) {
           os conflitos religiosos e a necessidade de centralização política formam os Estados
           modernos.
         </Texto>
+        <Texto muted>A fragmentação que a Reforma abriu tem um efeito colateral: sem uma única Igreja acima de todos os reis, cada monarca ganha mais espaço para concentrar autoridade — inclusive a de decidir a religião do próprio território.</Texto>
         <div data-anim className={s.lista}>
           <div className={s.listaLinha}><span className={s.listaMarca}>—</span><span className={s.listaTexto}>Unificação de moeda, impostos, exército e leis sob o rei</span></div>
           <div className={s.listaDivisor} />

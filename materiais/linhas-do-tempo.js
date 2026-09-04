@@ -14,10 +14,10 @@ export default [
     periodo: 'Séculos XV — XVII',
     serie: '1a',
     era: 'absolutismo',
-    resumo: 'Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis absolutos: Contrarreforma, formação das monarquias, os teóricos do absolutismo, navegações e mercantilismo.',
+    resumo: 'Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis absolutos: Reforma, Contrarreforma, formação das monarquias, os teóricos do absolutismo, navegações e mercantilismo — uma cadeia de causas, não fatos soltos.',
     capa: '/imagens/linha-do-tempo/absolutismo-e-mercantilismo/capa.jpg',
-    telas: 11,
-    duracaoMin: 10,
+    telas: 13,
+    duracaoMin: 12,
   },
   {
     slug: 'povos-originarios-e-colonizacao',
