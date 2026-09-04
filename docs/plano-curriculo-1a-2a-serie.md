@@ -175,6 +175,16 @@ Mesmo cuidado ético já aplicado à Linha do tempo de povos originários: sem r
 close-up (risco de estereotipagem), sem cenas de combate, fontes reais ou explicitamente
 marcadas como `recriada`.
 
+**Estado em 2026-09-03 (concluído):** os dois cenários estão no ar — `tawantinsuyu.js`
+(ângulo território/integração) e `tenochtitlan.js` (ângulo tributo/comércio, evita de
+propósito o tema de sacrifício ritual). 88/88 testes estruturais passando. A Linha do
+tempo "Absolutismo e Mercantilismo" ganhou 2 telas novas sobre a Reforma Protestante
+(Lutero, 95 teses, 1517), que faltava — o livro trata a Aula 1 direto como "os
+mecanismos da Contrarreforma" sem nunca explicar a Reforma que a motiva. Reforçadas as
+pontes causais entre as telas (Reforma → Contrarreforma → Monarquias → Absolutismo).
+As leituras de apoio trocadas de InfoEscola/Toda Matéria (publicidade agressiva) para
+Wikipédia PT (verificada artigo a artigo: sem nenhum anúncio, mais substancial).
+
 ### 3.3 — 1ª série: colonização da América (Aulas 5, 7–12) — não precipitar
 
 Este é o bloco mais rico do que sobra nos dois livros, e o mais delicado. O GDD já tem duas
