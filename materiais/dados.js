@@ -183,4 +183,67 @@ export default [
     duracaoMin: 27,
     momento: 'antes',
   },
+
+  // Leituras — verificadas em 2026-09-03: gratuitas, sem cadastro, sem
+  // paywall, linguagem acessível a Ensino Médio. InfoEscola e Toda
+  // Matéria não são fonte acadêmica primária, mas cumprem o mesmo papel
+  // que os vídeos indicados: pano de fundo, não fonte de prova.
+  {
+    slug: 'absolutismo-na-franca',
+    titulo: 'Absolutismo na França',
+    tipo: 'texto',
+    serie: '1a',
+    url: 'https://www.infoescola.com/historia/absolutismo-na-franca/',
+    descricao:
+      'Leitura de apoio (InfoEscola). Como o poder real se tornou centralizado sob Luís XIV — ' +
+      'dos conflitos religiosos ao mercantilismo de Colbert, o mesmo pano de fundo de "A Coroa ' +
+      'e o Cofre".',
+    cenariosRelacionados: ['coroa-e-cofre'],
+    duracaoMin: 7,
+    momento: 'antes',
+  },
+  {
+    slug: 'primeiros-povos-da-america',
+    titulo: 'Primeiros Povos da América',
+    tipo: 'texto',
+    serie: '1a',
+    url: 'https://www.todamateria.com.br/primeiros-povos-da-america/',
+    descricao:
+      'Leitura de apoio (Toda Matéria). Maias, astecas e incas antes do contato europeu — ' +
+      'organização, conquistas e o impacto da colonização. Artigo longo com várias seções, dá ' +
+      'pra ler por partes.',
+    cenariosRelacionados: [],
+    // sem simulação pra derivar a era (ver cenarios/eras.js — "colonizacao"
+    // ainda não tem cenário), então aqui é explícito. app/estudar/[era]
+    // usa este campo quando presente, antes de tentar cenariosRelacionados.
+    era: 'colonizacao',
+    duracaoMin: 15,
+  },
+  {
+    slug: 'voto-de-cabresto',
+    titulo: 'Voto de Cabresto',
+    tipo: 'texto',
+    serie: '2a',
+    url: 'https://www.todamateria.com.br/voto-de-cabresto/',
+    descricao:
+      'Leitura de apoio (Toda Matéria). Como os coronéis controlavam o voto na República Velha, ' +
+      'do "curral eleitoral" ao código eleitoral secreto de 1932 — pano de fundo direto de "A ' +
+      'terra do favor".',
+    cenariosRelacionados: ['a-terra-do-favor'],
+    duracaoMin: 7,
+    momento: 'antes',
+  },
+  {
+    slug: 'era-vargas-panorama',
+    titulo: 'Era Vargas (1930–1945)',
+    tipo: 'texto',
+    serie: '2a',
+    url: 'https://www.infoescola.com/historia/era-vargas/',
+    descricao:
+      'Leitura de apoio (InfoEscola). As três fases do governo Vargas, incluindo a CLT e como ' +
+      'os sindicatos ficaram atrelados ao regime — a estratégia por trás do "pai dos pobres".',
+    cenariosRelacionados: ['o-plano-que-nao-existia'],
+    duracaoMin: 7,
+    momento: 'antes',
+  },
 ]

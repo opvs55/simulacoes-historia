@@ -28,14 +28,17 @@ export default function Era({ params }) {
   const linhas = linhasDoTempo.filter((l) => l.era === era.slug)
   const cenarios = CENARIOS.filter((c) => c.era === era.slug)
 
-  // um material pertence à era do PRIMEIRO cenário relacionado — mesma
-  // regra de agrupamento usada em /materiais (ver
-  // docs/plano-navegacao-por-periodo.md). Sem cenário relacionado, o
-  // material fica de fora daqui (só aparece na lista plana /materiais).
-  // Linha do tempo fica de fora também — já aparece acima, vinda de
+  // um material pertence à sua própria `era` quando ela existe
+  // explicitamente (necessário para eras sem cenário jogável ainda, como
+  // "colonizacao" — não tem de onde derivar); senão, à era do PRIMEIRO
+  // cenário relacionado, mesma regra de agrupamento usada em /materiais
+  // (ver docs/plano-navegacao-por-periodo.md). Sem nenhum dos dois, o
+  // material fica de fora daqui — só aparece na lista plana /materiais.
+  // Linha do tempo fica de fora sempre — já aparece acima, vinda de
   // materiais/linhas-do-tempo.js; senão duplicaria.
   const materiaisDoPeriodo = materiaisData.filter((item) => {
     if (item.tipo === 'linha-do-tempo') return false
+    if (item.era) return item.era === era.slug
     const slugCenario = item.cenariosRelacionados?.[0]
     if (!slugCenario) return false
     const cenarioDoItem = CENARIOS.find((c) => c.slug === slugCenario)
