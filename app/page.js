@@ -8,13 +8,14 @@ import coroaECofre from '@/cenarios/coroa-e-cofre.js'
 import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
 import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
 import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
+import tawantinsuyu from '@/cenarios/tawantinsuyu.js'
 import { lerSeriePreferida, salvarSeriePreferida } from '@/lib/serie-preferida.js'
 import { encontrarEmAndamento } from '@/lib/progresso-timeline.js'
 import BarraInferior from './_ui/BarraInferior.js'
 import comum from './_ui/comum.module.css'
 import styles from './page.module.css'
 
-const CENARIOS = [coroaECofre, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
+const CENARIOS = [coroaECofre, tawantinsuyu, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
 const ROTULO_SERIE = { '1a': '1ª série', '2a': '2ª série' }
 
 // Home nova, seguindo docs/plano-navegacao-por-periodo.md — "papel para
@@ -52,10 +53,12 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <header className={styles.cabecalho}>
-        <div className={styles.marca}>Histórificando</div>
-        <button type="button" className={styles.serieBotao} onClick={trocarSerie}>
-          {ROTULO_SERIE[serie]} ⌄
-        </button>
+        <div className={styles.cabecalhoConteudo}>
+          <div className={styles.marca}>Histórificando</div>
+          <button type="button" className={styles.serieBotao} onClick={trocarSerie}>
+            {ROTULO_SERIE[serie]} ⌄
+          </button>
+        </div>
       </header>
 
       <div className={styles.corpo}>

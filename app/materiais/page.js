@@ -6,12 +6,13 @@ import coroaECofre from '@/cenarios/coroa-e-cofre.js'
 import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
 import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
 import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
+import tawantinsuyu from '@/cenarios/tawantinsuyu.js'
 import LinhaItem from '../_ui/LinhaItem.js'
 import listaStyles from '../_ui/LinhaItem.module.css'
 import styles from './page.module.css'
 
 // mesma ordem de /simulacoes: 1ª série primeiro.
-const CENARIOS = [coroaECofre, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
+const CENARIOS = [coroaECofre, tawantinsuyu, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
 
 const SERIES = [
   { slug: '1a', rotulo: '1ª série' },

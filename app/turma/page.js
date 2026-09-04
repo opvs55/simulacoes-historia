@@ -16,8 +16,10 @@ export default function Turma() {
   return (
     <div className={styles.page}>
       <header className={styles.cabecalho}>
-        <p className={comum.kicker}>Módulo Simulações</p>
-        <h1>Turma</h1>
+        <div className={styles.cabecalhoConteudo}>
+          <p className={comum.kicker}>Módulo Simulações</p>
+          <h1>Turma</h1>
+        </div>
       </header>
 
       <div className={styles.corpo}>

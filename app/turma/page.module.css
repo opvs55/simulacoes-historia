@@ -6,6 +6,8 @@
 
 .cabecalho {
   flex: none;
+  display: flex;
+  justify-content: center;
   padding: 40px 20px 16px;
   border-bottom: 1px solid var(--tinta);
 }
@@ -14,6 +16,11 @@
   .cabecalho {
     padding-top: 96px;
   }
+}
+
+.cabecalhoConteudo {
+  max-width: 500px;
+  width: 100%;
 }
 
 .cabecalho h1 {

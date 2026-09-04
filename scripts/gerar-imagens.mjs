@@ -66,6 +66,24 @@ const ICONES_PAPEIS = {
     'camponeses':
       'Portrait of a 17th century French peasant farmer: simple worn work clothes, weathered resigned expression, rural background.',
   },
+  tawantinsuyu: {
+    // Nenhum Sapa Inca nomeado — "conselho-imperial" é um cargo genérico,
+    // igual "conselho-coroa" em coroa-e-cofre.js. Descrições focam em
+    // vestimenta, objetos e função, não em traços étnicos — mesmo
+    // cuidado já aplicado à Linha do tempo de povos originários.
+    'conselho-imperial':
+      'Portrait of a generic Inca noble administrator: fine geometric-patterned tunic, ceremonial headdress with feathers, holding a quipu, composed authoritative expression. Not a ruler, not a specific historical figure — a generic court official.',
+    'curaca-local':
+      'Portrait of a generic local Andean community leader (curaca): woven tunic of modest but distinct pattern, simple headband, watchful thoughtful expression.',
+    'sacerdote-do-sol':
+      'Portrait of a generic Inca sun-cult priest: ceremonial tunic with solar motifs, holding a ceremonial vessel, composed serene expression.',
+    'artesao-textil':
+      'Portrait of a generic Inca textile weaver: simple tunic, hands near a backstrap loom with visible geometric weaving, focused skilled expression.',
+    'campones-do-ayllu':
+      'Portrait of a generic Andean farmer from an ayllu community: plain woven work clothes, agricultural tool nearby, weathered steady expression.',
+    'chasqui':
+      'Portrait of a generic Inca relay messenger (chasqui): light tunic suited for running, a small carrying pouch, alert forward-looking expression, mountain path suggested behind.',
+  },
 }
 
 const IMAGENS_RODADAS = {
@@ -107,6 +125,21 @@ const IMAGENS_RODADAS = {
     'a-conta-chega':
       'A family cart loaded with modest belongings stopped on a rural road at dawn near a French border checkpoint, figures small and distant, looking back toward the direction they came from, quiet somber mood, no readable text.',
   },
+  tawantinsuyu: {
+    // Paisagem/arquitetura/objetos em vez de cenas com pessoas em
+    // destaque — mesmo cuidado da Linha do tempo de povos originários:
+    // sem rostos em close-up, sem qualquer cena de combate.
+    'pachacuti-reforma':
+      'Andean agricultural terraces on a mountainside, a distant group of small figures working with no faces visible, clear sky, no text.',
+    'expansao-militar':
+      'A stone road crossing an Andean valley, connecting two distant regions, no human figures in the foreground, no text.',
+    'infraestrutura-e-mita':
+      'A row of stone storage buildings (qullqa) on an Andean hillside, sacks of grain faintly visible through open doorways, no people in focus, no text.',
+    'huayna-capac-auge':
+      'A ceremonial stone plaza in an Andean city seen from a distance, small groups wearing textiles of different geometric patterns, no faces in focus, no text.',
+    'a-sucessao':
+      'The stone interior of an Andean temple, niches in the wall and a carved solar symbol, empty of people, soft light, no text.',
+  },
 }
 
 // Uma capa por cenário — usada nos cards de /simulacoes e na home. Cena
@@ -121,6 +154,8 @@ const IMAGENS_CAPA = {
     'Wide panoramic view of a 1930s Brazilian city street corner at dusk, generic skyline with no recognizable real landmarks or monuments: a small newspaper stand with blank, unlabeled papers and completely blank signage (absolutely no text, letters, or writing anywhere in the image), a small worried crowd reading in silence, a radio antenna visible on a rooftop above, tense uncertain atmosphere of a rumor spreading through the city.',
   'coroa-e-cofre':
     'Wide panoramic view of a lavish 17th century French royal palace throne room seen from the back of the hall toward an ornate empty throne on a distant dais, courtiers in period dress standing in rows, tall windows, generic palace architecture not matching any specific real palace, nobody\'s face prominent or identifiable as a specific person.',
+  tawantinsuyu:
+    'Wide panoramic view of an Andean mountain landscape with an extensive stone road system winding through terraced hillsides toward a distant stone city, no readable text, no people prominent in the foreground, majestic scale emphasizing the reach of an empire built without wheels or draft animals.',
 }
 
 const IMAGENS_EVENTOS = {
