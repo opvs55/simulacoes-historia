@@ -84,6 +84,23 @@ const ICONES_PAPEIS = {
     'chasqui':
       'Portrait of a generic Inca relay messenger (chasqui): light tunic suited for running, a small carrying pouch, alert forward-looking expression, mountain path suggested behind.',
   },
+  tenochtitlan: {
+    // Nenhum Tlatoani nomeado. Descrições focam em vestimenta, objetos e
+    // função. Sacrifício ritual é deliberadamente omitido em todo este
+    // cenário (ver comentário no topo de cenarios/tenochtitlan.js).
+    'conselho-tlatoani':
+      'Portrait of a generic Aztec noble advisor: fine cotton cloak with geometric border pattern, feathered headpiece, composed authoritative expression. Not a ruler, not a specific historical figure — a generic court official.',
+    pochteca:
+      'Portrait of a generic Aztec long-distance merchant (pochteca): simple traveling cloak, a wooden staff, carrying a woven bag, alert watchful expression, jungle path suggested behind.',
+    calpixque:
+      'Portrait of a generic Aztec tribute collector (calpixque): fine tunic, holding a folded bark-paper record, composed measuring expression.',
+    chinampera:
+      'Portrait of a generic Aztec woman farmer working chinampas: simple woven clothing, holding agricultural tools, calm steady expression, water and reeds suggested behind.',
+    'artesao-pena':
+      'Portrait of a generic Aztec feather-work artisan: simple tunic, hands arranging colorful feathers into a pattern, focused skilled expression.',
+    'povo-tributario':
+      'Portrait of a generic tribute-paying provincial villager, distinct plain woven clothing (different pattern from Aztec nobility), watchful composed expression.',
+  },
 }
 
 const IMAGENS_RODADAS = {
@@ -140,6 +157,18 @@ const IMAGENS_RODADAS = {
     'a-sucessao':
       'The stone interior of an Andean temple, niches in the wall and a carved solar symbol, empty of people, soft light, no text.',
   },
+  tenochtitlan: {
+    'a-lista-de-tributo':
+      'Bundles of cotton cloth, cacao beans and colorful feathers organized in separate piles on woven mats, no people in focus, no text.',
+    'expedicao-de-longa-distancia':
+      'A dirt trail through dense jungle, woven carrying baskets stacked beside the path, no human figures in the foreground, no text.',
+    'limites-do-lago':
+      'An aerial-angle view of rectangular artificial garden islands (chinampas) on a lake with narrow water channels between them, no people in focus, no text.',
+    'o-atraso-da-provincia':
+      'Partially empty woven baskets beside a counting scale in a storage courtyard, no people in focus, no text.',
+    'a-grande-entrega':
+      'A large ceremonial plaza seen from a distance, small groups in organized lines carrying bundles, no faces in focus, no text.',
+  },
 }
 
 // Uma capa por cenário — usada nos cards de /simulacoes e na home. Cena
@@ -156,6 +185,8 @@ const IMAGENS_CAPA = {
     'Wide panoramic view of a lavish 17th century French royal palace throne room seen from the back of the hall toward an ornate empty throne on a distant dais, courtiers in period dress standing in rows, tall windows, generic palace architecture not matching any specific real palace, nobody\'s face prominent or identifiable as a specific person.',
   tawantinsuyu:
     'Wide panoramic view of an Andean mountain landscape with an extensive stone road system winding through terraced hillsides toward a distant stone city, no readable text, no people prominent in the foreground, majestic scale emphasizing the reach of an empire built without wheels or draft animals.',
+  tenochtitlan:
+    'Wide panoramic view of an island city built on a lake, connected to the shore by causeways, surrounded by a grid of rectangular artificial garden islands (chinampas), distant mountains on the horizon, no readable text, no people prominent in the foreground, emphasizing the scale of a city built entirely on water.',
 }
 
 const IMAGENS_EVENTOS = {

@@ -9,13 +9,14 @@ import saoPaulo1917 from '@/cenarios/sao-paulo-1917.js'
 import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
 import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
 import tawantinsuyu from '@/cenarios/tawantinsuyu.js'
+import tenochtitlan from '@/cenarios/tenochtitlan.js'
 import { lerSeriePreferida, salvarSeriePreferida } from '@/lib/serie-preferida.js'
 import { encontrarEmAndamento } from '@/lib/progresso-timeline.js'
 import BarraInferior from './_ui/BarraInferior.js'
 import comum from './_ui/comum.module.css'
 import styles from './page.module.css'
 
-const CENARIOS = [coroaECofre, tawantinsuyu, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
+const CENARIOS = [coroaECofre, tawantinsuyu, tenochtitlan, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
 const ROTULO_SERIE = { '1a': '1ª série', '2a': '2ª série' }
 
 // Home nova, seguindo docs/plano-navegacao-por-periodo.md — "papel para
