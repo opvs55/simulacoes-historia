@@ -152,6 +152,29 @@ tipo a que gerou o GDD original, mas o material do livro já dá o esqueleto:
   cobertura da 2ª série, com um dilema decisório natural (elite vs. governo central, várias
   posições legítimas) e sem o peso emocional de um desfecho trágico real — ver 3.4.
 
+### 3.2b — 1ª série: dois cenários sobre organização interna pré-contato (novo, 2026-09-03)
+
+Decisão do professor: mais simulações do 1º ano antes de voltar pra "9 de julho". A Aula 9
+("Os donos da terra") tem material rico o bastante para **duas** simulações — inca e asteca,
+cada uma com ângulo próprio — desde que fiquem estritamente **antes de qualquer contato
+europeu**, sem tocar em conquista/colonização (essa parte continua sendo só timeline, ver 3.3).
+
+- **"O Tawantinsuyu" (Império Inca)** — ângulo território/poder/integração. Pergunta: *"Como
+  manter unido um império de dezenas de povos e línguas diferentes, sem moeda e sem escrita
+  alfabética?"* Indicador de efeito fixo: `centralizacao-de-cusco` só sobe (análogo à Dívida em
+  "A Coroa e o Cofre") — toda integração tem custo sobre a autonomia dos ayllus locais. 6 papéis
+  (Sapa Inca/conselheiro, curaca local, sacerdote, artesão, camponês de ayllu, chasqui). 5
+  rodadas seguindo os governantes reais do livro (Pachacuti 1438–63 até Huayna Cápac
+  1493–1525), parando antes da crise sucessória que abriria a porta para 1532.
+- **"Tenochtitlán" (Império Asteca)** — ângulo economia/tributo, mais próximo do fiscal de "A
+  Coroa e o Cofre" que do territorial do cenário inca (evita repetir a mesma mecânica duas
+  vezes). Usa o material do livro sobre Tlatoani, tributo de povos dominados, chinampas e os
+  pochteca (comércio de longa distância).
+
+Mesmo cuidado ético já aplicado à Linha do tempo de povos originários: sem rostos em
+close-up (risco de estereotipagem), sem cenas de combate, fontes reais ou explicitamente
+marcadas como `recriada`.
+
 ### 3.3 — 1ª série: colonização da América (Aulas 5, 7–12) — não precipitar
 
 Este é o bloco mais rico do que sobra nos dois livros, e o mais delicado. O GDD já tem duas
