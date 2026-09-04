@@ -184,66 +184,61 @@ export default [
     momento: 'antes',
   },
 
-  // Leituras — verificadas em 2026-09-03: gratuitas, sem cadastro, sem
-  // paywall, linguagem acessível a Ensino Médio. InfoEscola e Toda
-  // Matéria não são fonte acadêmica primária, mas cumprem o mesmo papel
-  // que os vídeos indicados: pano de fundo, não fonte de prova.
+  // Leituras — trocadas em 2026-09-03: a primeira leva (InfoEscola/Toda
+  // Matéria) tinha publicidade agressiva demais (vídeos "rewarded ad" no
+  // meio do texto) e foi trocada por Wikipédia PT, verificada artigo a
+  // artigo: gratuita, sem cadastro, sem NENHUM anúncio, mais substancial
+  // e mais reconhecida do que os sites anteriores.
   {
-    slug: 'absolutismo-na-franca',
-    titulo: 'Absolutismo na França',
+    slug: 'luis-xiv-absolutismo',
+    titulo: 'Luís XIV de França',
     tipo: 'texto',
     serie: '1a',
-    url: 'https://www.infoescola.com/historia/absolutismo-na-franca/',
+    url: 'https://pt.wikipedia.org/wiki/Luís_XIV_de_França',
     descricao:
-      'Leitura de apoio (InfoEscola). Como o poder real se tornou centralizado sob Luís XIV — ' +
-      'dos conflitos religiosos ao mercantilismo de Colbert, o mesmo pano de fundo de "A Coroa ' +
-      'e o Cofre".',
+      'Leitura de apoio (Wikipédia). Como o poder real se tornou centralizado sob Luís XIV — ' +
+      'inclui Colbert e o mercantilismo, o mesmo pano de fundo de "A Coroa e o Cofre".',
     cenariosRelacionados: ['coroa-e-cofre'],
-    duracaoMin: 7,
+    duracaoMin: 10,
     momento: 'antes',
   },
   {
-    slug: 'primeiros-povos-da-america',
-    titulo: 'Primeiros Povos da América',
+    slug: 'imperio-inca',
+    titulo: 'Império Inca',
     tipo: 'texto',
     serie: '1a',
-    url: 'https://www.todamateria.com.br/primeiros-povos-da-america/',
+    url: 'https://pt.wikipedia.org/wiki/Império_Inca',
     descricao:
-      'Leitura de apoio (Toda Matéria). Maias, astecas e incas antes do contato europeu — ' +
-      'organização, conquistas e o impacto da colonização. Artigo longo com várias seções, dá ' +
-      'pra ler por partes.',
-    cenariosRelacionados: [],
-    // sem simulação pra derivar a era (ver cenarios/eras.js — "colonizacao"
-    // ainda não tem cenário), então aqui é explícito. app/estudar/[era]
-    // usa este campo quando presente, antes de tentar cenariosRelacionados.
-    era: 'colonizacao',
-    duracaoMin: 15,
+      'Leitura de apoio (Wikipédia). Organização política, tributo (mita) e expansão territorial ' +
+      'do Tawantinsuyu — o mesmo pano de fundo da simulação "O Tawantinsuyu".',
+    cenariosRelacionados: ['tawantinsuyu'],
+    duracaoMin: 12,
+    momento: 'antes',
   },
   {
-    slug: 'voto-de-cabresto',
-    titulo: 'Voto de Cabresto',
+    slug: 'coronelismo',
+    titulo: 'Coronelismo',
     tipo: 'texto',
     serie: '2a',
-    url: 'https://www.todamateria.com.br/voto-de-cabresto/',
+    url: 'https://pt.wikipedia.org/wiki/Coronelismo',
     descricao:
-      'Leitura de apoio (Toda Matéria). Como os coronéis controlavam o voto na República Velha, ' +
-      'do "curral eleitoral" ao código eleitoral secreto de 1932 — pano de fundo direto de "A ' +
-      'terra do favor".',
+      'Leitura de apoio (Wikipédia). Como os coronéis controlavam o voto na República Velha, do ' +
+      '"curral eleitoral" ao fim do voto aberto — pano de fundo direto de "A terra do favor".',
     cenariosRelacionados: ['a-terra-do-favor'],
-    duracaoMin: 7,
+    duracaoMin: 10,
     momento: 'antes',
   },
   {
     slug: 'era-vargas-panorama',
-    titulo: 'Era Vargas (1930–1945)',
+    titulo: 'Era Vargas',
     tipo: 'texto',
     serie: '2a',
-    url: 'https://www.infoescola.com/historia/era-vargas/',
+    url: 'https://pt.wikipedia.org/wiki/Era_Vargas',
     descricao:
-      'Leitura de apoio (InfoEscola). As três fases do governo Vargas, incluindo a CLT e como ' +
-      'os sindicatos ficaram atrelados ao regime — a estratégia por trás do "pai dos pobres".',
+      'Leitura de apoio (Wikipédia). As três fases do governo Vargas — Provisório, ' +
+      'Constitucional e Estado Novo — incluindo a CLT e a legislação trabalhista.',
     cenariosRelacionados: ['o-plano-que-nao-existia'],
-    duracaoMin: 7,
+    duracaoMin: 10,
     momento: 'antes',
   },
 ]
