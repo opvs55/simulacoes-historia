@@ -9,6 +9,7 @@ import aTerraDoFavor from '@/cenarios/a-terra-do-favor.js'
 import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
 import tawantinsuyu from '@/cenarios/tawantinsuyu.js'
 import tenochtitlan from '@/cenarios/tenochtitlan.js'
+import casaDaIndia from '@/cenarios/casa-da-india.js'
 import LinhaItem from '../../_ui/LinhaItem.js'
 import listaStyles from '../../_ui/LinhaItem.module.css'
 import comum from '../../_ui/comum.module.css'
@@ -16,7 +17,7 @@ import BarraInferior from '../../_ui/BarraInferior.js'
 import ProgressoLinha from './ProgressoLinha.js'
 import styles from './page.module.css'
 
-const CENARIOS = [coroaECofre, tawantinsuyu, tenochtitlan, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
+const CENARIOS = [coroaECofre, tawantinsuyu, tenochtitlan, casaDaIndia, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
 const ROTULO_SERIE = { '1a': '1ª série', '2a': '2ª série' }
 
 export function generateStaticParams() {

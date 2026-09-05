@@ -230,6 +230,19 @@ export default [
     momento: 'antes',
   },
   {
+    slug: 'grandes-navegacoes',
+    titulo: 'Grandes Navegações',
+    tipo: 'texto',
+    serie: '1a',
+    url: 'https://pt.wikipedia.org/wiki/Era_dos_Descobrimentos',
+    descricao:
+      'Leitura de apoio (Wikipédia). O contexto, as técnicas e as etapas da expansão marítima ' +
+      'portuguesa e espanhola — o mesmo pano de fundo da simulação "A Casa da Índia".',
+    cenariosRelacionados: ['casa-da-india'],
+    duracaoMin: 12,
+    momento: 'antes',
+  },
+  {
     slug: 'era-vargas-panorama',
     titulo: 'Era Vargas',
     tipo: 'texto',

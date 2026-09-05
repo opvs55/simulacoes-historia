@@ -8,6 +8,7 @@ import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
 import coroaECofre from '@/cenarios/coroa-e-cofre.js'
 import tawantinsuyu from '@/cenarios/tawantinsuyu.js'
 import tenochtitlan from '@/cenarios/tenochtitlan.js'
+import casaDaIndia from '@/cenarios/casa-da-india.js'
 import { estadoInicial, aplicarRodada } from '@/lib/simulacao/motor.js'
 import { sortearPapeis } from '@/lib/simulacao/sorteio.js'
 import { estimarColegasQueDecidiramIgual } from '@/lib/simulacao/turma-ficticia.js'
@@ -15,7 +16,7 @@ import BarraPapel from './_ui/BarraPapel.js'
 import Dock from './_ui/Dock.js'
 import styles from './page.module.css'
 
-const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia, coroaECofre, tawantinsuyu, tenochtitlan]
+const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia, coroaECofre, tawantinsuyu, tenochtitlan, casaDaIndia]
 
 const ROTULO_TIPO_FONTE = { ler: 'Ler', olhar: 'Olhar', ouvir: 'Ouvir' }
 

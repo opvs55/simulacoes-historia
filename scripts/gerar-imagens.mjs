@@ -101,6 +101,23 @@ const ICONES_PAPEIS = {
     'povo-tributario':
       'Portrait of a generic tribute-paying provincial villager, distinct plain woven clothing (different pattern from Aztec nobility), watchful composed expression.',
   },
+  'casa-da-india': {
+    // Nenhum Infante Dom Henrique, Bartolomeu Dias, Vasco da Gama ou rei
+    // nomeado — todos os papéis são cargos/funções genéricas, mesmo padrão
+    // de "conselho-coroa" em coroa-e-cofre.js.
+    'coroa-portuguesa':
+      'Portrait of a generic late 15th century Portuguese royal court minister: dark formal doublet, holding a sealed document, calculating composed expression. Not a king, not a specific historical figure — a generic court official.',
+    'fidalgo-da-armada':
+      'Portrait of a generic late 15th century Portuguese nobleman dressed for a sea voyage: fine doublet under a simple traveling cloak, confident determined expression, no specific historical figure.',
+    'mercador-financiador':
+      'Portrait of a wealthy late 15th century Portuguese merchant: fine but modest coat, holding a ledger, calculating ambitious expression.',
+    'mestre-de-cartas-e-rumos':
+      'A generic late 15th century Portuguese navigator and cartographer at work, seen from a slight side angle, bent over a nautical chart spread on a table, one hand holding a compass divider, plain unadorned cap, simple modest coat, face partly in profile rather than facing the viewer, cluttered workshop with rolled charts around, no dramatic window or ship visible, focused concentrated expression. Avoid any resemblance to famous painted portraits of real explorers.',
+    'marinheiro-da-carreira':
+      'Portrait of a generic late 15th century Portuguese common sailor: simple worn work clothes, weathered determined expression, ship rigging suggested behind.',
+    'carpinteiro-da-ribeira':
+      'Portrait of a generic late 15th century Portuguese shipyard carpenter: work apron over simple clothes, woodworking tools visible, weathered skilled hands, steady confident expression.',
+  },
 }
 
 const IMAGENS_RODADAS = {
@@ -169,6 +186,18 @@ const IMAGENS_RODADAS = {
     'a-grande-entrega':
       'A large ceremonial plaza seen from a distance, small groups in organized lines carrying bundles, no faces in focus, no text.',
   },
+  'casa-da-india': {
+    'alem-do-bojador':
+      'A small caravel seen from a distance, sailing near a desert, rocky West African coastline, rough seas, overcast sky, no text.',
+    'tordesilhas':
+      'Two cartographers, one dressed as Portuguese and one as Castilian, bent over the same world map on a table, each pointing to a different point on the ocean. The map shows only coastlines, decorative compass roses and small ship drawings, absolutely no place names, no labels, no words, no letters, no numbers anywhere on the map or in the scene.',
+    'a-rota-do-cabo':
+      'A fleet of sailing ships seen from a distance rounding a rocky cape battered by strong waves, dramatic overcast sky, no text.',
+    'casa-da-india-lisboa':
+      'The interior of a large 16th century Lisbon warehouse, plain unmarked sacks of spices stacked and being weighed on a large scale, a royal official noting the weight on a blank ledger page. The sacks and crates are completely blank, with no stitching patterns that resemble letters, no stamps, no markings, no words, no letters, no numbers anywhere in the scene.',
+    'o-preco-da-rota':
+      'The hull of a shipwrecked wooden vessel, half submerged, on a deserted beach at dawn, no human figures visible, somber quiet mood, no text.',
+  },
 }
 
 // Uma capa por cenário — usada nos cards de /simulacoes e na home. Cena
@@ -187,6 +216,8 @@ const IMAGENS_CAPA = {
     'Wide panoramic view of an Andean mountain landscape with an extensive stone road system winding through terraced hillsides toward a distant stone city, no readable text, no people prominent in the foreground, majestic scale emphasizing the reach of an empire built without wheels or draft animals.',
   tenochtitlan:
     'Wide panoramic view of an island city built on a lake, connected to the shore by causeways, surrounded by a grid of rectangular artificial garden islands (chinampas), distant mountains on the horizon, no readable text, no people prominent in the foreground, emphasizing the scale of a city built entirely on water.',
+  'casa-da-india':
+    'Wide panoramic view of a bustling late 15th century Lisbon harbor at dawn, several caravels and naus docked or departing, warehouses along the waterfront, the wide river mouth opening toward the ocean in the distance, no readable text, no people prominent in the foreground, emphasizing the scale of a small kingdom\'s maritime ambition.',
 }
 
 const IMAGENS_EVENTOS = {
