@@ -1121,6 +1121,77 @@
   line-height: 1.45;
 }
 
+.fechoCaminho {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--regua-fraca);
+  padding-top: 12px;
+}
+
+.fechoCaminhoRotulo {
+  font-family: var(--fonte-titulo);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+}
+
+.fechoCaminhoImagem {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.fechoCaminhoNome {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 20px;
+  color: var(--destaque-700);
+}
+
+.fechoCaminhoResumo {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.fechoCaminhoNota {
+  margin: 0;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--tinta-fraca);
+}
+
+.fechoCaminhoLista {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--regua-fraca);
+}
+
+.fechoCaminhoItem,
+.fechoCaminhoItemAtivo {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--regua-fraca);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--tinta-fraca);
+}
+
+.fechoCaminhoItemAtivo {
+  color: var(--tinta);
+  font-weight: 700;
+}
+
+.fechoCaminhoChance {
+  font-variant-numeric: tabular-nums;
+}
+
 .fechoDebate {
   display: flex;
   flex-direction: column;

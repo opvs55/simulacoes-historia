@@ -95,6 +95,57 @@ export default {
       perguntaGuia: 'Greve me dá direito ou passagem de volta?',
       contexto: 'Você veio de longe para trabalhar nessa fábrica. Ter seu nome numa lista de grevistas pode significar solidariedade — ou, se a coisa piorar, virar motivo de deportação.',
       icone: '/imagens/sao-paulo-1917/papeis/operario-imigrante.jpg',
+
+      // Finais pessoais (roteiro "Trilhas de 1917", 2026-09-01) — ver
+      // cenarios/schema.md. `exposicao` soma ±1 conforme a opção escolhida
+      // em cada rodada; `desfechoEvento` registra qual reação foi dada ao
+      // evento da Rodada 2, se ele disparar. Nenhum final aqui é garantido
+      // por uma trajetória só — é uma proporção de chance, não determinismo
+      // nem sorte plana (ver a "Atualização" no roteiro).
+      finais: [
+        {
+          slug: 'deportado',
+          nome: 'Deportado',
+          resumo: 'Semanas depois do acordo assinado, uma ordem de expulsão com base na Lei Adolfo Gordo chega com o seu nome. Você embarca de volta sem ter escolhido a hora nem o destino desta vez.',
+          imagem: '/imagens/sao-paulo-1917/finais/deportado.jpg',
+        },
+        {
+          slug: 'voltou-por-conta-propria',
+          nome: 'Voltou por conta própria',
+          resumo: 'Você não esperou a notificação virar ordem de fato. Embarcou de volta antes que decidissem por você — sem nunca saber ao certo se a ameaça era tão séria quanto pareceu naquela tarde.',
+          imagem: '/imagens/sao-paulo-1917/finais/voltou-por-conta-propria.jpg',
+        },
+        {
+          slug: 'ficou-discreto',
+          nome: 'Ficou, discreto',
+          resumo: 'Cabeça baixa desde o início, mesa mais vazia nos intervalos, nome em nenhuma lista. Você sai da greve exatamente como entrou nela: inteiro, e sem que quase ninguém tenha reparado em você.',
+          imagem: '/imagens/sao-paulo-1917/finais/ficou-discreto.jpg',
+        },
+        {
+          slug: 'uma-voz-da-colonia',
+          nome: 'Uma voz da colônia',
+          resumo: 'O advogado indicado pelo Comitê segurou a ameaça de expulsão. Meses depois, é a sua história — quase expulso, e conseguiu ficar — que outros imigrantes da Mooca contam antes de decidir se procuram ajuda ou fogem.',
+          imagem: '/imagens/sao-paulo-1917/finais/uma-voz-da-colonia.jpg',
+        },
+        {
+          slug: 'sob-vigilancia',
+          nome: 'Sob vigilância',
+          resumo: 'Nem o bastante para ser deportado, nem discreto o bastante para sumir da lista. Seu nome fica anotado num relatório da Força Pública que você nunca vai ler — envolvido o suficiente para ser lembrado, cauteloso o suficiente para não ser expulso.',
+          imagem: '/imagens/sao-paulo-1917/finais/sob-vigilancia.jpg',
+        },
+      ],
+      resolucaoFinais: {
+        casos: [
+          { quando: { desfechoEvento: 'embarcar' }, final: 'voltou-por-conta-propria' },
+          { quando: { desfechoEvento: 'advogado', exposicao: { max: 1 } }, pesos: { 'uma-voz-da-colonia': 60, 'sob-vigilancia': 40 } },
+          { quando: { desfechoEvento: 'advogado', exposicao: { min: 2 } }, pesos: { 'uma-voz-da-colonia': 80, 'sob-vigilancia': 20 } },
+          { quando: { desfechoEvento: 'esconder', exposicao: { max: 1 } }, pesos: { 'sob-vigilancia': 55, 'uma-voz-da-colonia': 25, deportado: 20 } },
+          { quando: { desfechoEvento: 'esconder', exposicao: { min: 2 } }, pesos: { deportado: 45, 'sob-vigilancia': 40, 'uma-voz-da-colonia': 15 } },
+          { quando: { exposicao: { max: -2 } }, pesos: { 'ficou-discreto': 85, 'sob-vigilancia': 15 } },
+          { quando: { exposicao: { min: -1, max: 0 } }, pesos: { 'ficou-discreto': 55, 'sob-vigilancia': 45 } },
+          { quando: { exposicao: { min: 1 } }, pesos: { 'ficou-discreto': 25, 'sob-vigilancia': 75 } },
+        ],
+      },
     },
   ],
 
@@ -236,12 +287,14 @@ export default {
             slug: 'juntar-lista',
             texto: 'Juntar-se à lista de assinaturas',
             deltas: { coesao: 8, repressao: 2 },
+            flags: { exposicao: 1 },
             consequencia: 'Seu nome, ao lado de outros, agora está numa lista que a fábrica pode ler. Você calculou o risco e decidiu que valia — mas o cálculo não terminou aqui.',
           },
           {
             slug: 'cabeca-baixa',
             texto: 'Manter a cabeça baixa — o risco de ser mandado embora, ou pior, é maior para quem não nasceu aqui',
             deltas: { coesao: -5 },
+            flags: { exposicao: -1 },
             consequencia: 'Ninguém te aponta o dedo, ninguém te chama de covarde. Mas na hora do intervalo, sua mesa fica mais vazia do que a dos que assinaram.',
           },
           {
@@ -480,6 +533,7 @@ export default {
             slug: 'aderir-risco',
             texto: 'Aderir ao protesto, mesmo sabendo o que uma ficha na polícia pode significar',
             deltas: { coesao: 10, repressao: 3 },
+            flags: { exposicao: 1 },
             consequencia: 'Você entra na rua sabendo que seu nome pode acabar numa ficha diferente da dos colegas nascidos aqui. Foi mesmo assim que você decidiu.',
             evento: {
               imagem: '/imagens/sao-paulo-1917/eventos/notificacao-expulsao.jpg',
@@ -490,16 +544,19 @@ export default {
                   slug: 'esconder',
                   texto: 'Não aparecer na fábrica por uns dias, dormindo em casa de um conhecido',
                   resultado: 'Você passa uma semana sem rotina fixa, sempre num teto diferente. A notificação não vira nada — pelo menos dessa vez.',
+                  flags: { desfechoEvento: 'esconder' },
                 },
                 {
                   slug: 'advogado',
                   texto: 'Buscar alguém do Comitê que conheça um advogado',
                   resultado: 'Alguém te indica um advogado que já defendeu outros casos parecidos. Não é barato, e não há garantia nenhuma — mas é mais do que você tinha ontem.',
+                  flags: { desfechoEvento: 'advogado' },
                 },
                 {
                   slug: 'embarcar',
                   texto: 'Não arriscar — embarcar de volta antes que a notificação vire ordem de fato',
                   resultado: 'Você decide não esperar para descobrir se a ameaça era séria. Ninguém te culpa. Mas a fábrica continua com um posto vazio, e o Comitê, com uma assinatura a menos.',
+                  flags: { desfechoEvento: 'embarcar' },
                 },
               ],
             },
@@ -508,6 +565,7 @@ export default {
             slug: 'manter-distancia',
             texto: 'Manter distância — muito a perder se for preso ou marcado',
             deltas: { coesao: -6 },
+            flags: { exposicao: -1 },
             consequencia: 'Você fica dentro de casa com a porta fechada. Ninguém te culpa — mas ninguém te procura depois, também.',
           },
           {
@@ -711,12 +769,14 @@ export default {
             slug: 'participar-cortejo-risco',
             texto: 'Entrar no cortejo, apesar do risco',
             deltas: { coesao: 15, repressao: 3 },
+            flags: { exposicao: 1 },
             consequencia: 'Você entra no meio de dez mil pessoas, sabendo que qualquer uma delas pode estar sendo observada por alguém que anota nomes.',
           },
           {
             slug: 'observar-de-longe',
             texto: 'Observar de longe — muito visível para quem pode ser deportado',
             deltas: { coesao: -4 },
+            flags: { exposicao: -1 },
             consequencia: 'Você acompanha de uma esquina, pronto para sumir se precisar. Está lá, mas não está — pelo menos não do jeito que conta.',
           },
           {
@@ -944,6 +1004,7 @@ export default {
             slug: 'propor-fim-trabalho-infantil',
             texto: 'Propor o fim do trabalho de menores de 14 anos',
             deltas: { coesao: 8, opiniao: 3 },
+            flags: { exposicao: 1 },
             consequencia: 'A proposta entra na pauta sem muita discussão — quase todo mundo na sala já viu criança trabalhando na fábrica.',
           },
           {
@@ -956,6 +1017,7 @@ export default {
             slug: 'nao-participar-redacao',
             texto: 'Não participar da redação — deixar para quem tem mais experiência',
             deltas: { coesao: -4 },
+            flags: { exposicao: -1 },
             consequencia: 'Você fica de fora da redação, achando que não é o seu lugar. A pauta final não carrega nenhuma marca sua.',
           },
         ],
@@ -1272,12 +1334,14 @@ export default {
             slug: 'temer-e-recuar',
             texto: 'Recuar da vida pública — o risco de deportação agora é real',
             deltas: { direitos_cumprido: -6, coesao: -3 },
+            flags: { exposicao: -1 },
             consequencia: 'Você se afasta de qualquer atividade visível. O medo de deportação, abstrato há duas semanas, agora tem nome de lei.',
           },
           {
             slug: 'continuar-organizando',
             texto: 'Continuar organizando, apesar do risco',
             deltas: { direitos_cumprido: 7, coesao: 7, repressao: 3 },
+            flags: { exposicao: 1 },
             consequencia: 'Você continua organizando, sabendo que seu nome pode estar numa lista que nunca vai ver. É a mesma escolha que você fez desde a Rodada 1 — só que agora custa mais caro.',
           },
           {

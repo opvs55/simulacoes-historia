@@ -200,6 +200,25 @@ const IMAGENS_RODADAS = {
   },
 }
 
+// Uma imagem por final pessoal (ver lib/simulacao/finais.js) — cena/objeto
+// genérico representando o desfecho, nunca um retrato de rosto específico
+// (mesma regra de sempre: é um operário imigrante fictício e genérico, não
+// uma pessoa real).
+const IMAGENS_FINAIS = {
+  'sao-paulo-1917': {
+    deportado:
+      'A weathered steamship departing a South American port at dusk, seen from the pier, a uniformed port official checking papers against a departure list nearby, generic and not a specific real ship or port, no readable text, somber resigned mood.',
+    'voltou-por-conta-propria':
+      'A single figure with a small suitcase boarding a steamship gangway alone at dusk, seen from behind and at a distance, no face visible, no readable text, quiet uncertain mood.',
+    'ficou-discreto':
+      'An empty spot at a long row of textile looms inside a 1917 Brazilian factory floor, machines running on either side, no person in the empty spot, neutral documentary tone, no readable text.',
+    'uma-voz-da-colonia':
+      'A small modest room in a 1917 immigrant boarding house in São Paulo, several generic figures seated close together listening attentively to one person speaking, warm lamp light, no faces in sharp close-up, no readable text.',
+    'sob-vigilancia':
+      'A closed manila folder tied shut on a wooden police desk under a single lamp, a typewriter nearby, no visible name or readable text on the folder, dim tense atmosphere.',
+  },
+}
+
 // Uma capa por cenário — usada nos cards de /simulacoes e na home. Cena
 // panorâmica que resume o tema inteiro (não uma rodada específica), em
 // formato paisagem (3:2) para caber bem num card retangular.
@@ -289,6 +308,7 @@ async function main() {
     ...Object.keys(IMAGENS_RODADAS),
     ...Object.keys(IMAGENS_EVENTOS),
     ...Object.keys(IMAGENS_CAPA),
+    ...Object.keys(IMAGENS_FINAIS),
   ])
   for (const cenario of cenarios) {
     if (filtroCenario && cenario !== filtroCenario) continue
@@ -324,6 +344,15 @@ async function main() {
         new URL(`../public/imagens/${cenario}/eventos/`, import.meta.url).pathname.slice(1),
         IMAGENS_EVENTOS[cenario],
         apiKey
+      )
+    }
+    if (IMAGENS_FINAIS[cenario]) {
+      console.log(`[${cenario}] imagens de finais pessoais`)
+      await gerarLote(
+        new URL(`../public/imagens/${cenario}/finais/`, import.meta.url).pathname.slice(1),
+        IMAGENS_FINAIS[cenario],
+        apiKey,
+        '16:9'
       )
     }
   }

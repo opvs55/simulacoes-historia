@@ -12,6 +12,7 @@ import casaDaIndia from '@/cenarios/casa-da-india.js'
 import { estadoInicial, aplicarRodada } from '@/lib/simulacao/motor.js'
 import { sortearPapeis } from '@/lib/simulacao/sorteio.js'
 import { estimarColegasQueDecidiramIgual } from '@/lib/simulacao/turma-ficticia.js'
+import { acumularFlags, resolverFinalPessoal } from '@/lib/simulacao/finais.js'
 import BarraPapel from './_ui/BarraPapel.js'
 import Dock from './_ui/Dock.js'
 import styles from './page.module.css'
@@ -47,6 +48,7 @@ export default function EntrarNaPartida({ params }) {
   const [justificativa, setJustificativa] = useState('')
   const [respostasReflexao, setRespostasReflexao] = useState({})
   const [reacaoEscolhida, setReacaoEscolhida] = useState(null)
+  const [flagsPessoais, setFlagsPessoais] = useState({})
   const [fontesLidas, setFontesLidas] = useState([])
   const [investigarAberto, setInvestigarAberto] = useState(false)
   const [enquantoIssoAberto, setEnquantoIssoAberto] = useState(false)
@@ -103,6 +105,7 @@ export default function EntrarNaPartida({ params }) {
     setSemente(sementeCalculada)
     setPapelSlug(sorteio[nome])
     setEstado(estadoInicial(cenario))
+    setFlagsPessoais({})
     setEtapa('sorteio')
   }
 
@@ -121,6 +124,7 @@ export default function EntrarNaPartida({ params }) {
   function handleDecidir() {
     if (!opcaoEscolhida) return
     const opcao = todasOpcoes.find((o) => o.slug === opcaoEscolhida)
+    if (opcao.flags) setFlagsPessoais((anteriores) => acumularFlags(anteriores, opcao.flags))
     setEstadoAnterior(estado)
     const resultado = aplicarRodada(estado, [{ papelSlug, opcaoSlug: opcaoEscolhida }], cenario, rodadaAtual.slug)
     setUltimoEfeito(resultado)
@@ -130,6 +134,7 @@ export default function EntrarNaPartida({ params }) {
 
   function handleResolverEvento() {
     if (!reacaoEscolhida) return
+    if (reacaoSelecionada?.flags) setFlagsPessoais((anteriores) => acumularFlags(anteriores, reacaoSelecionada.flags))
     setEtapa('resultado')
   }
 
@@ -161,6 +166,7 @@ export default function EntrarNaPartida({ params }) {
     setJustificativa('')
     setRespostasReflexao({})
     setReacaoEscolhida(null)
+    setFlagsPessoais({})
     setFontesLidas([])
     setInvestigarAberto(false)
     setEnquantoIssoAberto(false)
@@ -596,6 +602,9 @@ export default function EntrarNaPartida({ params }) {
     const perguntasReflexao = cenario.desfecho.perguntasReflexao ?? []
     const emReflexao = etapa === 'fim' && perguntasReflexao.length > 0 && reflexaoPasso < perguntasReflexao.length
     const perguntaAtual = perguntasReflexao[reflexaoPasso]
+    const resolucaoFinal = papel.finais ? resolverFinalPessoal(papel, flagsPessoais, semente) : null
+    const pesosDoCaso = resolucaoFinal?.casoUsado?.pesos
+    const pesoTotalDoCaso = pesosDoCaso ? Object.values(pesosDoCaso).reduce((soma, peso) => soma + peso, 0) : 0
 
     return (
       <div className={styles.telaCheia}>
@@ -625,6 +634,37 @@ export default function EntrarNaPartida({ params }) {
                     <span className={styles.fechoTabelaValor}>{Math.round(estado.indicadores[indicador.slug])}</span>
                   </div>
                 ))}
+              </div>
+            )}
+
+            {resolucaoFinal && (
+              <div className={styles.fechoCaminho}>
+                <div className={styles.fechoCaminhoRotulo}>O seu caminho</div>
+                {resolucaoFinal.final.imagem && (
+                  <img src={resolucaoFinal.final.imagem} alt="" className={styles.fechoCaminhoImagem} />
+                )}
+                <h3 className={styles.fechoCaminhoNome}>{resolucaoFinal.final.nome}</h3>
+                <p className={styles.fechoCaminhoResumo}>{resolucaoFinal.final.resumo}</p>
+                {pesosDoCaso && (
+                  <ul className={styles.fechoCaminhoLista}>
+                    {Object.entries(pesosDoCaso)
+                      .sort((a, b) => b[1] - a[1])
+                      .map(([slug, peso]) => {
+                        const finalDaLista = papel.finais.find((f) => f.slug === slug)
+                        const chance = Math.round((peso / pesoTotalDoCaso) * 100)
+                        const ativo = slug === resolucaoFinal.final.slug
+                        return (
+                          <li key={slug} className={ativo ? styles.fechoCaminhoItemAtivo : styles.fechoCaminhoItem}>
+                            <span>{finalDaLista?.nome ?? slug}</span>
+                            <span className={styles.fechoCaminhoChance}>{chance}%</span>
+                          </li>
+                        )
+                      })}
+                  </ul>
+                )}
+                {!pesosDoCaso && (
+                  <p className={styles.fechoCaminhoNota}>Esta escolha decidiu o desfecho sozinha, sem sorteio.</p>
+                )}
               </div>
             )}
 

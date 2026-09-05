@@ -196,6 +196,54 @@ export default {
 }
 ```
 
+## Finais pessoais (opcional — `lib/simulacao/finais.js`)
+
+Separado dos indicadores coletivos: um **estado pessoal** que só pertence ao jogador, não é
+agregado com a turma, e desemboca num final nomeado e específico pro papel jogado — a lógica de
+Detroit: Become Human descrita no roteiro "Trilhas de 1917" (2026-09-01). O desfecho histórico
+(`desfecho.fixo`) continua igual pra todo mundo; isto é uma camada a mais, não uma substituição.
+
+```js
+papeis: [
+  {
+    slug: 'operario-imigrante',
+    // ...campos normais do papel...
+
+    // opcional — finais nomeados possíveis pra este papel.
+    finais: [
+      { slug: 'deportado', nome: 'Deportado', resumo: '1-2 frases descrevendo o desfecho pessoal.' },
+    ],
+
+    // opcional — como resolver qual final sai, a partir das flags
+    // acumuladas (ver `opcao.flags`/`reacao.flags` abaixo). Avaliado em
+    // ORDEM — o primeiro `quando` que bater decide; por isso casos mais
+    // específicos vêm antes dos genéricos, e os últimos casos devem cobrir
+    // o resto do espaço (senão `resolverFinalPessoal` devolve `null`).
+    resolucaoFinais: {
+      casos: [
+        // `quando` compara flags por igualdade (string/boolean) ou faixa
+        // numérica ({min, max}, ambos opcionais). Flag ausente conta como 0.
+        { quando: { desfechoEvento: 'embarcar' }, final: 'voltou-por-conta-propria' }, // escolha decide sozinha, sem sorteio
+        { quando: { desfechoEvento: 'advogado', exposicao: { max: 1 } }, pesos: { 'uma-voz-da-colonia': 60, 'sob-vigilancia': 40 } },
+        { quando: { exposicao: { max: -2 } }, pesos: { 'ficou-discreto': 85, 'sob-vigilancia': 15 } },
+      ],
+    },
+  },
+],
+```
+
+- `opcao.flags` e `evento.reacoes[].flags`: mesma forma de `deltas`, mas para o estado pessoal —
+  `{ exposicao: 1 }`. Uma flag numérica **soma** ao longo da partida (ausência conta como 0); uma
+  flag não-numérica (string/boolean) é **substituída** pelo valor mais recente — é assim que uma
+  reação de evento registra qual reação foi escolhida (`{ desfechoEvento: 'advogado' }`) sem
+  precisar de uma flag booleana por reação possível.
+- Os `pesos` de um `caso` viram probabilidade normalizada (não precisam somar 100) — sorteados com
+  semente (`código da partida` + `apelido`, mesmo padrão de `sortearPapeis`), então replay do
+  mesmo código sempre resolve pro mesmo final. Números são estimativa/ilustrativos por natureza
+  (o próprio roteiro de design já assume isso) — balancear jogando, não é definido de antemão.
+- Nem todo papel de um cenário precisa ter `finais` — é por papel, não por cenário. Um papel sem
+  `finais` simplesmente não mostra a tela "seu caminho" no fecho.
+
 ## Regras que o motor assume (não validadas em tempo de execução ainda)
 
 - Toda fonte com `confiavel: false` deveria ter `revelacaoNoFecho`. O GDD (seção 16.2) descreve
