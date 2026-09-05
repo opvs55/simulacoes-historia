@@ -113,10 +113,10 @@ export default [
     descricao:
       'Indicado pelo professor. A Revolta Constitucionalista de 1932 — as elites paulistas ' +
       'contra o governo provisório de Vargas, entre 1930 e o Estado Novo de "O plano que não ' +
-      'existia". Ainda não é uma simulação própria no site (ver plano de currículo), mas já ' +
-      'é pano de fundo direto.',
-    cenariosRelacionados: ['o-plano-que-nao-existia'],
+      'existia". Mesmo pano de fundo da simulação "9 de Julho".',
+    cenariosRelacionados: ['nove-de-julho-1932', 'o-plano-que-nao-existia'],
     duracaoMin: 25,
+    momento: 'antes',
   },
   {
     slug: 'nerdologia-proclamacao-da-republica',

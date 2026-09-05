@@ -118,6 +118,25 @@ const ICONES_PAPEIS = {
     'carpinteiro-da-ribeira':
       'Portrait of a generic late 15th century Portuguese shipyard carpenter: work apron over simple clothes, woodworking tools visible, weathered skilled hands, steady confident expression.',
   },
+  'nove-de-julho-1932': {
+    // Nenhum Pedro de Toledo, nenhum general nomeado, nenhum dos jovens do
+    // MMDC retratado como papel jogável — todos os papéis são funções
+    // genéricas, mesmo padrão de "operario-imigrante" em sao-paulo-1917.js.
+    'governo-constitucionalista':
+      'A generic 1930s Brazilian state government official seen from the side or three-quarter back angle, bent over a desk reading a document, formal dark suit, face partly turned away from the viewer, cluttered government office with maps and papers, avoid any resemblance to a specific real historical figure or famous portrait.',
+    'fazendeiro-industrial-financiador':
+      'Portrait of a wealthy 1930s Brazilian coffee farmer and industrialist: fine formal suit, confident calculating expression.',
+    'jornalista-da-memoria':
+      'Portrait of a 1930s Brazilian newspaper journalist: suit and tie, pen and notebook in hand, alert observant expression.',
+    'mulher-da-campanha-do-ouro':
+      'Portrait of a 1930s Brazilian middle-class woman volunteer: modest formal dress, composed determined expression, holding a small collection box.',
+    'estudante-voluntario-mmdc':
+      'Portrait of a young 1930s Brazilian university student volunteer wearing an improvised civilian armband over regular clothes: earnest determined expression.',
+    'soldado-forca-publica':
+      'Portrait of a 1930s Brazilian state military police (Força Pública) soldier: period military uniform, serious weathered expression.',
+    'operario-paulista':
+      'Portrait of a 1930s Brazilian factory worker: simple work clothes, weathered thoughtful expression.',
+  },
 }
 
 const IMAGENS_RODADAS = {
@@ -198,6 +217,18 @@ const IMAGENS_RODADAS = {
     'o-preco-da-rota':
       'The hull of a shipwrecked wooden vessel, half submerged, on a deserted beach at dawn, no human figures visible, somber quiet mood, no text.',
   },
+  'nove-de-julho-1932': {
+    'os-quatro-nomes':
+      'A 1930s urban square at dusk, seen from a distance, a small group gathered quietly around a spot marked with flowers, no faces in close-up, somber mood, no readable text.',
+    'nove-de-julho':
+      'A crowd filling a historic square in a 1930s Brazilian city, seen from a distance, generic flags waving, no faces prominent, no readable text or flag emblems.',
+    'ouro-para-sao-paulo':
+      'A small 1930s donation counter with wedding rings, chains and brooches laid on a plain cloth, a precision scale beside them, no people in focus. Every box, container and surface in the scene is completely blank — no labels, no signage, no stamps, no words, no letters, no numbers anywhere in the image.',
+    'o-cerco-se-fecha':
+      'A rural countryside landscape at dusk, improvised earthwork trenches visible, no human figures in close-up, distant hills, somber late-afternoon light, no text.',
+    'a-rendicao':
+      'A flag being folded at dusk in an empty military courtyard, no human figures prominent, somber muted tones, no readable text.',
+  },
 }
 
 // Uma imagem por final pessoal (ver lib/simulacao/finais.js) — cena/objeto
@@ -237,6 +268,8 @@ const IMAGENS_CAPA = {
     'Wide panoramic view of an island city built on a lake, connected to the shore by causeways, surrounded by a grid of rectangular artificial garden islands (chinampas), distant mountains on the horizon, no readable text, no people prominent in the foreground, emphasizing the scale of a city built entirely on water.',
   'casa-da-india':
     'Wide panoramic view of a bustling late 15th century Lisbon harbor at dawn, several caravels and naus docked or departing, warehouses along the waterfront, the wide river mouth opening toward the ocean in the distance, no readable text, no people prominent in the foreground, emphasizing the scale of a small kingdom\'s maritime ambition.',
+  'nove-de-julho-1932':
+    'Wide panoramic view of a 1930s São Paulo street with volunteer civilians and improvised military trucks preparing for war, factory smokestacks in the background, overcast dramatic sky, no readable text or flag emblems, no faces prominent in the foreground, emphasizing a city mobilizing largely alone.',
 }
 
 const IMAGENS_EVENTOS = {
@@ -251,6 +284,10 @@ const IMAGENS_EVENTOS = {
   'o-plano-que-nao-existia': {
     'batida-policial':
       'Plainclothes political police agents at a door during a 1930s Brazilian pre-dawn raid, dim hallway light, tense atmosphere, no visible weapons or violence.',
+  },
+  'nove-de-julho-1932': {
+    'ferido-em-combate':
+      'A young 1930s Brazilian volunteer soldier sitting against a low earthwork wall in a rural trench, a bandage visibly wrapped around one arm, tired but alert expression, no blood, no weapons in frame, quiet aftermath mood.',
   },
 }
 

@@ -235,8 +235,8 @@ Ordenado por prioridade e dependência (cada fase pressupõe a anterior pronta).
 |---|---|---|---|
 | **1** ✅ | Navegação por série nos 3 hubs (`/simulacoes`, `/materiais`, `/linha-do-tempo`) + home | Tudo que vem depois já nasce organizado; evita retrabalho | Cada hub mostra 1ª e 2ª série agrupadas, mesmo com só 2ª série povoada ainda |
 | **2** ✅ | Implementar "A Coroa e o Cofre" (`cenarios/coroa-e-cofre.js`) | Já está 100% desenhada — maior retorno, menor esforço deste plano inteiro | Jogável de ponta a ponta, testes estruturais passando, é a 1ª entrada da 1ª série em `/simulacoes` |
-| **3** | Desenhar "9 de julho" (papéis, cotas, indicadores, rodadas — sessão dedicada, como a que gerou o GDD original) | Precisa existir como design antes de virar código | Documento de design aprovado pelo professor, no mesmo nível de detalhe da seção 7/8 do GDD |
-| **4** | Implementar "9 de julho" | — | Jogável de ponta a ponta, testes passando, 4º card em `/simulacoes` |
+| **3** ✅ | Desenhar "9 de julho" (papéis, cotas, indicadores, rodadas — sessão dedicada, como a que gerou o GDD original) | Precisa existir como design antes de virar código | Documento de design aprovado pelo professor, no mesmo nível de detalhe da seção 7/8 do GDD |
+| **4** ✅ | Implementar "9 de julho" | — | Jogável de ponta a ponta, testes passando, 4º card em `/simulacoes` |
 | **5** ✅ | Materiais + Linha do tempo da 1ª série (Idade Moderna/Absolutismo, mesmo padrão já usado para 1889–1930) | Reaproveita o que já existe (`TimelineShell` já é genérico), dá contexto de leitura antes de jogar "A Coroa e o Cofre" | Nova entrada em `/linha-do-tempo` cobrindo o arco de 1661–1685 (ou mais largo, Reforma/Contrarreforma até absolutismo) |
 | **6** (sem prazo) | Colonização da América (1ª série) e período democrático 1945–64 (2ª série) | Exigem decisão de formato antes de qualquer código — ver 3.3 e 3.4 | Uma conversa própria, não uma tarefa de implementação direta |
 
@@ -247,6 +247,24 @@ reflexões em etapas). O plano também ganhou conteúdo fora desta lista origina
 linhas do tempo (Absolutismo/Mercantilismo e Povos Originários na 1ª série; "Da Revolta
 ao Desenvolvimento" na 2ª) e reorganização de `/materiais` por série → tipo → tema.
 Fases 3–4 ("9 de julho") e 6 seguem em aberto.
+
+**Estado em 2026-09-04 (fases 3-4 concluídas)**: "9 de Julho" (`cenarios/nove-de-
+julho-1932.js`) está desenhado e implementado — 7 papéis (governo constitucionalista,
+fazendeiro/industrial financiador, jornalista da memória, mulher da Campanha do Ouro,
+estudante voluntário do MMDC, soldado da Força Pública, operário paulista), 6
+indicadores (o par memória-oficial/memória-crítica revelado sobretudo no fecho, mesmo
+padrão de direitos_papel/direitos_cumprido em são-paulo-1917), 5 rodadas seguindo a
+cronologia real (23 de maio → 9 de julho → Campanha do Ouro → disparidade militar →
+rendição de 1º de outubro). Fatos verificados via FGV CPDOC, Assembleia Legislativa de
+SP e Wikipédia PT antes de escrever qualquer texto. Nenhuma pessoa real nomeada como
+papel jogável (Pedro de Toledo aparece só como fato histórico, nunca como personagem).
+126/126 testes estruturais passando. Também nesta rodada: implementado o mecanismo de
+"finais pessoais" (roteiro "Trilhas de 1917", 2026-09-01) para o Operário imigrante de
+são-paulo-1917.js — estado pessoal seedado, proporção de chance entre 5 finais
+nomeados, tela "seu caminho" no fecho — como prova de conceito antes de decidir replicar
+para os outros papéis/cenários (ver `lib/simulacao/finais.js` e `cenarios/schema.md`).
+Fase 6 (colonização da América, período democrático 1945–64) segue em aberto — ainda
+precisa da conversa dedicada que os itens 3.3/3.4 pedem.
 
 ---
 

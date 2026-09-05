@@ -9,12 +9,13 @@ import oPlanoQueNaoExistia from '@/cenarios/o-plano-que-nao-existia.js'
 import tawantinsuyu from '@/cenarios/tawantinsuyu.js'
 import tenochtitlan from '@/cenarios/tenochtitlan.js'
 import casaDaIndia from '@/cenarios/casa-da-india.js'
+import noveDeJulho1932 from '@/cenarios/nove-de-julho-1932.js'
 import LinhaItem from '../_ui/LinhaItem.js'
 import listaStyles from '../_ui/LinhaItem.module.css'
 import styles from './page.module.css'
 
 // mesma ordem de /simulacoes: 1ª série primeiro.
-const CENARIOS = [coroaECofre, tawantinsuyu, tenochtitlan, casaDaIndia, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia]
+const CENARIOS = [coroaECofre, tawantinsuyu, tenochtitlan, casaDaIndia, saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia, noveDeJulho1932]
 
 const SERIES = [
   { slug: '1a', rotulo: '1ª série' },
