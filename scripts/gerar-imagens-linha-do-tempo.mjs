@@ -116,6 +116,42 @@ const LINHAS_DO_TEMPO = {
       'Wide view of a misty Andean mountaintop stone citadel at dawn, terraced stone structures ' +
       'and a central plaza, dramatic peaks in the background, no readable text, no people prominent.',
   },
+  'imaginario-do-colonizador': {
+    // Cuidado ético reforçado: NENHUMA imagem ilustra a cena estereotipada
+    // em si (nem a gravura de Theodore de Bry, nem qualquer figura humana
+    // genérica "estilizada como selvagem") — sempre o objeto ou o meio
+    // (carta, prensa, mapa), nunca a cena descrita. Ver comentário no topo
+    // de app/linha-do-tempo/_conteudo/ImaginarioDoColonizador.js.
+    capa:
+      'Close-up still life of an aged 16th century archive: yellowed handwritten letters fanned ' +
+      'out on a wooden desk, a quill pen, a wax seal, warm candlelight, moody shadows, no ' +
+      'readable text, no people.',
+    carta:
+      'Close-up of a single aged handwritten parchment letter with a broken wax seal beside it ' +
+      'and a quill pen resting on the desk, warm candlelight, the handwriting rendered as ' +
+      'generic illegible period cursive marks, not actual readable text, no people.',
+    gravura:
+      'Generic 16th century European print workshop interior: a wooden printing press, stacks ' +
+      'of blank engraved plates and printed pages on a table, dim workshop light, no readable ' +
+      'text or imagery on any visible page, no people, emphasizing mass reproduction rather ' +
+      'than any specific printed scene.',
+    catequese:
+      'Close-up still life of a small stack of aged handwritten missionary letters tied with ' +
+      'string, a simple wooden crucifix resting beside them, candlelight, no readable text, no people.',
+    raca:
+      'An old weathered blank world map outline on parchment, seen at an angle in dim light, ' +
+      'continent shapes drawn only as plain outlines with cross-hatching shading, absolutely no ' +
+      'place names, no country names, no continent labels, no words, no letters, no numbers, no ' +
+      'compass rose text, no grid labels anywhere on the map, no people — an abstract sense of ' +
+      'the world being divided into blank territories waiting to be categorized.',
+    resposta:
+      'A contemporary wooden desk with an open book, reading glasses, and a cup of coffee, soft ' +
+      'daylight from a window, no people, no readable text on the book pages, warm modern ' +
+      'academic atmosphere.',
+    territoriovivo:
+      'Wide distant view of a lush Brazilian Amazon rainforest river bend at golden hour, dense ' +
+      'canopy and calm water, no people, no readable text, serene and vital mood.',
+  },
   'da-revolta-ao-desenvolvimento': {
     // 1930-1961: Revolta de 1932, mulheres operarias, CLT/trabalhismo,
     // Dutra/Guerra Fria, 2o governo Vargas, JK. Nenhuma pessoa real
@@ -137,6 +173,10 @@ const LINHAS_DO_TEMPO = {
       'Generic 1932 São Paulo street scene with a makeshift barricade of furniture and sandbags, ' +
       'a few volunteer civilians in improvised armbands nearby, no weapons fired, no visible ' +
       'flags with readable text, daytime, tense but not violent.',
+    constituicaoanl:
+      'Generic 1930s Brazilian public square with a large gathered crowd listening to an unseen ' +
+      'speaker on a distant podium, banners with no readable text, daytime, an atmosphere of ' +
+      'mass political mobilization, no violence, no specific identifiable person.',
     trabalhismo:
       'Generic 1940s Brazilian radio broadcast studio interior, a large tabletop microphone on ' +
       'a stand at an empty podium, on-air light glowing, technical equipment around, warm ' +

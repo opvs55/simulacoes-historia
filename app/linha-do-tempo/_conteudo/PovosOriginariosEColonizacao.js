@@ -64,8 +64,8 @@ function Fecho() {
     ['Hoje', 'Mais de 300 povos indígenas seguem vivos no Brasil, cada um com língua e tradições próprias'],
     ['1325', 'Astecas fundam Tenochtitlán; maias já floresciam havia séculos na Mesoamérica'],
     ['1492+', 'Chegada europeia — "descobrimento" é um termo hoje questionado, o continente já era habitado'],
-    ['1500s', 'Doenças, armas, alianças exploradas e rivalidades internas derrubam impérios indígenas'],
-    ['1534+', 'Capitanias hereditárias e Governo-Geral organizam a colonização portuguesa — com resistência real, não só derrota'],
+    ['1500s', 'Doenças, armas, alianças exploradas e rivalidades internas derrubam impérios indígenas — 90% da população morta por volta de 1600'],
+    ['1534+', 'Capitanias hereditárias e Governo-Geral organizam a colonização portuguesa por ordem oficial da Coroa — com resistência real, não só derrota'],
   ]
   return (
     <Tela id="fecho" label="Fecho" imagem={`${BASE}/diversidade.jpg`} imagemPosicao="center 40%" brilho={0.42} duracao={30}>
@@ -238,7 +238,19 @@ export default function PovosOriginariosEColonizacao({ onSair }) {
           <div className={s.listaDivisor} />
           <div className={s.listaLinha}><span className={s.listaMarca}>—</span><span className={s.listaTexto}>Doenças europeias, sem imunidade indígena, causam colapso demográfico</span></div>
         </div>
-        <Texto muted>A resistência foi real — a exploração dessas rachaduras é que decidiu a guerra, não uma rendição passiva.</Texto>
+        <div data-anim className={s.avisoCritico}>
+          <span className={s.avisoCriticoIcone}>⚠</span>
+          <span>
+            O número não é pequeno: estima-se que, por volta de 1600, <strong>90% dos povos
+            ameríndios já tinham morrido</strong> — a maioria por doença, não em combate direto. Isso
+            não é um detalhe da conquista, é a escala real dela.
+          </span>
+        </div>
+        <Texto muted>
+          A resistência foi real, e teve nomes — Cuauhtémoc, que sucedeu Montezuma II na defesa de
+          Tenochtitlán, e Túpac Amaru I, que resistiu ao domínio espanhol por décadas a partir de
+          Vilcabamba. A exploração das rachaduras internas é que decidiu a guerra, não uma rendição passiva.
+        </Texto>
       </Tela>
 
       <Tela id="colonizacao-portuguesa" label="Colonização portuguesa" imagem={`${BASE}/colonizacaoportuguesa.jpg`} imagemPosicao="center 50%" brilho={0.45}>
@@ -255,6 +267,19 @@ export default function PovosOriginariosEColonizacao({ onSair }) {
           <span className={s.citacaoCriticaAutor}>Sobre a Bahia, 1545</span>
         </div>
         <Texto muted>Resistência documentada desde o início — um capitão expulso de suas próprias terras por indígenas, cinco anos depois do início da colonização.</Texto>
+        <div data-anim className={s.citacaoCritica}>
+          &ldquo;[...] destruindo-lhes suas aldeias e povoações, e matando e cativando aquela parte
+          deles que vos parecer que abasta para seu castigo e exemplo de todos.&rdquo;
+          <span className={s.citacaoCriticaAutor}>Regimento de Tomé de Sousa, 1548 — instrução oficial da Coroa</span>
+        </div>
+        <div data-anim className={s.avisoCritico}>
+          <span className={s.avisoCriticoIcone}>⚠</span>
+          <span>
+            Não é um excesso isolado de um colono qualquer — é uma ordem escrita, assinada em nome
+            da Coroa portuguesa, determinando destruição e escravização como resposta padrão à
+            resistência indígena. Isso também é documento histórico, e também precisa ser lido.
+          </span>
+        </div>
       </Tela>
 
       <TelaClara id="quiz-3" label="Quiz 3">

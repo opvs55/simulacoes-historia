@@ -209,6 +209,23 @@ que com uma simulação de decisões. A Aula 5 (diversidade dos povos originári
 contato) e a Aula 9–10 (civilizações inca/asteca/maia) são as menos arriscadas do bloco — dá
 pra pensar nelas separadas do resto, focadas em conhecer em vez de decidir.
 
+**Decisão final, 2026-09-06 (conversa dedicada realizada):** confirmado — Aulas 7, 11 e 12
+NUNCA viram simulação decisória. Decisão permanente, não "por enquanto". Em vez disso:
+- Aula 8 ganhou linha do tempo própria e extensa, `imaginario-do-colonizador.js` ("O Selvagem
+  Que Inventaram", 11 telas) — crítica de fontes (Caminha, Theodore de Bry, Anchieta) contra
+  teoria (Quijano) e uma voz indígena contemporânea real (Gersem Baniwa). Nenhuma imagem
+  gerada ilustra a cena estereotipada em si (nem a gravura de antropofagia) — só o objeto/meio
+  (carta, prensa, mapa em branco), nunca a cena descrita.
+- Aulas 7 e 11 (conquista espanhola e colonização portuguesa) tiveram as telas "conquista" e
+  "colonizacao-portuguesa", já existentes em `povos-originarios-e-colonizacao.js`, aprofundadas
+  com os fatos mais graves do livro (90% de colapso demográfico até 1600; os nomes de
+  resistência Cuauhtémoc e Túpac Amaru I; o Regimento de Tomé de Sousa de 1548 ordenando
+  "destruir e matar" como política oficial da Coroa) — sempre em modo leitura crítica, sem
+  decisão, sem pontuação.
+
+Aula 9–10 (1ª série) já concluídas antes desta conversa: 3 cenários (Tawantinsuyu, Tenochtitlan,
+Tikal) + linha do tempo "Pedra, Fio e Nó" para a Aula 10 especificamente.
+
 ### 3.4 — 2ª série: período democrático 1945–1964 (Aulas 9–12) — baixa prioridade, uma ressalva
 
 Dutra/Guerra Fria (Aula 10) e JK (Aula 12) são bons candidatos a simulação no mesmo molde dos
@@ -223,6 +240,16 @@ de uma pessoa real, recente o suficiente para ter fotografia). Se isto virar con
 recomendação é o mesmo caminho da seção 3.3: leitura/linha do tempo antes de decisão jogável, e
 uma conversa própria sobre até onde o "currículo invertido" (decidir primeiro, nomear depois)
 funciona quando o fato final é uma morte real e documentada.
+
+**Estado em 2026-09-06:** CLT (Aula 9), Dutra/Guerra Fria (Aula 10) e JK (Aula 12) aprofundados
+na Linha do tempo "Do quartel ao canteiro de obras" — cada um ganhou uma fonte primária real
+(discurso de Vargas no rádio anunciando a CLT; a cassação do PCB em 1947; os candangos de
+Brasília) — sem virar cenário à parte, confirmando que não precisavam de um. A Aula 11 (2º
+Vargas) seguiu a mesma ressalva desta seção: a tela "segundo-vargas" ganhou a carta-testamento
+de Vargas (1954) como fonte primária, lida com a mesma distância crítica que o próprio livro
+pede — mito político, não só um adeus — mas **nunca virou simulação decisória.** Também
+resolvido: o intervalo 1934-1937 entre "9 de Julho" e "O plano que não existia" (Constituição de
+1934, ANL, Lei de Segurança Nacional) ganhou tela própria, fechando o elo causal.
 
 ---
 

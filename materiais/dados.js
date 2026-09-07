@@ -47,6 +47,32 @@ export default [
     duracaoMin: 11,
   },
   {
+    slug: 'materialidade-e-saberes-incas',
+    titulo: 'Pedra, Fio e Nó',
+    tipo: 'linha-do-tempo',
+    serie: '1a',
+    url: '/linha-do-tempo/materialidade-e-saberes-incas',
+    descricao:
+      'Arquitetura sísmica sem argamassa, terraços, o quipu, cultura têxtil e Machu Picchu — e ' +
+      'uma leitura crítica de quem "descobriu" o quê, e para quem. Dez telas, sem decisão jogável.',
+    cenariosRelacionados: ['tawantinsuyu'],
+    duracaoMin: 9,
+    momento: 'antes',
+  },
+  {
+    slug: 'imaginario-do-colonizador',
+    titulo: 'O Selvagem Que Inventaram',
+    tipo: 'linha-do-tempo',
+    serie: '1a',
+    url: '/linha-do-tempo/imaginario-do-colonizador',
+    descricao:
+      'Como a imagem do indígena "selvagem" foi construída, fonte a fonte, por quem nunca foi ' +
+      'indígena — e como ela é respondida hoje por vozes indígenas como a de Gersem Baniwa. ' +
+      'Onze telas, nenhuma decisão jogável.',
+    cenariosRelacionados: [],
+    duracaoMin: 10,
+  },
+  {
     slug: 'absolutismo-e-mercantilismo',
     titulo: 'O rei, a fé e o mercado',
     tipo: 'linha-do-tempo',

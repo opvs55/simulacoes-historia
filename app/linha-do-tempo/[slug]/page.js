@@ -6,6 +6,7 @@ import AbsolutismoEMercantilismo from '../_conteudo/AbsolutismoEMercantilismo.js
 import PovosOriginariosEColonizacao from '../_conteudo/PovosOriginariosEColonizacao.js'
 import DaRevoltaAoDesenvolvimento from '../_conteudo/DaRevoltaAoDesenvolvimento.js'
 import MaterialidadeESaberesIncas from '../_conteudo/MaterialidadeESaberesIncas.js'
+import ImaginarioDoColonizador from '../_conteudo/ImaginarioDoColonizador.js'
 
 // Cada linha do tempo é um componente próprio (o conteúdo é curado demais
 // para valer a pena um schema genérico só para reaproveitar 1 vez) — este
@@ -16,6 +17,7 @@ const LINHAS_DO_TEMPO = {
   'povos-originarios-e-colonizacao': PovosOriginariosEColonizacao,
   'da-revolta-ao-desenvolvimento': DaRevoltaAoDesenvolvimento,
   'materialidade-e-saberes-incas': MaterialidadeESaberesIncas,
+  'imaginario-do-colonizador': ImaginarioDoColonizador,
 }
 
 export default function PaginaLinhaDoTempo({ params }) {

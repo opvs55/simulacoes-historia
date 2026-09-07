@@ -200,6 +200,29 @@ export default function DaRevoltaAoDesenvolvimento({ onSair }) {
         />
       </TelaClara>
 
+      <Tela id="constituicao-e-anl" label="1934–1937" imagem={`${BASE}/constituicaoanl.jpg`} imagemPosicao="center 40%" brilho={0.46}>
+        <Kicker>1934 — 1937</Kicker>
+        <Titulo>Uma Constituição<br />nova, uma crise maior</Titulo>
+        <Texto>
+          Em 1934, o Brasil ganha nova Constituição. Meses depois, a Aliança Nacional
+          Libertadora (ANL) — coalizão ampla de partidos, sindicatos e organizações, com Luís
+          Carlos Prestes como presidente de honra — vira a maior organização de massas que o
+          país já teve, com centenas de núcleos criados em poucos meses.
+        </Texto>
+        <div data-anim className={s.citacaoCritica}>
+          &ldquo;ZÉ: – Todo esse aparato é para garantir a democracia liberal? GETÚLIO: – Não. É
+          para nos defendermos... dela!&rdquo;
+          <span className={s.citacaoCriticaAutor}>Charge de Storni sobre a Lei de Segurança Nacional, revista Careta, 1935</span>
+        </div>
+        <Texto muted>
+          O crescimento da ANL assusta o governo, que aprova a Lei de Segurança Nacional em
+          abril de 1935 e passa a tratar a ANL como equivalente ao PCB, para isolá-la e
+          combatê-la — o mesmo aparato que a charge de época já chamava de arma contra a
+          democracia, não a favor dela. É esse clima de polarização, alimentado dos dois lados,
+          que abre caminho para o golpe de 1937 que &ldquo;O plano que não existia&rdquo; mostra em detalhe.
+        </Texto>
+      </Tela>
+
       <Tela id="trabalhismo" label="Trabalhismo" imagem={`${BASE}/trabalhismo.jpg`} imagemPosicao="center 40%" brilho={0.4}>
         <Kicker>Estado Novo, 1943</Kicker>
         <Titulo>Direitos como<br />estratégia</Titulo>
@@ -294,6 +317,18 @@ export default function DaRevoltaAoDesenvolvimento({ onSair }) {
           Estados Unidos alimentam uma crise crescente. A instabilidade culmina no suicídio de
           Vargas em 1954 — um episódio que provocou comoção popular e marcou profundamente a
           política brasileira.
+        </Texto>
+        <div data-anim className={s.citacaoCritica}>
+          &ldquo;Eu vos dei a minha vida. Agora vos ofereço a minha morte. Nada receio.
+          Serenamente dou o primeiro passo no caminho da eternidade e saio da vida para entrar na
+          História.&rdquo;
+          <span className={s.citacaoCriticaAutor}>Getúlio Vargas, carta-testamento, 23 de agosto de 1954</span>
+        </div>
+        <Texto muted>
+          O próprio livro pede para ler esse texto com distância crítica: a carta não é só um
+          adeus, é um documento político que constrói uma narrativa de &ldquo;nós contra
+          eles&rdquo; — e que, lida no rádio horas depois da morte de Vargas, ajudou a transformar
+          a crise em mito político invocado por décadas.
         </Texto>
       </Tela>
 

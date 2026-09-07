@@ -42,6 +42,17 @@ export default [
     duracaoMin: 9,
   },
   {
+    slug: 'imaginario-do-colonizador',
+    titulo: 'O Selvagem Que Inventaram',
+    periodo: '1500 — hoje',
+    serie: '1a',
+    era: 'colonizacao',
+    resumo: 'Como a imagem do indígena "selvagem" foi construída, carta por carta e gravura por gravura, por quem nunca foi indígena — de Caminha e Anchieta a Theodore de Bry — e como ela é respondida hoje por vozes indígenas como a de Gersem Baniwa. Onze telas, nenhuma decisão.',
+    capa: '/imagens/linha-do-tempo/imaginario-do-colonizador/capa.jpg',
+    telas: 11,
+    duracaoMin: 10,
+  },
+  {
     slug: 'republica-velha',
     titulo: 'A República que o povo assistiu',
     periodo: '1889 — 1930',
@@ -60,7 +71,7 @@ export default [
     era: 'era-vargas',
     resumo: 'Mulheres operárias, o colapso da República Velha em 1930, a Revolta de 1932, a CLT como estratégia de controle, Dutra na Guerra Fria, o retorno e a queda de Vargas, e Juscelino prometendo 50 anos em 5.',
     capa: '/imagens/linha-do-tempo/da-revolta-ao-desenvolvimento/capa.jpg',
-    telas: 13,
-    duracaoMin: 12,
+    telas: 14,
+    duracaoMin: 13,
   },
 ]
