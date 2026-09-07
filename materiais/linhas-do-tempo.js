@@ -31,6 +31,17 @@ export default [
     duracaoMin: 11,
   },
   {
+    slug: 'materialidade-e-saberes-incas',
+    titulo: 'Pedra, Fio e Nó',
+    periodo: 'Período inca',
+    serie: '1a',
+    era: 'colonizacao',
+    resumo: 'Arquitetura sísmica sem argamassa, terraços que cultivam onde a montanha não deixaria, o quipu que administra um império em nós, o tecido que valia mais que ouro, e Machu Picchu alinhada às estrelas — fechando com a pergunta que a própria "descoberta" de 1911 esconde.',
+    capa: '/imagens/linha-do-tempo/materialidade-e-saberes-incas/capa.jpg',
+    telas: 10,
+    duracaoMin: 9,
+  },
+  {
     slug: 'republica-velha',
     titulo: 'A República que o povo assistiu',
     periodo: '1889 — 1930',

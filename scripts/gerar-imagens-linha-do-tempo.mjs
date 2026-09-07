@@ -91,6 +91,31 @@ const LINHAS_DO_TEMPO = {
       'thatched and tiled buildings near a river, cane fields around it, overcast sky, no human ' +
       'figures prominent, no readable text.',
   },
+  'materialidade-e-saberes-incas': {
+    // Nenhuma pessoa retratada em nenhuma cena — foco em arquitetura,
+    // paisagem e objetos, mesmo cuidado da timeline de povos originários.
+    capa:
+      'Wide panoramic view of Andean mountain terraced hillsides at dawn, ancient stone ' +
+      'architecture ruins visible on a distant ridge, misty valleys below, no readable text, ' +
+      'no people prominent.',
+    pedrasobrepedra:
+      'Close-up of a precisely fitted Inca-style dry stone wall, large polygonal stone blocks ' +
+      'interlocking without any visible mortar, weathered texture, soft raking light ' +
+      'emphasizing the joints, no people, no readable text.',
+    terracosagua:
+      'Andean agricultural terraces (andenes) curving along a steep mountainside, a small stone ' +
+      'irrigation channel visible, distant snow-capped peaks, no people prominent, no readable text.',
+    quipu:
+      'Close-up still life of a quipu, a device of knotted colored cords hanging from a ' +
+      'horizontal cord, resting on a plain woven cloth, warm indoor light, no people, no ' +
+      'readable text or symbols.',
+    textil:
+      'Close-up of a finely woven Andean textile with geometric patterns in naturally dyed ' +
+      'colors, folded fabric texture visible, soft light, no people, no readable text.',
+    machupicchu:
+      'Wide view of a misty Andean mountaintop stone citadel at dawn, terraced stone structures ' +
+      'and a central plaza, dramatic peaks in the background, no readable text, no people prominent.',
+  },
   'da-revolta-ao-desenvolvimento': {
     // 1930-1961: Revolta de 1932, mulheres operarias, CLT/trabalhismo,
     // Dutra/Guerra Fria, 2o governo Vargas, JK. Nenhuma pessoa real

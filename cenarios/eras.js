@@ -18,8 +18,8 @@ export default [
     periodo: 'Antes de 1500 — Século XVI',
     serie: '1a',
     resumo:
-      'Maias, astecas e incas antes de qualquer navio chegar; o encontro, a conquista e a ' +
-      'colonização depois. Ainda sem simulação — só a linha do tempo, por enquanto.',
+      'Maias, astecas e incas antes de qualquer navio chegar — três simulações, uma por ' +
+      'civilização — e, depois, o encontro e a colonização, por enquanto só em linha do tempo.',
     capa: '/imagens/linha-do-tempo/povos-originarios-e-colonizacao/capa.jpg',
   },
   {
