@@ -209,7 +209,7 @@ export default function ImaginarioDoColonizador({ onSair }) {
           &ldquo;Dessa visão limitada e discriminatória [...] resultou uma série de ambiguidades
           e contradições ainda hoje presentes no imaginário da sociedade brasileira [...] que
           continua considerando os povos indígenas como culturas em estágios inferiores.&rdquo;
-          <span className={s.citacaoCriticaAutor}>Gersem Baniwa, "O índio brasileiro" (Ministério da Educação, 2006)</span>
+          <span className={s.citacaoCriticaAutor}>Gersem Baniwa, &ldquo;O índio brasileiro&rdquo; (Ministério da Educação, 2006)</span>
         </div>
         <Texto muted>
           Pela primeira vez nesta timeline, quem fala é um autor indígena — não um cronista

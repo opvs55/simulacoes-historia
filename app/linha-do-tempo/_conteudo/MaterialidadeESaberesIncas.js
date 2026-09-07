@@ -152,7 +152,7 @@ export default function MaterialidadeESaberesIncas({ onSair }) {
         <div data-anim className={s.painel}>
           <div className={s.painelLinha}>
             <span className={s.painelNome}>Quem registrou isso pra gente</span>
-            <span className={s.painelTexto}>Felipe Guamán Poma de Ayala, cronista de ascendência inca, descreveu e desenhou quipus em sua "Nueva Corónica y Buen Gobierno" (1615)</span>
+            <span className={s.painelTexto}>Felipe Guamán Poma de Ayala, cronista de ascendência inca, descreveu e desenhou quipus em sua &ldquo;Nueva Corónica y Buen Gobierno&rdquo; (1615)</span>
           </div>
           <div className={s.painelLinha}>
             <span className={s.painelNome}>O que ainda não sabemos</span>
@@ -170,7 +170,7 @@ export default function MaterialidadeESaberesIncas({ onSair }) {
           identidade. O <Termo chave="cumbi">cumbi</Termo>, tecido fino de lã de vicunha ou alpaca,
           circulava como tributo, presente diplomático e sinal de status dentro do império.
         </Texto>
-        <Texto muted>Os padrões geométricos tecidos em cada peça também comunicavam origem regional e posição social — uma peça de roupa que "falava" antes de qualquer palavra ser dita.</Texto>
+        <Texto muted>Os padrões geométricos tecidos em cada peça também comunicavam origem regional e posição social — uma peça de roupa que &ldquo;falava&rdquo; antes de qualquer palavra ser dita.</Texto>
       </Tela>
 
       <Tela id="machu-picchu" label="Machu Picchu: pedra e estrela" imagem={`${BASE}/machupicchu.jpg`} imagemPosicao="center 45%" brilho={0.4}>
