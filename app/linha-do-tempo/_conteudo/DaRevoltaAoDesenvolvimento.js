@@ -35,6 +35,10 @@ const GLOSSARIO = {
     'Plano de Metas',
     'Programa de governo de Juscelino Kubitschek organizado em torno do lema "50 anos em 5" — prioridades em energia, transporte, indústria de base e a construção de Brasília.',
   ],
+  candangos: [
+    'Candangos',
+    'Nome dado aos trabalhadores migrantes — muitos vindos do Nordeste — que construíram Brasília sob condições precárias. Depois da inauguração da capital, boa parte foi removida para cidades-satélite, sem lugar garantido no centro modernista que ajudou a erguer.',
+  ],
 }
 
 function Quiz({ pergunta, opcoes, certa, feedbackCerto, feedbackErrado, kicker = 'Checagem rápida' }) {
@@ -217,6 +221,26 @@ export default function DaRevoltaAoDesenvolvimento({ onSair }) {
         <Texto muted>O <Termo chave="dip">DIP</Termo> orquestra a imagem de Vargas como &ldquo;pai dos pobres&rdquo; — um benfeitor espontâneo, não um Estado calculando como esfriar o conflito de classe.</Texto>
       </Tela>
 
+      <TelaClara id="a-voz-do-pai-dos-pobres" label="A voz do rádio, 1943">
+        <div data-anim className={s.reflexaoKicker}>Fonte primária · 1943</div>
+        <p data-anim className={s.reflexaoPergunta}>
+          &ldquo;O panorama resultante é de concórdia, ausentes a desconfiança e a hostilidade,
+          capacitados todos de que são necessários uns aos outros.&rdquo;
+        </p>
+        <p data-anim className={s.reflexaoContexto}>
+          Trecho real de um discurso de Getúlio Vargas transmitido pelo rádio ao anunciar a CLT —
+          o mesmo tipo de encenação que o <Termo chave="dip">DIP</Termo> organizava, como a
+          manifestação no Estádio do Vasco da Gama em 1941, para mostrar &ldquo;apoio unânime ao
+          líder&rdquo;. No discurso, Vargas descreve décadas de tensão entre patrões e empregados
+          como se já tivessem sido resolvidas por decreto — a mesma lei que, como você acabou de
+          ver, também servia para conter greves e vigiar sindicatos.
+        </p>
+        <p data-anim className={s.reflexaoNota}>
+          Para discutir: que palavras do discurso soam mais como propaganda do que como descrição
+          da realidade? O que Vargas evita dizer sobre quem perde autonomia nesse acordo?
+        </p>
+      </TelaClara>
+
       <TelaClara id="reflexao" label="E se fosse você?">
         <div data-anim className={s.reflexaoKicker}>Para pensar — e discutir em sala</div>
         <p data-anim className={s.reflexaoPergunta}>
@@ -242,9 +266,19 @@ export default function DaRevoltaAoDesenvolvimento({ onSair }) {
         <Texto>
           A Constituição de 1946 restabelece soberania popular, separação dos poderes e direitos
           civis — um marco institucional depois do Estado Novo. Mas o país já nasce dividido pela
-          Guerra Fria.
+          Guerra Fria: Dutra rompe relações com a União Soviética e alinha o Brasil aos Estados Unidos.
         </Texto>
-        <Texto muted>Redemocratizar não significa neutralidade: o alinhamento internacional já pesa sobre a política interna desde o primeiro governo eleito do período.</Texto>
+        <div data-anim className={s.painel}>
+          <div className={s.painelLinha}>
+            <span className={s.painelNome}>O que a redemocratização dá</span>
+            <span className={s.painelTexto}>Constituição liberal, eleições diretas, separação dos poderes</span>
+          </div>
+          <div className={s.painelLinha}>
+            <span className={s.painelNome}>O que ela mesma tira, na prática</span>
+            <span className={s.painelTexto}>Em 1947, o registro do Partido Comunista Brasileiro é cassado — e, depois, os mandatos de seus deputados e do senador eleitos</span>
+          </div>
+        </div>
+        <Texto muted>Redemocratizar não significa neutralidade: um partido legal, com representação real no Congresso, perde o direito de existir formalmente — os limites da nova democracia aparecem antes mesmo de ela completar dois anos.</Texto>
       </Tela>
 
       <Tela id="segundo-vargas" label="Segundo Vargas" imagem={`${BASE}/segundovargas.jpg`} imagemPosicao="center 40%" brilho={0.38}>
@@ -295,7 +329,12 @@ export default function DaRevoltaAoDesenvolvimento({ onSair }) {
             <div className={s.comparativoTexto}>Inflação, dívida, êxodo rural, precarização urbana</div>
           </div>
         </div>
-        <Texto muted>O rápido crescimento não virou melhoria generalizada de vida — a intensificação do êxodo rural alimentou conflitos sociais que o desenvolvimentismo prometia resolver.</Texto>
+        <Texto muted>
+          Os <Termo chave="candangos">candangos</Termo> — trabalhadores migrantes, muitos do
+          Nordeste, que erguem Brasília sob condições precárias e repressão policial — não têm
+          lugar garantido na cidade que constroem: depois da inauguração, boa parte é empurrada
+          para cidades-satélite, longe do centro modernista que ajudou a criar.
+        </Texto>
       </Tela>
 
       <Fecho />
