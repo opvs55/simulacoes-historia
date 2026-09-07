@@ -8,9 +8,10 @@ import tawantinsuyu from '@/cenarios/tawantinsuyu.js'
 import tenochtitlan from '@/cenarios/tenochtitlan.js'
 import casaDaIndia from '@/cenarios/casa-da-india.js'
 import noveDeJulho1932 from '@/cenarios/nove-de-julho-1932.js'
+import tikal from '@/cenarios/tikal.js'
 import styles from './page.module.css'
 
-const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia, coroaECofre, tawantinsuyu, tenochtitlan, casaDaIndia, noveDeJulho1932]
+const CENARIOS = [saoPaulo1917, aTerraDoFavor, oPlanoQueNaoExistia, coroaECofre, tawantinsuyu, tenochtitlan, casaDaIndia, tikal, noveDeJulho1932]
 
 const NOME_ERA = {
   republica: 'República Velha',

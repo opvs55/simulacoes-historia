@@ -137,6 +137,25 @@ const ICONES_PAPEIS = {
     'operario-paulista':
       'Portrait of a 1930s Brazilian factory worker: simple work clothes, weathered thoughtful expression.',
   },
+  tikal: {
+    // Nenhum governante maia nomeado retratado (nem o rei derrotado em 562,
+    // nem Jasaw Chan K'awiil I, vencedor de 695) — "conselho-real-tikal" é
+    // um cargo genérico, mesmo padrão de "conselho-imperial"/"conselho-
+    // tlatoani". Sem rostos em close-up com traços étnicos estereotipados —
+    // mesmo cuidado da Linha do tempo de povos originários.
+    'conselho-real-tikal':
+      'Portrait of a generic Classic Maya noble administrator: fine woven cloak with geometric patterns, elaborate feathered headdress, jade jewelry, composed authoritative expression. Not a ruler, not a specific historical figure — a generic court official.',
+    'senhor-vassalo':
+      'Portrait of a generic Classic Maya minor city-state lord: woven tunic of distinct but modest pattern, simple jade ornament, watchful thoughtful expression.',
+    'sacerdote-astronomo':
+      'Portrait of a generic Classic Maya priest-astronomer: ceremonial tunic, holding a folded bark-paper codex, composed serene expression, night sky motif suggested behind.',
+    'mercador-jade-obsidiana':
+      'Portrait of a generic Classic Maya long-distance trader: simple traveling cloak, holding a small woven pouch of trade goods, alert watchful expression, jungle path suggested behind.',
+    'mestre-construtor':
+      'Portrait of a generic Classic Maya construction overseer: simple tunic, hands near stone-working tools, weathered steady expression, scaffolding suggested behind.',
+    'campones-maia':
+      'Portrait of a generic Classic Maya farmer: plain woven work clothes, agricultural tool nearby, weathered steady expression.',
+  },
 }
 
 const IMAGENS_RODADAS = {
@@ -229,6 +248,18 @@ const IMAGENS_RODADAS = {
     'a-rendicao':
       'A flag being folded at dusk in an empty military courtyard, no human figures prominent, somber muted tones, no readable text.',
   },
+  tikal: {
+    'os-templos-de-tikal':
+      'A tall stone step-pyramid temple seen from a distance among the jungle canopy at dusk, no human figures prominent, no readable text or glyphs.',
+    'aliancas-e-casamentos':
+      'A small procession of generic Classic Maya figures in ceremonial cloaks crossing a jungle path between two city-states, seen from a distance, no faces in close-up, no readable text.',
+    'a-sombra-de-calakmul':
+      'A schematic-feeling jungle landscape at dusk with two overlapping zones of influence suggested by faint torch-lit paths converging toward two distant stone cities, somber tone, no readable text or map labels.',
+    'a-derrota-de-562':
+      'A partially built stone temple with abandoned wooden scaffolding around it, quiet, dim late-afternoon light, no human figures prominent, no readable text.',
+    'o-silencio-que-nao-e-fim':
+      'The interior of a stone archive chamber with folded bark-paper codices stacked on stone shelves, torchlight, no human figures prominent, no readable text or glyphs.',
+  },
 }
 
 // Uma imagem por final pessoal (ver lib/simulacao/finais.js) — cena/objeto
@@ -270,6 +301,8 @@ const IMAGENS_CAPA = {
     'Wide panoramic view of a bustling late 15th century Lisbon harbor at dawn, several caravels and naus docked or departing, warehouses along the waterfront, the wide river mouth opening toward the ocean in the distance, no readable text, no people prominent in the foreground, emphasizing the scale of a small kingdom\'s maritime ambition.',
   'nove-de-julho-1932':
     'Wide panoramic view of a 1930s São Paulo street with volunteer civilians and improvised military trucks preparing for war, factory smokestacks in the background, overcast dramatic sky, no readable text or flag emblems, no faces prominent in the foreground, emphasizing a city mobilizing largely alone.',
+  tikal:
+    'Wide panoramic view of a Classic Maya city rising above the jungle canopy at dawn, tall stone step-pyramid temples silhouetted against a misty sky, dense rainforest stretching to the horizon, no readable text or glyphs, no people prominent in the foreground, emphasizing a city-state standing alone among rivals.',
 }
 
 const IMAGENS_EVENTOS = {
