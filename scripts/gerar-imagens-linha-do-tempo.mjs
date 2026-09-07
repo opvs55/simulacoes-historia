@@ -103,6 +103,11 @@ const LINHAS_DO_TEMPO = {
       'Generic interior of a 1910s-1920s Brazilian textile factory, several women working at ' +
       'looms and spinning machines in a row, natural light from tall windows, documentary tone, ' +
       'no close-up identifiable faces, no readable text.',
+    movimento1930:
+      'Wide distant exterior view of a generic early 20th century Brazilian government palace at ' +
+      'dusk, a small crowd of civilians and a few soldiers gathered near the entrance, tense but ' +
+      'non-violent transitional mood, no specific identifiable building or person, no readable ' +
+      'text or flag emblems, overcast dramatic light.',
     revolta1932:
       'Generic 1932 São Paulo street scene with a makeshift barricade of furniture and sandbags, ' +
       'a few volunteer civilians in improvised armbands nearby, no weapons fired, no visible ' +

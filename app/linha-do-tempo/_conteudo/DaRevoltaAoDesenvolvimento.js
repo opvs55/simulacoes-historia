@@ -7,6 +7,10 @@ import s from './DaRevoltaAoDesenvolvimento.module.css'
 const BASE = '/imagens/linha-do-tempo/da-revolta-ao-desenvolvimento'
 
 const GLOSSARIO = {
+  tenentismo: [
+    'Tenentismo',
+    'Movimento de jovens oficiais do Exército, nos anos 1920, que criticava o poder das oligarquias e defendia um Estado mais forte, centralizado e moderno — combinava moralização da política, nacionalismo e modernização, ainda que de forma autoritária.',
+  ],
   mmdc: [
     'MMDC',
     'Iniciais de Martins, Miragaia, Dráusio e Camargo — os primeiros mortos da Revolução Constitucionalista de 1932, viraram símbolo do movimento paulista.',
@@ -62,6 +66,7 @@ function Fecho() {
   const { reiniciar } = useTimeline()
   const marcos = [
     ['1917+', 'Mulheres operárias organizam sindicatos e entram na Greve Geral, mesmo sem reconhecimento'],
+    ['1930', 'A "política do café com leite" se rompe — oligarquias dissidentes e tenentismo levam Vargas ao poder'],
     ['1932', 'Revolta Constitucionalista: as elites paulistas pegam em armas contra Vargas — e perdem'],
     ['1943', 'CLT consolida direitos trabalhistas dentro de um pacto corporativista e autoritário'],
     ['1946', 'Constituição redemocratiza o país sob Dutra, já dentro da Guerra Fria'],
@@ -87,11 +92,15 @@ function Fecho() {
   )
 }
 
-// Aulas 4, 6, 9, 10, 11 e 12 do 2º ano — o que sobra depois de "São
-// Paulo, 1917", "A terra do favor", "O plano que não existia" e da Linha
-// do tempo da República Velha (ver docs/plano-curriculo-1a-2a-serie.md).
-// A tela "trabalhismo" segue de perto a leitura crítica que o próprio
-// livro já faz da CLT — não é uma interpretação nossa por cima da fonte.
+// Aulas 4, 5, 6, 9, 10, 11 e 12 do 2º ano — o que sobra depois de "São
+// Paulo, 1917", "A terra do favor", "O plano que não existia", "9 de
+// Julho" e da Linha do tempo da República Velha (ver docs/plano-
+// curriculo-1a-2a-serie.md). A tela "movimento-1930" segue de perto o
+// resumo do próprio livro (Aula 5) — inclusive a leitura de que a
+// Revolução de 1930 uniu oligarquias dissidentes E tenentismo, não foi
+// golpe militar isolado. A tela "trabalhismo" segue de perto a leitura
+// crítica que o próprio livro já faz da CLT — não é uma interpretação
+// nossa por cima da fonte.
 export default function DaRevoltaAoDesenvolvimento({ onSair }) {
   return (
     <TimelineShell slug="da-revolta-ao-desenvolvimento" titulo="Do quartel ao canteiro de obras" glossario={GLOSSARIO} onSair={onSair}>
@@ -101,7 +110,7 @@ export default function DaRevoltaAoDesenvolvimento({ onSair }) {
           Do quartel ao<br /><i className={s.capaDestaque}>canteiro de obras</i>
         </h1>
         <div data-anim className={s.capaRegua} />
-        <Texto>Entre a greve de 1917 e Brasília: mulheres operárias, uma revolta perdida, direitos trabalhistas com preço político, e trinta anos até o Brasil prometer se reinventar em cinco.</Texto>
+        <Texto>Entre a greve de 1917 e Brasília: mulheres operárias, o colapso da República Velha, uma revolta perdida, direitos trabalhistas com preço político, e trinta anos até o Brasil prometer se reinventar em cinco.</Texto>
         <div data-anim className={s.capaRodape}>
           <span className={s.capaSeta}>↑</span> deslize para começar
         </div>
@@ -123,6 +132,33 @@ export default function DaRevoltaAoDesenvolvimento({ onSair }) {
           <div className={s.listaLinha}><span className={s.listaMarca}>—</span><span className={s.listaTexto}>Ampliaram a luta para educação e saúde, não só salário</span></div>
         </div>
         <Texto muted>Desigualdade salarial, dupla jornada, sub-representação — desafios daquela luta que ainda não terminaram.</Texto>
+      </Tela>
+
+      <Tela id="movimento-1930" label="Movimento de 1930" imagem={`${BASE}/movimento1930.jpg`} imagemPosicao="center 40%" brilho={0.46}>
+        <Kicker>1929 — 1930</Kicker>
+        <Titulo>Um pacto<br />se rompe</Titulo>
+        <Texto>
+          A &ldquo;política do café com leite&rdquo; — o acordo não escrito que alternava São Paulo e
+          Minas Gerais na presidência — se rompe quando Washington Luís insiste no próprio
+          sucessor. Oligarquias excluídas se juntam a um grupo inesperado: o{' '}
+          <Termo chave="tenentismo">tenentismo</Termo>, jovens oficiais que já criticavam o poder das
+          oligarquias desde os anos 1920.
+        </Texto>
+        <div data-anim className={s.painel}>
+          <div className={s.painelLinha}>
+            <span className={s.painelNome}>O estopim</span>
+            <span className={s.painelTexto}>A Grande Depressão de 1929 fragiliza a economia cafeeira, pilar financeiro do regime</span>
+          </div>
+          <div className={s.painelLinha}>
+            <span className={s.painelNome}>A aliança</span>
+            <span className={s.painelTexto}>Oligarquias dissidentes + tenentismo — Vargas articula os dois lados e assume o Estado</span>
+          </div>
+        </div>
+        <Texto muted>
+          Interventores federais — muitos ligados ao tenentismo — substituem as antigas
+          oligarquias regionais. É esse mesmo desmonte da autonomia estadual que, dois anos
+          depois, os paulistas vão pegar em armas para tentar reverter.
+        </Texto>
       </Tela>
 
       <Tela id="revolta-1932" label="Revolta de 1932" imagem={`${BASE}/revolta1932.jpg`} imagemPosicao="center 45%" brilho={0.48}>

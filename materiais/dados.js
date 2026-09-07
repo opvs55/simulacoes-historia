@@ -25,11 +25,12 @@ export default [
     serie: '2a',
     url: '/linha-do-tempo/da-revolta-ao-desenvolvimento',
     descricao:
-      'Mulheres operárias, a Revolta de 1932, a CLT como estratégia de controle do movimento ' +
-      'operário, Dutra na Guerra Fria, o retorno e a queda de Vargas, e JK prometendo 50 anos ' +
-      'em 5. O que fica entre "São Paulo, 1917" e a era de Brasília.',
-    cenariosRelacionados: ['sao-paulo-1917', 'o-plano-que-nao-existia'],
-    duracaoMin: 10,
+      'Mulheres operárias, o colapso da República Velha em 1930, a Revolta de 1932, a CLT ' +
+      'como estratégia de controle do movimento operário, Dutra na Guerra Fria, o retorno e a ' +
+      'queda de Vargas, e JK prometendo 50 anos em 5. O que fica entre "São Paulo, 1917" e a ' +
+      'era de Brasília.',
+    cenariosRelacionados: ['sao-paulo-1917', 'nove-de-julho-1932', 'o-plano-que-nao-existia'],
+    duracaoMin: 11,
     momento: 'antes',
   },
   {

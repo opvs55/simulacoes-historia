@@ -47,9 +47,9 @@ export default [
     periodo: '1917 — 1961',
     serie: '2a',
     era: 'era-vargas',
-    resumo: 'Mulheres operárias, a Revolta de 1932, a CLT como estratégia de controle, Dutra na Guerra Fria, o retorno e a queda de Vargas, e Juscelino prometendo 50 anos em 5.',
+    resumo: 'Mulheres operárias, o colapso da República Velha em 1930, a Revolta de 1932, a CLT como estratégia de controle, Dutra na Guerra Fria, o retorno e a queda de Vargas, e Juscelino prometendo 50 anos em 5.',
     capa: '/imagens/linha-do-tempo/da-revolta-ao-desenvolvimento/capa.jpg',
-    telas: 11,
-    duracaoMin: 10,
+    telas: 12,
+    duracaoMin: 11,
   },
 ]
