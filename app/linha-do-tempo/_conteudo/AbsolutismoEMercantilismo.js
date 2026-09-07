@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, Citacao, useTimeline } from '../_experiencia/TimelineShell.js'
+import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, Citacao, ParaInvestigar, useTimeline } from '../_experiencia/TimelineShell.js'
 import s from './AbsolutismoEMercantilismo.module.css'
 
 const BASE = '/imagens/linha-do-tempo/absolutismo-e-mercantilismo'
@@ -320,6 +320,15 @@ export default function AbsolutismoEMercantilismo({ onSair }) {
           certa={1}
           feedbackCerto="Isso. O mercantilismo busca metais preciosos e mercados — as navegações são o meio de chegar até eles, e o que trazem de volta financia o Estado centralizado."
           feedbackErrado="Não. Um alimenta o outro: a lógica mercantilista impulsiona a expansão marítima, e a expansão traz de volta o que sustenta o mercantilismo."
+        />
+      </TelaClara>
+
+      <TelaClara id="para-investigar" label="Para investigar">
+        <ParaInvestigar
+          perguntas={[
+            'Pesquise um outro país europeu, além da França, que também tentou construir uma monarquia absolutista no mesmo período — o que deu certo e o que fracassou, comparado ao caso francês?',
+            'O mercantilismo defendia que um país só enriquece à custa de outro. Pesquise se algum pensador da própria época já criticava essa ideia, e o que veio depois dela, séculos mais tarde, na economia.',
+          ]}
         />
       </TelaClara>
 

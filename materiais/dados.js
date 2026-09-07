@@ -30,7 +30,7 @@ export default [
       'queda de Vargas, e JK prometendo 50 anos em 5. O que fica entre "São Paulo, 1917" e a ' +
       'era de Brasília.',
     cenariosRelacionados: ['sao-paulo-1917', 'nove-de-julho-1932', 'o-plano-que-nao-existia'],
-    duracaoMin: 11,
+    duracaoMin: 14,
     momento: 'antes',
   },
   {
@@ -42,9 +42,9 @@ export default [
     descricao:
       'Maias, astecas e incas antes do contato; o encontro, a conquista e a colonização depois ' +
       '— sem decisão jogável, com atenção a quem escreveu cada fonte e à resistência indígena ' +
-      'documentada desde o início. Doze telas.',
+      'documentada desde o início. Treze telas.',
     cenariosRelacionados: [],
-    duracaoMin: 11,
+    duracaoMin: 12,
   },
   {
     slug: 'materialidade-e-saberes-incas',
@@ -54,9 +54,9 @@ export default [
     url: '/linha-do-tempo/materialidade-e-saberes-incas',
     descricao:
       'Arquitetura sísmica sem argamassa, terraços, o quipu, cultura têxtil e Machu Picchu — e ' +
-      'uma leitura crítica de quem "descobriu" o quê, e para quem. Dez telas, sem decisão jogável.',
+      'uma leitura crítica de quem "descobriu" o quê, e para quem. Onze telas, sem decisão jogável.',
     cenariosRelacionados: ['tawantinsuyu'],
-    duracaoMin: 9,
+    duracaoMin: 10,
     momento: 'antes',
   },
   {
@@ -68,9 +68,9 @@ export default [
     descricao:
       'Como a imagem do indígena "selvagem" foi construída, fonte a fonte, por quem nunca foi ' +
       'indígena — e como ela é respondida hoje por vozes indígenas como a de Gersem Baniwa. ' +
-      'Onze telas, nenhuma decisão jogável.',
+      'Doze telas, nenhuma decisão jogável.',
     cenariosRelacionados: [],
-    duracaoMin: 10,
+    duracaoMin: 11,
   },
   {
     slug: 'absolutismo-e-mercantilismo',
@@ -80,11 +80,11 @@ export default [
     url: '/linha-do-tempo/absolutismo-e-mercantilismo',
     descricao:
       'Como a Europa deixou de ser um mosaico de feudos e virou um continente de reis ' +
-      'absolutos, em treze telas — Reforma, Contrarreforma, formação das monarquias, os três ' +
+      'absolutos, em catorze telas — Reforma, Contrarreforma, formação das monarquias, os três ' +
       'teóricos do absolutismo, navegações e mercantilismo. O mesmo pano de fundo de "A Coroa ' +
       'e o Cofre".',
     cenariosRelacionados: ['coroa-e-cofre'],
-    duracaoMin: 12,
+    duracaoMin: 13,
     momento: 'antes',
   },
   {
@@ -94,12 +94,12 @@ export default [
     serie: '2a',
     url: '/linha-do-tempo/republica-velha',
     descricao:
-      'Os quarenta anos da Primeira República em dezessete telas, em modo história — role como ' +
+      'Os quarenta anos da Primeira República em dezoito telas, em modo história — role como ' +
       'num feed, com glossário e checagens rápidas no caminho. Cobre o pano de fundo dos 3 ' +
       'cenários: o coronelismo de "A terra do favor", a greve de "São Paulo, 1917" e a ascensão ' +
       'de Vargas de "O plano que não existia".',
     cenariosRelacionados: ['sao-paulo-1917', 'a-terra-do-favor', 'o-plano-que-nao-existia'],
-    duracaoMin: 15,
+    duracaoMin: 16,
     momento: 'antes',
   },
   {

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, Citacao, useTimeline } from '../_experiencia/TimelineShell.js'
+import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, Citacao, ParaInvestigar, useTimeline } from '../_experiencia/TimelineShell.js'
 import s from './RepublicaVelha.module.css'
 
 const BASE = '/imagens/linha-do-tempo/republica-velha'
@@ -388,6 +388,15 @@ export default function RepublicaVelha({ onSair }) {
           certa={1}
           feedbackCerto="Isso. Vargas cria o Ministério do Trabalho e leis sociais, mas atrela os sindicatos ao Estado."
           feedbackErrado="Não. A repressão vinha de antes; o que muda é o Estado assumir a questão social — concedendo direitos e controlando os sindicatos."
+        />
+      </TelaClara>
+
+      <TelaClara id="para-investigar" label="Para investigar">
+        <ParaInvestigar
+          perguntas={[
+            'A Semana de Arte Moderna de 1922 aconteceu no mesmo período de crise da Primeira República. Pesquise que ligação, se houver, os modernistas tinham com as críticas políticas ao coronelismo daquele momento.',
+            'A Coluna Prestes andou milhares de quilômetros pelo interior do Brasil sem nunca ser derrotada nem tomar o poder. Pesquise o que aconteceu com Luís Carlos Prestes depois que a coluna se dissolveu, em 1927.',
+          ]}
         />
       </TelaClara>
 

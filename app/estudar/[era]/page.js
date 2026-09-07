@@ -67,34 +67,46 @@ export default function Era({ params }) {
       <div className={styles.corpo}>
         <p className={styles.resumo}>{era.resumo}</p>
 
-        <div className={styles.lista}>
-          {linhas.map((linha) => (
-            <ProgressoLinha key={linha.slug} linha={linha} />
-          ))}
+        {linhas.length > 0 && (
+          <div className={styles.grupo}>
+            <div className={comum.kicker}>Linhas do tempo · para ler</div>
+            <div className={styles.lista}>
+              {linhas.map((linha) => (
+                <ProgressoLinha key={linha.slug} linha={linha} />
+              ))}
+            </div>
+          </div>
+        )}
 
-          {cenarios.map((cenario) => (
-            <Link key={cenario.slug} href={`/simulacoes/${cenario.slug}`} className={styles.item}>
-              <div className={`${comum.plate} ${styles.itemCapa}`}>
-                <img src={`/imagens/${cenario.slug}/capa.jpg`} alt="" />
-              </div>
-              <div className={styles.itemCorpo}>
-                <div className={styles.itemTitulo}>{cenario.titulo}</div>
-                <div className={styles.itemMeta}>
-                  <span className={styles.itemMetaDestaque}>Simulação</span>
-                  <span>·</span>
-                  <span>{cenario.rodadas.length} rodadas</span>
-                  <span>·</span>
-                  <span>turma inteira</span>
-                </div>
-              </div>
-              <span className={styles.itemSeta}>→</span>
-            </Link>
-          ))}
+        {cenarios.length > 0 && (
+          <div className={styles.grupo}>
+            <div className={comum.kicker}>Simulações · para jogar com a turma</div>
+            <div className={styles.lista}>
+              {cenarios.map((cenario) => (
+                <Link key={cenario.slug} href={`/simulacoes/${cenario.slug}`} className={styles.item}>
+                  <div className={`${comum.plate} ${styles.itemCapa}`}>
+                    <img src={`/imagens/${cenario.slug}/capa.jpg`} alt="" />
+                  </div>
+                  <div className={styles.itemCorpo}>
+                    <div className={styles.itemTitulo}>{cenario.titulo}</div>
+                    <div className={styles.itemMeta}>
+                      <span className={styles.itemMetaDestaque}>Simulação</span>
+                      <span>·</span>
+                      <span>{cenario.rodadas.length} rodadas</span>
+                      <span>·</span>
+                      <span>turma inteira</span>
+                    </div>
+                  </div>
+                  <span className={styles.itemSeta}>→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
-          {linhas.length === 0 && cenarios.length === 0 && (
-            <p className={styles.vazio}>Ainda não há linha do tempo nem simulação para este período.</p>
-          )}
-        </div>
+        {linhas.length === 0 && cenarios.length === 0 && (
+          <p className={styles.vazio}>Ainda não há linha do tempo nem simulação para este período.</p>
+        )}
 
         {materiaisDoPeriodo.length > 0 && (
           <div className={styles.materiaisBloco}>

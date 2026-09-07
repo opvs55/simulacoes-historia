@@ -1218,6 +1218,58 @@
   line-height: 1.5;
 }
 
+/* "Para investigar" — perguntas sem resposta no app, pra pesquisar por
+   conta própria. Rotulo usa a cor de destaque (não tinta-fraca, como o
+   debate) pra ficar visualmente distinto de "discussão em grupo" — e o
+   "?" antes de cada pergunta reforça que aqui ninguém dá a resposta. */
+.fechoInvestigar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--regua-fraca);
+  padding-top: 12px;
+}
+
+.fechoInvestigarRotulo {
+  font-family: var(--fonte-titulo);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--destaque-700);
+}
+
+.fechoInvestigarLista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.fechoInvestigarLista li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.fechoInvestigarLista li::before {
+  content: '?';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--destaque);
+  font-weight: 700;
+}
+
+.fechoInvestigarNota {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--tinta-mais-fraca);
+}
+
 .reflexaoBloco {
   display: flex;
   flex-direction: column;

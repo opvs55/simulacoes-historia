@@ -181,6 +181,14 @@ export default {
     textoFecho: '...',
     perguntasDebate: ['...', '...', '...'], // roda de conversa em grupo, conduzida pelo professor
 
+    // opcional — 2+ perguntas genuinamente sem resposta em lugar nenhum do
+    // app: mandam quem jogou pesquisar por conta própria (livro, internet,
+    // família, museu), depois do fim da partida. Diferente de
+    // perguntasDebate (discussão em grupo, conduzida pelo professor) e de
+    // juri (debate estruturado, com fontes já catalogadas no cenário) —
+    // aqui não há fonte nem lado dado, só a pergunta.
+    paraInvestigar: ['...', '...'],
+
     // opcional — reflexão individual, respondida por escrito pelo próprio
     // aluno na tela de fecho (ainda não é salva — não há Supabase ligado
     // ao jogo, então isso é só o campo pronto pra quando existir). Sempre

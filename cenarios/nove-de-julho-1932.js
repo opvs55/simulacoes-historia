@@ -995,6 +995,12 @@ export default {
       'A Memória oficial nasceu de um fato histórico que ninguém escolheu (a rendição, o feriado) — a Memória crítica, não. Por que uma virou lei e feriado, e a outra dependeu de escolha, rodada a rodada, para não desaparecer?',
       'São Paulo perdeu a guerra e, menos de dois anos depois, teve praticamente tudo que pedia. Isso muda a resposta de vocês para a pergunta do início desta simulação?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'Pesquise a campanha "Ouro para o bem de São Paulo" — quanto foi arrecadado em joias e dinheiro, e o que aconteceu com esse ouro depois da derrota.',
+      'O dia 9 de Julho é feriado estadual em São Paulo até hoje. Pesquise desde quando ele é comemorado e como a data é lembrada atualmente.',
+    ],
     perguntasReflexao: [
       { nivel: 'Sua experiência', pergunta: 'No papel que você jogou, em algum momento sentiu que estava lutando por algo que não era exatamente a sua causa? Descreva a rodada em que isso ficou mais claro.' },
       { nivel: 'O conceito', pergunta: 'Uma "memória oficial" pode nascer de um fato real e ainda simplificar ou esconder outras verdades. Que outro exemplo disso você conhece, na história ou fora dela?' },

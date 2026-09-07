@@ -856,6 +856,12 @@ export default {
       'Diferente de "O Tawantinsuyu" e "Tenochtitlán", este cenário não tem um império único no centro. Isso mudou o tipo de decisão que vocês tomaram, papel a papel?',
       'Tikal quase desapareceu do registro histórico por 130 anos e ainda assim se recuperou. Que outros exemplos — históricos ou não — vocês conhecem de uma "queda" que não foi definitiva?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'A "guerra estelar" entre Tikal e Calakmul foi reconstruída por epigrafistas lendo inscrições maias, décadas depois de escavada. Pesquise como os pesquisadores conseguiram decifrar a escrita maia — quem foram os principais responsáveis por isso.',
+      'Tikal ficou coberta pela floresta e foi escavada de verdade só no século XX, embora nunca tenha sido "perdida" para quem vivia na região. Pesquise por que uma cidade tão grande passou tanto tempo fora dos livros de história ocidentais.',
+    ],
     perguntasReflexao: [
       { nivel: 'Sua experiência', pergunta: 'No papel que você jogou, como foi decidir sem saber se Tikal ia se recuperar da derrota de 562 ou não? O que isso muda em relação a jogar um cenário cujo desfecho final você já sabe de antemão?' },
       { nivel: 'O conceito', pergunta: 'Ao contrário dos outros dois cenários da Aula 9, aqui não existe um "centro" único de poder. Como isso se chama, e por que essa diferença importa para entender os maias de verdade?' },

@@ -932,6 +932,12 @@ export default {
       'O boato da "lista" do coronel não existia. Quantas decisões da turma foram tomadas por causa dele mesmo assim?',
       'Se o resultado da eleição estava decidido de antemão, o que exatamente vocês estavam disputando durante as quatro rodadas?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'O "voto de cabresto" era possível porque o voto não era secreto na Primeira República. Pesquise quando o voto secreto foi implementado no Brasil e por qual lei.',
+      'Pesquise se ainda existem práticas parecidas com o coronelismo na política brasileira de hoje — sob que nomes elas aparecem agora?',
+    ],
     perguntasReflexao: [
       {
         nivel: 'Sua experiência',

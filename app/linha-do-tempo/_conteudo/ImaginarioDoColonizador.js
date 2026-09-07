@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, useTimeline } from '../_experiencia/TimelineShell.js'
+import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, ParaInvestigar, useTimeline } from '../_experiencia/TimelineShell.js'
 import s from './ImaginarioDoColonizador.module.css'
 
 const BASE = '/imagens/linha-do-tempo/imaginario-do-colonizador'
@@ -247,6 +247,15 @@ export default function ImaginarioDoColonizador({ onSair }) {
           certa={1}
           feedbackCerto="Isso. O problema não é usar fontes europeias — é usá-las sem perceber que elas constroem uma imagem a serviço de um objetivo, e sem colocar ao lado vozes indígenas respondendo a essa imagem."
           feedbackErrado="Não é isso. As fontes europeias continuam valiosas — o ponto é ler percebendo o objetivo de quem escreveu, e completar o quadro com vozes indígenas, como a de Gersem Baniwa."
+        />
+      </TelaClara>
+
+      <TelaClara id="para-investigar" label="Para investigar">
+        <ParaInvestigar
+          perguntas={[
+            'Pesquise um livro didático ou material escolar mais antigo (de um adulto da família, de uma biblioteca) e veja como ele descreve os povos indígenas — mudou desde "O índio brasileiro" (2006) até hoje?',
+            'Theodore de Bry nunca esteve no Brasil — desenhou a partir do relato de outra pessoa. Pesquise se isso era comum entre os ilustradores europeus da época, ou se de Bry é um caso isolado.',
+          ]}
         />
       </TelaClara>
 

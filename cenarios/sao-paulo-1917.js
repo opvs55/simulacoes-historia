@@ -1393,6 +1393,12 @@ export default {
       'Quem, na turma, propôs salário igual para as mulheres na pauta — e quem só decidiu depois de ler as Bases de 1906? O que isso mudou?',
       'Se vocês fossem sorteados de novo, para outro papel, decidiriam diferente? O que isso diz sobre o peso que cada papel carrega?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'A greve de 1917 é considerada a maior greve geral da história do Brasil até então. Pesquise quantos trabalhadores participaram e quantas fábricas pararam, segundo os historiadores.',
+      'Muitos dos grevistas de 1917 eram imigrantes italianos e espanhóis com ideias anarquistas. Pesquise o que aconteceu com o movimento anarquista no Brasil nas décadas seguintes.',
+    ],
     // Reflexão individual (currículo em espiral — GDD seção 3): mesmo
     // conceito revisitado em 3 camadas crescentes, não 3 perguntas soltas.
     perguntasReflexao: [

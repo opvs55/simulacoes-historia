@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, useTimeline } from '../_experiencia/TimelineShell.js'
+import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, ParaInvestigar, useTimeline } from '../_experiencia/TimelineShell.js'
 import s from './DaRevoltaAoDesenvolvimento.module.css'
 
 const BASE = '/imagens/linha-do-tempo/da-revolta-ao-desenvolvimento'
@@ -371,6 +371,15 @@ export default function DaRevoltaAoDesenvolvimento({ onSair }) {
           para cidades-satélite, longe do centro modernista que ajudou a criar.
         </Texto>
       </Tela>
+
+      <TelaClara id="para-investigar" label="Para investigar">
+        <ParaInvestigar
+          perguntas={[
+            'A CLT, criada por Vargas, ainda regula boa parte do trabalho no Brasil hoje. Pesquise uma mudança recente (últimos 10 anos) nas leis trabalhistas brasileiras e compare com o espírito original da CLT.',
+            'Pesquise o que aconteceu com boa parte dos candangos depois que Brasília foi inaugurada, e como vivem hoje as cidades-satélite ao redor da capital.',
+          ]}
+        />
+      </TelaClara>
 
       <Fecho />
     </TimelineShell>

@@ -202,3 +202,25 @@ export function Citacao({ autor, children }) {
     </div>
   )
 }
+
+// Perguntas em aberto — sem resposta em lugar nenhum do app, de propósito.
+// O objetivo é mandar quem está usando pesquisar por conta própria (livro,
+// internet, família, museu, professor), nunca ler uma resposta pronta na
+// tela. Vive dentro de uma TelaClara, perto do Fecho — componente
+// compartilhado por todas as linhas do tempo, pra não duplicar CSS/JSX
+// currículo a currículo (ver docs de dívida técnica).
+export function ParaInvestigar({ perguntas }) {
+  return (
+    <>
+      <div data-anim className={styles.investigarKicker}>Para investigar por conta própria</div>
+      <ul className={styles.investigarLista}>
+        {perguntas.map((pergunta) => (
+          <li key={pergunta} data-anim className={styles.investigarItem}>
+            {pergunta}
+          </li>
+        ))}
+      </ul>
+      <p data-anim className={styles.investigarNota}>Sem resposta pronta aqui — pesquise, pergunte, compare fontes.</p>
+    </>
+  )
+}

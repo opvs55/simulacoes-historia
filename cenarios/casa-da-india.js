@@ -949,6 +949,12 @@ export default {
       'O Custo Humano da rota só subiu, rodada após rodada, em quase toda decisão possível. O que isso diz sobre o preço real das Grandes Navegações, além do que os mapas e as datas mostram?',
       'De que forma o ouro e a pimenta que chegam a Lisboa nesta simulação ajudam a explicar o Tesouro, a corte e o poder que aparecem em "A Coroa e o Cofre"?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'Vasco da Gama chegou a Calicute em 1498. Pesquise como os comerciantes muçulmanos que já dominavam aquele comércio de especiarias reagiram à chegada dos portugueses.',
+      'A Casa da Índia guardava registros detalhados de cada carga que chegava a Lisboa. Pesquise se algum desses registros originais sobreviveu até hoje e onde está guardado.',
+    ],
     perguntasReflexao: [
       { nivel: 'Sua experiência', pergunta: 'No papel que você teve, em algum momento a busca por lucro ou por glória pesou mais do que o risco real de vidas envolvidas? Descreva a rodada em que isso ficou mais claro.' },
       { nivel: 'O conceito', pergunta: 'Agora que você sabe o nome disso — mercantilismo, mesmo antes da palavra existir — como ele explica por que Portugal queria controlar a rota inteira, e não só participar dela?' },

@@ -833,6 +833,12 @@ export default {
       'O ressentimento das províncias tributárias nunca zerou em nenhuma rodada, não importa o que a turma decidisse. O que isso diz sobre impérios sustentados por tributo?',
       'Os pochteca eram comerciantes e também informantes. Existe alguma atividade hoje que combine essas duas funções da mesma forma?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'O Códice Mendoza lista, em desenhos, tudo que cada província devia entregar como tributo a Tenochtitlán. Pesquise um exemplo real desses tributos listados no códice.',
+      'A Cidade do México foi construída sobre as ruínas de Tenochtitlán. Pesquise o que os arqueólogos encontraram ao escavar o Templo Mayor, hoje no centro da cidade atual.',
+    ],
     perguntasReflexao: [
       {
         nivel: 'Sua experiência',

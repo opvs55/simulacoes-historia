@@ -842,6 +842,12 @@ export default {
       'A centralização de Cusco nunca diminuiu em nenhuma rodada, não importa o que a turma decidisse. O que isso diz sobre como impérios se sustentam?',
       'Existe uma forma de integrar um povo novo a um Estado maior sem que ele perca parte de si? O que a rodada da expansão militar sugere sobre isso?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'O quipu ainda não foi decifrado por completo pelos pesquisadores. Pesquise o que se sabe hoje sobre como um sistema de nós registrava números — e o que ainda é mistério.',
+      'O quéchua, língua do Tawantinsuyu, ainda é falada hoje por milhões de pessoas. Pesquise em quais países e por quantas pessoas o quéchua é falado atualmente.',
+    ],
     perguntasReflexao: [
       {
         nivel: 'Sua experiência',

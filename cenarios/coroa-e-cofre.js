@@ -907,6 +907,12 @@ export default {
       'A Dívida com a burguesia nunca diminuiu em nenhuma opção do jogo. O que isso diz sobre o próprio sistema, e não só sobre as escolhas de cada rodada?',
       'A revogação do Édito de Nantes fortaleceu ou enfraqueceu a França, considerando quem partiu e o que levou consigo?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'Luís XIV é famoso pela frase (talvez lendária) "o Estado sou eu". Pesquise se existe registro histórico confiável dela, ou se foi atribuída a ele só depois — e o que isso muda sobre como lemos o absolutismo.',
+      'Depois da revogação do Édito de Nantes, milhares de huguenotes fugiram da França. Pesquise para quais países eles foram e o que esses países ganharam com a chegada de artesãos e comerciantes protestantes.',
+    ],
     perguntasReflexao: [
       { nivel: 'Sua experiência', pergunta: 'No papel que você teve, em algum momento sentiu que "obedecer" e "sobreviver" eram a mesma escolha? Descreva a rodada em que isso ficou mais claro.' },
       { nivel: 'O conceito', pergunta: 'Agora que você sabe o nome disso — absolutismo, mercantilismo, sociedade estamental — qual desses três explica melhor a rodada que você decidiu mais rápido, sem pensar muito?' },

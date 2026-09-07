@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, useTimeline } from '../_experiencia/TimelineShell.js'
+import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, ParaInvestigar, useTimeline } from '../_experiencia/TimelineShell.js'
 import s from './PovosOriginariosEColonizacao.module.css'
 
 const BASE = '/imagens/linha-do-tempo/povos-originarios-e-colonizacao'
@@ -294,6 +294,15 @@ export default function PovosOriginariosEColonizacao({ onSair }) {
           certa={1}
           feedbackCerto="Isso. Já em 1545, indígenas expulsaram um capitão português da Bahia — resistência não é um capítulo tardio, está desde o início."
           feedbackErrado="Não. Há registros de resistência armada desde os primeiros anos da colonização — inclusive expulsando colonos de suas terras."
+        />
+      </TelaClara>
+
+      <TelaClara id="para-investigar" label="Para investigar">
+        <ParaInvestigar
+          perguntas={[
+            'A timeline cita a resistência de Cuauhtémoc e Túpac Amaru I, e a expulsão de um capitão português da Bahia em 1545. Pesquise outra liderança ou episódio de resistência indígena, no território que hoje é o Brasil, contra o processo de colonização.',
+            'Pesquise um povo indígena que vive no Brasil hoje e uma luta específica (por terra, língua, saúde) que ele está travando atualmente.',
+          ]}
         />
       </TelaClara>
 

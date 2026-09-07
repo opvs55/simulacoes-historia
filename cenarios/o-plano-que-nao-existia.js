@@ -822,6 +822,12 @@ export default {
       'O "Círculo de Vargas" e o "Alto-comando militar" tinham o maior peso do jogo. Eles também foram os que menos investigaram a origem do documento?',
       'A Constituição de 1937 deu ao presidente o poder de "decretar o estado de guerra". Uma lei real e uma ameaça falsa produziram, juntas, oito anos de ditadura — o que isso ensina sobre onde mora o perigo: na lei, na mentira, ou na combinação das duas?',
     ],
+    // Sem resposta pronta em lugar nenhum do app — o objetivo é mandar
+    // pesquisar por conta própria, não ler uma resposta na tela.
+    paraInvestigar: [
+      'O Plano Cohen foi forjado pelo capitão integralista Olímpio Mourão Filho. Pesquise o que aconteceu com ele décadas depois — o mesmo nome aparece em outro golpe na história do Brasil. Qual?',
+      'Pesquise quanto tempo o Estado Novo durou ao todo e como ele terminou, em 1945.',
+    ],
     perguntasReflexao: [
       {
         nivel: 'Sua experiência',

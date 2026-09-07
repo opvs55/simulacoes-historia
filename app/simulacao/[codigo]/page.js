@@ -679,6 +679,18 @@ export default function EntrarNaPartida({ params }) {
               </ul>
             </div>
 
+            {cenario.desfecho.paraInvestigar?.length > 0 && (
+              <div className={styles.fechoInvestigar}>
+                <div className={styles.fechoInvestigarRotulo}>Para investigar por conta própria</div>
+                <ul className={styles.fechoInvestigarLista}>
+                  {cenario.desfecho.paraInvestigar.map((pergunta) => (
+                    <li key={pergunta}>{pergunta}</li>
+                  ))}
+                </ul>
+                <p className={styles.fechoInvestigarNota}>Sem resposta pronta aqui — pesquise, pergunte, compare fontes.</p>
+              </div>
+            )}
+
             {emReflexao && perguntaAtual && (
               <div className={styles.reflexaoBloco}>
                 <div className={styles.reflexaoRotulo}>

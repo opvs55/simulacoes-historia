@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, useTimeline } from '../_experiencia/TimelineShell.js'
+import TimelineShell, { Tela, TelaClara, Kicker, Titulo, Texto, Termo, ParaInvestigar, useTimeline } from '../_experiencia/TimelineShell.js'
 import s from './MaterialidadeESaberesIncas.module.css'
 
 const BASE = '/imagens/linha-do-tempo/materialidade-e-saberes-incas'
@@ -221,6 +221,15 @@ export default function MaterialidadeESaberesIncas({ onSair }) {
           certa={1}
           feedbackCerto="Isso. O próprio texto de Bingham questiona a hipótese da fortaleza — um bom lembrete de que até uma fonte de época pode conter sua própria dúvida, se você ler o texto inteiro."
           feedbackErrado="Não é bem isso — releia o trecho: o próprio Bingham acha 'muito improvável' que templos tão refinados fossem uma fortaleza contra povos armados apenas com zarabatanas e arcos."
+        />
+      </TelaClara>
+
+      <TelaClara id="para-investigar" label="Para investigar">
+        <ParaInvestigar
+          perguntas={[
+            'Guamán Poma escreveu e desenhou a "Nueva Corónica y Buen Gobierno" pouco depois da conquista espanhola. Pesquise onde está o manuscrito original hoje e se dá para ver as páginas dele pela internet.',
+            'A arquitetura inca resistia a terremotos sem argamassa. Pesquise se essa técnica de encaixe de pedras influencia ou é estudada pela engenharia antissísmica de hoje.',
+          ]}
         />
       </TelaClara>
 
